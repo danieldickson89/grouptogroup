@@ -8,20 +8,75 @@
 
 /* Begin PBXBuildFile section */
 		3938FBCA1C8F7BEE00BAD9CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3938FBC91C8F7BEE00BAD9CD /* AppDelegate.swift */; };
-		3938FBCC1C8F7BEE00BAD9CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3938FBCB1C8F7BEE00BAD9CD /* ViewController.swift */; };
 		3938FBCF1C8F7BEE00BAD9CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3938FBCD1C8F7BEE00BAD9CD /* Main.storyboard */; };
 		3938FBD11C8F7BEE00BAD9CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3938FBD01C8F7BEE00BAD9CD /* Assets.xcassets */; };
 		3938FBD41C8F7BEE00BAD9CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3938FBD21C8F7BEE00BAD9CD /* LaunchScreen.storyboard */; };
+		3938FBDC1C8F806E00BAD9CD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3938FBDB1C8F806E00BAD9CD /* LoginViewController.swift */; };
+		3938FBDE1C8F809100BAD9CD /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3938FBDD1C8F809100BAD9CD /* SignUpViewController.swift */; };
+		3938FBE01C8F80CC00BAD9CD /* YourGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3938FBDF1C8F80CC00BAD9CD /* YourGroupsViewController.swift */; };
+		3938FBE21C8F80EA00BAD9CD /* AddGroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3938FBE11C8F80EA00BAD9CD /* AddGroupTableViewController.swift */; };
+		3938FBE41C8F810800BAD9CD /* GroupChatsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3938FBE31C8F810800BAD9CD /* GroupChatsListTableViewController.swift */; };
+		3938FBE61C8F81E000BAD9CD /* GroupToGroupChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3938FBE51C8F81E000BAD9CD /* GroupToGroupChatViewController.swift */; };
+		3938FBE91C8F874A00BAD9CD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3938FBE81C8F874A00BAD9CD /* User.swift */; };
+		3938FBEB1C8F875300BAD9CD /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3938FBEA1C8F875300BAD9CD /* Group.swift */; };
+		3938FBF11C8F8A7B00BAD9CD /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3938FBF01C8F8A7B00BAD9CD /* Message.swift */; };
+		3938FBF31C8F8B7C00BAD9CD /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3938FBF21C8F8B7C00BAD9CD /* FirebaseController.swift */; };
+		3938FBF61C8F8BAE00BAD9CD /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3938FBF41C8F8BA600BAD9CD /* Firebase.framework */; };
+		3938FBF71C8F8BAE00BAD9CD /* Firebase.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3938FBF41C8F8BA600BAD9CD /* Firebase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3938FBFA1C8F8BBF00BAD9CD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3938FBF91C8F8BBF00BAD9CD /* Security.framework */; };
+		3938FBFC1C8F8BC600BAD9CD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3938FBFB1C8F8BC600BAD9CD /* SystemConfiguration.framework */; };
+		3938FBFE1C8F8BD400BAD9CD /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3938FBFD1C8F8BD400BAD9CD /* CFNetwork.framework */; };
+		3938FC001C8F8BDA00BAD9CD /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3938FBFF1C8F8BDA00BAD9CD /* libicucore.tbd */; };
+		3938FC021C8F8BE200BAD9CD /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3938FC011C8F8BE200BAD9CD /* libc++.tbd */; };
+		3938FC051C8F8D1100BAD9CD /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3938FC041C8F8D1100BAD9CD /* UserController.swift */; };
+		3938FC071C8F8D2100BAD9CD /* GroupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3938FC061C8F8D2100BAD9CD /* GroupController.swift */; };
+		3938FC091C8F8D2900BAD9CD /* ConversationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3938FC081C8F8D2900BAD9CD /* ConversationController.swift */; };
+		3938FC0B1C8F8D5500BAD9CD /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3938FC0A1C8F8D5500BAD9CD /* Conversation.swift */; };
+		3938FC0E1C8F993700BAD9CD /* MessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3938FC0D1C8F993700BAD9CD /* MessageController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3938FBF81C8F8BAE00BAD9CD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3938FBF71C8F8BAE00BAD9CD /* Firebase.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3938FBC61C8F7BEE00BAD9CD /* GroupToGroup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroupToGroup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3938FBC91C8F7BEE00BAD9CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3938FBCB1C8F7BEE00BAD9CD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3938FBCE1C8F7BEE00BAD9CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3938FBD01C8F7BEE00BAD9CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3938FBD31C8F7BEE00BAD9CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3938FBD51C8F7BEE00BAD9CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3938FBDB1C8F806E00BAD9CD /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3938FBDD1C8F809100BAD9CD /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		3938FBDF1C8F80CC00BAD9CD /* YourGroupsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YourGroupsViewController.swift; sourceTree = "<group>"; };
+		3938FBE11C8F80EA00BAD9CD /* AddGroupTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGroupTableViewController.swift; sourceTree = "<group>"; };
+		3938FBE31C8F810800BAD9CD /* GroupChatsListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupChatsListTableViewController.swift; sourceTree = "<group>"; };
+		3938FBE51C8F81E000BAD9CD /* GroupToGroupChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupToGroupChatViewController.swift; sourceTree = "<group>"; };
+		3938FBE81C8F874A00BAD9CD /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		3938FBEA1C8F875300BAD9CD /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		3938FBF01C8F8A7B00BAD9CD /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		3938FBF21C8F8B7C00BAD9CD /* FirebaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
+		3938FBF41C8F8BA600BAD9CD /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = GroupToGroup/Firebase.framework; sourceTree = "<group>"; };
+		3938FBF91C8F8BBF00BAD9CD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		3938FBFB1C8F8BC600BAD9CD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		3938FBFD1C8F8BD400BAD9CD /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		3938FBFF1C8F8BDA00BAD9CD /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		3938FC011C8F8BE200BAD9CD /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		3938FC041C8F8D1100BAD9CD /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		3938FC061C8F8D2100BAD9CD /* GroupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupController.swift; sourceTree = "<group>"; };
+		3938FC081C8F8D2900BAD9CD /* ConversationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationController.swift; sourceTree = "<group>"; };
+		3938FC0A1C8F8D5500BAD9CD /* Conversation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
+		3938FC0D1C8F993700BAD9CD /* MessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +84,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3938FC021C8F8BE200BAD9CD /* libc++.tbd in Frameworks */,
+				3938FC001C8F8BDA00BAD9CD /* libicucore.tbd in Frameworks */,
+				3938FBFE1C8F8BD400BAD9CD /* CFNetwork.framework in Frameworks */,
+				3938FBFC1C8F8BC600BAD9CD /* SystemConfiguration.framework in Frameworks */,
+				3938FBFA1C8F8BBF00BAD9CD /* Security.framework in Frameworks */,
+				3938FBF61C8F8BAE00BAD9CD /* Firebase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +99,7 @@
 		3938FBBD1C8F7BEE00BAD9CD = {
 			isa = PBXGroup;
 			children = (
+				3938FC031C8F8BE800BAD9CD /* Frameworks */,
 				3938FBC81C8F7BEE00BAD9CD /* GroupToGroup */,
 				3938FBC71C8F7BEE00BAD9CD /* Products */,
 			);
@@ -55,13 +117,64 @@
 			isa = PBXGroup;
 			children = (
 				3938FBC91C8F7BEE00BAD9CD /* AppDelegate.swift */,
-				3938FBCB1C8F7BEE00BAD9CD /* ViewController.swift */,
 				3938FBCD1C8F7BEE00BAD9CD /* Main.storyboard */,
+				3938FBEE1C8F876900BAD9CD /* Models */,
+				3938FC0C1C8F8D5D00BAD9CD /* Model Controllers */,
+				3938FBE71C8F872700BAD9CD /* ViewControllers */,
 				3938FBD01C8F7BEE00BAD9CD /* Assets.xcassets */,
 				3938FBD21C8F7BEE00BAD9CD /* LaunchScreen.storyboard */,
 				3938FBD51C8F7BEE00BAD9CD /* Info.plist */,
 			);
 			path = GroupToGroup;
+			sourceTree = "<group>";
+		};
+		3938FBE71C8F872700BAD9CD /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3938FBDB1C8F806E00BAD9CD /* LoginViewController.swift */,
+				3938FBDD1C8F809100BAD9CD /* SignUpViewController.swift */,
+				3938FBDF1C8F80CC00BAD9CD /* YourGroupsViewController.swift */,
+				3938FBE11C8F80EA00BAD9CD /* AddGroupTableViewController.swift */,
+				3938FBE31C8F810800BAD9CD /* GroupChatsListTableViewController.swift */,
+				3938FBE51C8F81E000BAD9CD /* GroupToGroupChatViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		3938FBEE1C8F876900BAD9CD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3938FBE81C8F874A00BAD9CD /* User.swift */,
+				3938FBEA1C8F875300BAD9CD /* Group.swift */,
+				3938FBF01C8F8A7B00BAD9CD /* Message.swift */,
+				3938FC0A1C8F8D5500BAD9CD /* Conversation.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		3938FC031C8F8BE800BAD9CD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3938FC011C8F8BE200BAD9CD /* libc++.tbd */,
+				3938FBFF1C8F8BDA00BAD9CD /* libicucore.tbd */,
+				3938FBF41C8F8BA600BAD9CD /* Firebase.framework */,
+				3938FBFD1C8F8BD400BAD9CD /* CFNetwork.framework */,
+				3938FBFB1C8F8BC600BAD9CD /* SystemConfiguration.framework */,
+				3938FBF91C8F8BBF00BAD9CD /* Security.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3938FC0C1C8F8D5D00BAD9CD /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3938FBF21C8F8B7C00BAD9CD /* FirebaseController.swift */,
+				3938FC041C8F8D1100BAD9CD /* UserController.swift */,
+				3938FC061C8F8D2100BAD9CD /* GroupController.swift */,
+				3938FC0D1C8F993700BAD9CD /* MessageController.swift */,
+				3938FC081C8F8D2900BAD9CD /* ConversationController.swift */,
+			);
+			name = "Model Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +187,7 @@
 				3938FBC21C8F7BEE00BAD9CD /* Sources */,
 				3938FBC31C8F7BEE00BAD9CD /* Frameworks */,
 				3938FBC41C8F7BEE00BAD9CD /* Resources */,
+				3938FBF81C8F8BAE00BAD9CD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -135,8 +249,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3938FBCC1C8F7BEE00BAD9CD /* ViewController.swift in Sources */,
+				3938FBEB1C8F875300BAD9CD /* Group.swift in Sources */,
+				3938FC071C8F8D2100BAD9CD /* GroupController.swift in Sources */,
+				3938FBDE1C8F809100BAD9CD /* SignUpViewController.swift in Sources */,
+				3938FC0B1C8F8D5500BAD9CD /* Conversation.swift in Sources */,
+				3938FBE41C8F810800BAD9CD /* GroupChatsListTableViewController.swift in Sources */,
+				3938FBDC1C8F806E00BAD9CD /* LoginViewController.swift in Sources */,
+				3938FBE61C8F81E000BAD9CD /* GroupToGroupChatViewController.swift in Sources */,
+				3938FBE91C8F874A00BAD9CD /* User.swift in Sources */,
+				3938FC051C8F8D1100BAD9CD /* UserController.swift in Sources */,
+				3938FBE21C8F80EA00BAD9CD /* AddGroupTableViewController.swift in Sources */,
+				3938FBF11C8F8A7B00BAD9CD /* Message.swift in Sources */,
+				3938FC0E1C8F993700BAD9CD /* MessageController.swift in Sources */,
 				3938FBCA1C8F7BEE00BAD9CD /* AppDelegate.swift in Sources */,
+				3938FBF31C8F8B7C00BAD9CD /* FirebaseController.swift in Sources */,
+				3938FC091C8F8D2900BAD9CD /* ConversationController.swift in Sources */,
+				3938FBE01C8F80CC00BAD9CD /* YourGroupsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +375,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GroupToGroup",
+				);
 				INFOPLIST_FILE = GroupToGroup/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.devMountain.GroupToGroup;
@@ -258,6 +390,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GroupToGroup",
+				);
 				INFOPLIST_FILE = GroupToGroup/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.devMountain.GroupToGroup;
@@ -284,6 +420,7 @@
 				3938FBDA1C8F7BEE00BAD9CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
