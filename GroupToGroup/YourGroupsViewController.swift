@@ -32,7 +32,6 @@ class YourGroupsViewController: UIViewController {
                     navigationItem.title = currentUser.username
                     GroupController.observeGroupsForUser(userID, completion: { (groups) -> Void in
                         self.groupsArray = groups
-                        print(self.groupsArray)
                         self.yourGroupsListTableView.reloadData()
                     })
                 }

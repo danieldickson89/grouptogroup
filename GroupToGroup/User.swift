@@ -15,7 +15,7 @@ class User: FirebaseType {
     
     let username: String
     var groups: [Group] = []
-    var groupIDs: [String :AnyObject] = [String :AnyObject]()
+    var groupIDs: [String] = []
     var identifier: String?
     var endpoint: String {
         return "users"
@@ -30,15 +30,16 @@ class User: FirebaseType {
     }
     
     required init?(json: [String : AnyObject], identifier: String) {
-        guard let username = json[kUsername] as? String,
-        groupIDs = json[kGroups] as? [String :AnyObject] else {
+        guard let username = json[kUsername] as? String else {
             self.username = ""
             return nil
         }
         self.identifier = identifier
         self.username = username
-        self.groupIDs = groupIDs
-       // print(self.groupIDs)
+        
+        if let groupIDs = json[kGroups] as? [String] {
+            self.groupIDs = groupIDs
+        }
     }
 }
 

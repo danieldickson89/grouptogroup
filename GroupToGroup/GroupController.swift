@@ -30,12 +30,12 @@ class GroupController {
         if let groupID = group.identifier {
             for var user in users {
                 if let userID = user.identifier {
-                    //group.userIDs.append(userID)
+                    group.userIDs.append(userID)
                     UserController.addGroupToUser(userID, groupID: groupID)
                 }
                 user.save()
             }
-         //   saveGroup(groupID, userIDs: group.userIDs)
+            saveGroup(groupID, userIDs: group.userIDs)
         }
         completion(group: group)
     }

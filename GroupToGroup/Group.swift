@@ -11,12 +11,12 @@ import Foundation
 class Group: FirebaseType {
     
     let kName: String = "name"
-    let kUsers: String = "members"
+    let kUsers: String = "users"
     let kConversations: String = "conversations"
     
     let name: String
     var users: [User] = []
-    var userIDs: [String : AnyObject] = [String : AnyObject]()
+    var userIDs: [String] = []
     var conversations: [Conversation] = []
     var conversationIDs: [String] = []
     var identifier: String?
@@ -47,16 +47,22 @@ class Group: FirebaseType {
     }
     
     required init?(json: [String : AnyObject], identifier: String) {
-        guard let name = json[kName] as? String,
-        let userIDs = json[kUsers] as? [String: AnyObject],
-              let conversationIDs = json[kConversations] as? [String] else {
+        guard let name = json[kName] as? String else {
             self.name = ""
             return nil
         }
+        
         self.identifier = identifier
         self.name = name
-        self.userIDs = userIDs
-        self.conversationIDs = conversationIDs
+        
+        if let conversationIDs = json[kConversations] as? [String] {
+            self.conversationIDs = conversationIDs
+        }
+        
+        if let userIDs = json[kUsers] as? [String] {
+            self.userIDs = userIDs
+        }
+        
     }
     
 }
