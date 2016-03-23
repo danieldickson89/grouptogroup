@@ -134,8 +134,8 @@
 				3938FBDB1C8F806E00BAD9CD /* LoginViewController.swift */,
 				3938FBDD1C8F809100BAD9CD /* SignUpViewController.swift */,
 				3938FBDF1C8F80CC00BAD9CD /* YourGroupsViewController.swift */,
-				3938FBE11C8F80EA00BAD9CD /* AddGroupTableViewController.swift */,
 				3938FBE31C8F810800BAD9CD /* GroupChatsListTableViewController.swift */,
+				3938FBE11C8F80EA00BAD9CD /* AddGroupTableViewController.swift */,
 				3938FBE51C8F81E000BAD9CD /* GroupToGroupChatViewController.swift */,
 			);
 			name = ViewControllers;

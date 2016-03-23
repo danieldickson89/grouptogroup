@@ -27,41 +27,24 @@ class GroupController {
     static func createGroup(name: String, users: [User], conversations: [Conversation] = [], completion: (group: Group?) -> Void) {
         var group = Group(name: name, users: users, conversations: conversations)
         group.save()
-        if let groupID = group.identifier {
-            var userCount = 0
-            for var user in users {
-                if let userID = user.identifier {
-                    group.userIDs.append(userID)
-                    UserController.addGroupToUser(userID, groupID: groupID)
-                }
-                user.save()
-                userCount++
-            }
-            saveGroup(groupID, userIDs: group.userIDs, index: userCount)
+        for user in users {
+            linkUserAndGroup(group, user: user)
         }
         completion(group: group)
     }
     
-    static func addMemberToGroup(groupID: String, user: User, index: Int) {
-        if let userID = user.identifier {
-            FirebaseController.base.childByAppendingPath("groups/\(groupID)/members/\(userID)").setValue(index)
-            UserController.addGroupToUser(userID, groupID: groupID)
-        }
-    }
-    
-    static func saveGroup(groupID: String, userIDs: [String], index: Int) {
-        for id in userIDs {
-            FirebaseController.base.childByAppendingPath("groups/\(groupID)/members").childByAppendingPath(id).setValue(index)
-        }
+    static func linkUserAndGroup(var group: Group, var user: User) {
+        guard let groupID = group.identifier,
+            userID = user.identifier else {return}
+        user.groupIDs.append(groupID)
+        user.save()
+        group.userIDs.append(userID)
+        group.save()
     }
     
     static func observeGroupsForUser(userID: String, completion: (groups: [Group])->Void) {
         FirebaseController.base.childByAppendingPath("users/\(userID)/groups").observeEventType(.Value, withBlock: { (data) -> Void in
-            if let groupIDsDictionary = data.value as? [String : AnyObject] {
-                var groupIDs: [String] = []
-                for groupID in groupIDsDictionary {
-                    groupIDs.append(groupID.0)
-                }
+            if let groupIDs = data.value as? [String] {
                 var groupsArray: [Group] = []
                 for groupIdentifier in groupIDs {
                     fetchGroupForIdentifier(groupIdentifier, completion: { (group) -> Void in

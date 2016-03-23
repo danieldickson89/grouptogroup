@@ -23,16 +23,20 @@ class YourGroupsViewController: UIViewController {
 
     }
     
-    override func viewDidAppear(animated: Bool) {
-        
-        joinGroupButton.layer.cornerRadius = 4
-    
-            if let _ = UserController.currentUser {
-                setupAppearanceForCurrentUser()
-            }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        if let _ = UserController.currentUser {
+            setupAppearanceForCurrentUser()
+        }
         else {
             navigationController?.performSegueWithIdentifier("toLogin", sender: nil)
         }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        joinGroupButton.layer.cornerRadius = 4
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,6 +50,8 @@ class YourGroupsViewController: UIViewController {
     }
     
     func setupAppearanceForCurrentUser() {
+        groupsArray = []
+        yourGroupsListTableView.reloadData()
         if let currentUser = UserController.currentUser {
             if let userID = currentUser.identifier {
                 navigationItem.title = currentUser.username
@@ -81,23 +87,36 @@ class YourGroupsViewController: UIViewController {
     }
     
     @IBAction func joinGroupButtonTapped(sender: AnyObject) {
-        if let groupIDText = enterGroupIDTextField.text {
-            let index = groupsArray.count
-            GroupController.addMemberToGroup(groupIDText, user: UserController.currentUser, index: index)
+        if let groupID = enterGroupIDTextField.text {
+            GroupController.fetchGroupForIdentifier(groupID, completion: { (group) -> Void in
+                if let group = group {
+                   GroupController.linkUserAndGroup(group, user: UserController.currentUser)
+                } else {
+                    // Add alert to tell user that group doesn't exist
+                    let alert = UIAlertController(title: "Invalid Group", message: "the group \"\(groupID)\" does not exist", preferredStyle: .Alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                    self.presentViewController(alert, animated: true, completion: nil)
+                }
+            })
         }
     }
     
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "toConversations" {
+            if let cell = sender as? UITableViewCell, indexPath = yourGroupsListTableView.indexPathForCell(cell) {
+                let groupChatsListTableViewController = segue.destinationViewController as! GroupChatsListTableViewController
+                let group = groupsArray[indexPath.row]
+                groupChatsListTableViewController.group = group
+            }
+        }
     }
-    */
-
+    
 }
 
 extension YourGroupsViewController: UITableViewDataSource, UITableViewDelegate {

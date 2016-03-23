@@ -15,7 +15,14 @@ class User: FirebaseType {
     
     let username: String
     var groups: [Group] = []
-    var groupIDs: [String] = []
+    var groupIDs: [String] = [] {
+        didSet {
+            if identifier == UserController.currentUser.identifier {
+                NSUserDefaults.standardUserDefaults().setObject(self.jsonValue, forKey: UserController.kUser)
+                NSUserDefaults.standardUserDefaults().synchronize()
+            }
+        }
+    }
     var identifier: String?
     var endpoint: String {
         return "users"

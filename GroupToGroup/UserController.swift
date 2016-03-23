@@ -14,16 +14,13 @@ class UserController {
     
     static var currentUser: User! {
         get {
-        
-        guard let uid = FirebaseController.base.authData?.uid,
-        let userDefaultsValue = NSUserDefaults.standardUserDefaults().valueForKey(kUser),
-        let userDictionary =  userDefaultsValue as? [String : AnyObject] else { return nil }
-        
-        return User(json: userDictionary, identifier: uid)
+            guard let uid = FirebaseController.base.authData?.uid,
+                let userDefaultsValue = NSUserDefaults.standardUserDefaults().valueForKey(kUser),
+                let userDictionary =  userDefaultsValue as? [String : AnyObject] else { return nil }
+            return User(json: userDictionary, identifier: uid)
         }
         
         set {
-            
             if let newValue = newValue {
                 NSUserDefaults.standardUserDefaults().setValue(newValue.jsonValue, forKey: kUser)
                 NSUserDefaults.standardUserDefaults().synchronize()
@@ -50,23 +47,23 @@ class UserController {
     }
     
     
-//    static func observeConversationsForUser(user: User, completion: () -> Void) {
-//        if let identifier = user.identifier {
-//            FirebaseController.base.childByAppendingPath("users/\(identifier)/conversations").observeEventType(.ChildAdded, withBlock: { (data) -> Void in
-//                if let conversationDictionary = data.value as? [String: AnyObject] {
-//                    if let conversationID = Array(conversationDictionary.keys).first {
-//                        user.conversationIDs.append(conversationID)
-//                        ConversationController.fetchConversationForIdentifier(conversationID, completion: { (conversation) -> Void in
-//                            if let conversation = conversation {
-//                                user.conversations.append(conversation)
-//                                completion()
-//                            }
-//                        })
-//                    }
-//                }
-//            })
-//        }
-//    }
+    //    static func observeConversationsForUser(user: User, completion: () -> Void) {
+    //        if let identifier = user.identifier {
+    //            FirebaseController.base.childByAppendingPath("users/\(identifier)/conversations").observeEventType(.ChildAdded, withBlock: { (data) -> Void in
+    //                if let conversationDictionary = data.value as? [String: AnyObject] {
+    //                    if let conversationID = Array(conversationDictionary.keys).first {
+    //                        user.conversationIDs.append(conversationID)
+    //                        ConversationController.fetchConversationForIdentifier(conversationID, completion: { (conversation) -> Void in
+    //                            if let conversation = conversation {
+    //                                user.conversations.append(conversation)
+    //                                completion()
+    //                            }
+    //                        })
+    //                    }
+    //                }
+    //            })
+    //        }
+    //    }
     
     static func createUserFirebase(username: String, email: String, password: String, completion: (success: Bool) -> Void) {
         FirebaseController.base.createUser(email, password: password) { (error, result) -> Void in
