@@ -42,7 +42,7 @@ class GroupController {
     
     static func addMemberToGroup(groupID: String, user: User) {
         if let userID = user.identifier {
-            FirebaseController.base.childByAppendingPath("groups/\(groupID)/members/\(userID)").setValue(true)
+            FirebaseController.base.childByAppendingPath("groups/\(groupID)/members/\(userID)").setValue(user.jsonValue)
             UserController.addGroupToUser(userID, groupID: groupID)
         }
     }

@@ -37,7 +37,7 @@ class UserController {
     
     // Also known as the fetchUserForIdentifier method (either way)
     static func userForIdentifier(identifier: String, completion: (user: User?) -> Void) {
-        print("User for ID: \(identifier)")
+        //print("User for ID: \(identifier)")
         FirebaseController.dataAtEndpoint("users/\(identifier)") { (data) -> Void in
             
             if let json = data as? [String: AnyObject] {
