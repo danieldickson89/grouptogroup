@@ -50,9 +50,3 @@ class Conversation: FirebaseType {
         self.identifier = identifier
     }
 }
-
-//class Conversation2 {
-//    var groups: [Group]
-//    var groupIDs: [String]
-//    var messages: [Message]
-//}

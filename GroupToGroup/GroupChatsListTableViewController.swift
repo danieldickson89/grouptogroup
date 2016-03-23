@@ -37,7 +37,7 @@ class GroupChatsListTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("conversationCell", forIndexPath: indexPath)
-
+        
         cell.textLabel?.text = group?.name
 
         return cell

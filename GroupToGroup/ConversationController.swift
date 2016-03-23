@@ -24,16 +24,38 @@ class ConversationController {
         })
     }
     
-    static func createConversation(name: String, groups: [Group], users: [User], messages: [Message], completion: (conversation: Conversation?) -> Void) {
+    static func createConversation(name: String, groups: [Group], messages: [Message] = [], completion: (conversation: Conversation?) -> Void) {
         var conversation = Conversation(name: name, groups: groups, messages: messages)
         conversation.save()
-        if let conversationID = conversation.identifier {
-            for var group in groups {
-                group.conversationIDs.append(conversationID)
-                group.save()
-            }
+        for group in groups {
+            linkGroupAndConversation(conversation, group: group)
         }
         completion(conversation: conversation)
+    }
+    
+    static func linkGroupAndConversation(var conversation: Conversation, var group: Group) {
+        guard let conversationID = conversation.identifier,
+            groupID = group.identifier else {return}
+        group.conversationIDs.append(conversationID)
+        group.save()
+        conversation.groupIDs.append(groupID)
+        conversation.save()
+    }
+    
+    static func observeConversationsForGroup(groupID: String, completion: (conversations: [Conversation])->Void) {
+        FirebaseController.base.childByAppendingPath("groups/\(groupID)/conversations").observeEventType(.Value, withBlock: { (data) -> Void in
+            if let conversationIDs = data.value as? [String] {
+                var conversationsArray: [Conversation] = []
+                for conversationIdentifier in conversationIDs {
+                    fetchConversationForIdentifier(conversationIdentifier, completion: { (conversation) -> Void in
+                        if let conversation = conversation {
+                            conversationsArray.append(conversation)
+                            completion(conversations: conversationsArray)
+                        }
+                    })
+                }
+            }
+        })
     }
 }
     

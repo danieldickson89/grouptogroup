@@ -47,9 +47,3 @@ class Message: FirebaseType {
         self.sender = sender
     }
 }
-
-//class Message2 {
-//    let text: String
-//    let sender: User
-//    var conversationID: String
-//}

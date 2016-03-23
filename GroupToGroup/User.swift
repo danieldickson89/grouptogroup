@@ -49,36 +49,3 @@ class User: FirebaseType {
         }
     }
 }
-
-//class User2 {
-//    let username: String
-//    var groups: [Group] = []
-//    var groupIDs: [String]
-//}
-//
-
-
-//    var groups: [Group] = {
-//        var groupArray: [Group] = []
-//        // for each groupID
-//        // call GroupController group from identifier
-//        // return group
-//
-//        let tunnel = dispatch_group_create()
-//        for groupID in UserController.currentUser.groupIDs {
-//            dispatch_group_enter(tunnel)
-//            GroupController.fetchGroupForIdentifier(groupID, completion: { (group) -> Void in
-//                if let group = group {
-//                    groupArray.append(group)
-//                }
-//                dispatch_group_leave(tunnel)
-//            })
-//        }
-//
-//        // you will need a dispatch group so that each group comes back before you return
-//        // use dispatch_wait instead of dispatch_group_notify
-//
-//        dispatch_group_wait(tunnel, dispatch_time(DISPATCH_TIME_NOW, Int64(5.0*Double(NSEC_PER_SEC))))
-//
-//        return groupArray
-//    }()

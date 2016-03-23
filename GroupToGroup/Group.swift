@@ -66,11 +66,3 @@ class Group: FirebaseType {
     }
     
 }
-
-//class Group2 {
-//    let name: String
-//    var users: [User]
-//    var userIDs: [String]
-//    var conversations: [Conversation] = []
-//    var conversationIDs: [String]
-//}
