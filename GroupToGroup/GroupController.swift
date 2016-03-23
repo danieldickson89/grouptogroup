@@ -28,28 +28,30 @@ class GroupController {
         var group = Group(name: name, users: users, conversations: conversations)
         group.save()
         if let groupID = group.identifier {
+            var userCount = 0
             for var user in users {
                 if let userID = user.identifier {
                     group.userIDs.append(userID)
                     UserController.addGroupToUser(userID, groupID: groupID)
                 }
                 user.save()
+                userCount++
             }
-            saveGroup(groupID, userIDs: group.userIDs)
+            saveGroup(groupID, userIDs: group.userIDs, index: userCount)
         }
         completion(group: group)
     }
     
-    static func addMemberToGroup(groupID: String, user: User) {
+    static func addMemberToGroup(groupID: String, user: User, index: Int) {
         if let userID = user.identifier {
-            FirebaseController.base.childByAppendingPath("groups/\(groupID)/members/\(userID)").setValue(user.jsonValue)
+            FirebaseController.base.childByAppendingPath("groups/\(groupID)/members/\(userID)").setValue(index)
             UserController.addGroupToUser(userID, groupID: groupID)
         }
     }
     
-    static func saveGroup(groupID: String, userIDs: [String]) {
+    static func saveGroup(groupID: String, userIDs: [String], index: Int) {
         for id in userIDs {
-            FirebaseController.base.childByAppendingPath("groups/\(groupID)/members").childByAppendingPath(id).setValue(true)
+            FirebaseController.base.childByAppendingPath("groups/\(groupID)/members").childByAppendingPath(id).setValue(index)
         }
     }
     

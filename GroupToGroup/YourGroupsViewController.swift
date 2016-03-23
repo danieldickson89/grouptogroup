@@ -27,14 +27,8 @@ class YourGroupsViewController: UIViewController {
         
         joinGroupButton.layer.cornerRadius = 4
     
-            if let currentUser = UserController.currentUser {
-                if let userID = currentUser.identifier {
-                    navigationItem.title = currentUser.username
-                    GroupController.observeGroupsForUser(userID, completion: { (groups) -> Void in
-                        self.groupsArray = groups
-                        self.yourGroupsListTableView.reloadData()
-                    })
-                }
+            if let _ = UserController.currentUser {
+                setupAppearanceForCurrentUser()
             }
         else {
             navigationController?.performSegueWithIdentifier("toLogin", sender: nil)
@@ -88,7 +82,8 @@ class YourGroupsViewController: UIViewController {
     
     @IBAction func joinGroupButtonTapped(sender: AnyObject) {
         if let groupIDText = enterGroupIDTextField.text {
-            GroupController.addMemberToGroup(groupIDText, user: UserController.currentUser)
+            let index = groupsArray.count
+            GroupController.addMemberToGroup(groupIDText, user: UserController.currentUser, index: index)
         }
     }
     
