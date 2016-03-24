@@ -24,6 +24,22 @@ class GroupController {
         })
     }
     
+    static func fetchAllGroups(completion: (groups: [Group]) -> Void) {
+        
+        FirebaseController.dataAtEndpoint("groups") { (data) -> Void in
+            
+            if let json = data as? [String: AnyObject] {
+                
+                let groups = json.flatMap({Group(json: $0.1 as! [String : AnyObject], identifier: $0.0)})
+                
+                completion(groups: groups)
+                
+            } else {
+                completion(groups: [])
+            }
+        }
+    }
+    
     static func createGroup(name: String, users: [User], conversations: [Conversation] = [], completion: (group: Group?) -> Void) {
         var group = Group(name: name, users: users, conversations: conversations)
         group.save()

@@ -234,6 +234,24 @@
             </objects>
             <point key="canvasLocation" x="1075" y="1041"/>
         </scene>
+        <!--Group Profile View Controller-->
+        <scene sceneID="xuZ-gQ-zGM">
+            <objects>
+                <viewController id="EII-fy-zWz" customClass="GroupProfileViewController" customModule="GroupToGroup" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9YR-ED-cS5"/>
+                        <viewControllerLayoutGuide type="bottom" id="qDM-Q8-vLh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fO5-Jf-m9S">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UcB-vZ-QnI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3545" y="0.0"/>
+        </scene>
         <!--Add Group Table View Controller-->
         <scene sceneID="zpi-C9-X4t">
             <objects>
@@ -243,13 +261,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupNames" id="Y1U-5F-FBx">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupCell" id="Y1U-5F-FBx">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Y1U-5F-FBx" id="8Sb-AA-bMf">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="EII-fy-zWz" kind="show" identifier="toGroupProfileView" id="G9x-yr-4R9"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -262,6 +283,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K9F-Uo-yLp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2793" y="726"/>
+        </scene>
+        <!--Groups Search Results Table View Controller-->
+        <scene sceneID="End-An-EhQ">
+            <objects>
+                <tableViewController storyboardIdentifier="GroupsSearchResultsTableViewController" id="nRd-nN-iFX" customClass="GroupsSearchResultsTableViewController" customModule="GroupToGroup" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="NML-HQ-jDQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupnameCell" id="huM-Wb-l8z">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="huM-Wb-l8z" id="X1S-Ku-Rx9">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="nRd-nN-iFX" id="JOl-Qi-H7T"/>
+                            <outlet property="delegate" destination="nRd-nN-iFX" id="a36-nN-Wan"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o23-h7-oMU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3545" y="726"/>
         </scene>
         <!--Group Chats List Table View Controller-->
         <scene sceneID="hFI-0N-CIe">
