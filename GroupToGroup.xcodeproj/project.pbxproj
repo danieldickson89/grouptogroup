@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3918B42D1CA361E200E16407 /* GroupsSearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3918B42C1CA361E200E16407 /* GroupsSearchResultsTableViewController.swift */; };
 		3918B42F1CA3651E00E16407 /* GroupProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3918B42E1CA3651E00E16407 /* GroupProfileViewController.swift */; };
+		392A9D141CA48D8D00964522 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392A9D131CA48D8D00964522 /* ChatViewController.swift */; };
 		3938FBCA1C8F7BEE00BAD9CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3938FBC91C8F7BEE00BAD9CD /* AppDelegate.swift */; };
 		3938FBCF1C8F7BEE00BAD9CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3938FBCD1C8F7BEE00BAD9CD /* Main.storyboard */; };
 		3938FBD11C8F7BEE00BAD9CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3938FBD01C8F7BEE00BAD9CD /* Assets.xcassets */; };
@@ -34,7 +35,6 @@
 		3938FC091C8F8D2900BAD9CD /* ConversationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3938FC081C8F8D2900BAD9CD /* ConversationController.swift */; };
 		3938FC0B1C8F8D5500BAD9CD /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3938FC0A1C8F8D5500BAD9CD /* Conversation.swift */; };
 		3938FC0E1C8F993700BAD9CD /* MessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3938FC0D1C8F993700BAD9CD /* MessageController.swift */; };
-		39DFF7601CA44E2900F751BB /* ConversationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DFF75F1CA44E2900F751BB /* ConversationTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -54,6 +54,7 @@
 /* Begin PBXFileReference section */
 		3918B42C1CA361E200E16407 /* GroupsSearchResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsSearchResultsTableViewController.swift; sourceTree = "<group>"; };
 		3918B42E1CA3651E00E16407 /* GroupProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupProfileViewController.swift; sourceTree = "<group>"; };
+		392A9D131CA48D8D00964522 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		3938FBC61C8F7BEE00BAD9CD /* GroupToGroup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroupToGroup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3938FBC91C8F7BEE00BAD9CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3938FBCE1C8F7BEE00BAD9CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -80,7 +81,6 @@
 		3938FC081C8F8D2900BAD9CD /* ConversationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationController.swift; sourceTree = "<group>"; };
 		3938FC0A1C8F8D5500BAD9CD /* Conversation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
 		3938FC0D1C8F993700BAD9CD /* MessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageController.swift; sourceTree = "<group>"; };
-		39DFF75F1CA44E2900F751BB /* ConversationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +142,7 @@
 				3938FBE11C8F80EA00BAD9CD /* AddGroupTableViewController.swift */,
 				3918B42C1CA361E200E16407 /* GroupsSearchResultsTableViewController.swift */,
 				3918B42E1CA3651E00E16407 /* GroupProfileViewController.swift */,
-				39DFF75F1CA44E2900F751BB /* ConversationTableViewController.swift */,
+				392A9D131CA48D8D00964522 /* ChatViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -263,9 +263,9 @@
 				3938FBDC1C8F806E00BAD9CD /* LoginViewController.swift in Sources */,
 				3938FBE91C8F874A00BAD9CD /* User.swift in Sources */,
 				3938FC051C8F8D1100BAD9CD /* UserController.swift in Sources */,
-				39DFF7601CA44E2900F751BB /* ConversationTableViewController.swift in Sources */,
 				3918B42D1CA361E200E16407 /* GroupsSearchResultsTableViewController.swift in Sources */,
 				3938FBE21C8F80EA00BAD9CD /* AddGroupTableViewController.swift in Sources */,
+				392A9D141CA48D8D00964522 /* ChatViewController.swift in Sources */,
 				3938FBF11C8F8A7B00BAD9CD /* Message.swift in Sources */,
 				3918B42F1CA3651E00E16407 /* GroupProfileViewController.swift in Sources */,
 				3938FC0E1C8F993700BAD9CD /* MessageController.swift in Sources */,

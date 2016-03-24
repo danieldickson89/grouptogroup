@@ -65,9 +65,9 @@ class GroupChatsListTableViewController: UITableViewController {
             addGroupTableViewController.usersGroup = usersGroup
         } else if segue.identifier == "toConversation" {
             if let cell = sender as? UITableViewCell, indexPath = tableView.indexPathForCell(cell) {
-                let conversationTableViewController = segue.destinationViewController as! ConversationTableViewController
+                let chatViewController = segue.destinationViewController as! ChatViewController
                 let conversation = conversationsArray[indexPath.row]
-                conversationTableViewController.conversation = conversation
+                chatViewController.conversation = conversation
             }
         }
     }
