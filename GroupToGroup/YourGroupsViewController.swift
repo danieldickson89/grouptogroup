@@ -112,7 +112,7 @@ class YourGroupsViewController: UIViewController {
             if let cell = sender as? UITableViewCell, indexPath = yourGroupsListTableView.indexPathForCell(cell) {
                 let groupChatsListTableViewController = segue.destinationViewController as! GroupChatsListTableViewController
                 let group = groupsArray[indexPath.row]
-                groupChatsListTableViewController.group = group
+                groupChatsListTableViewController.usersGroup = group
             }
         }
     }

@@ -10,19 +10,28 @@ import UIKit
 
 class GroupProfileViewController: UIViewController {
     
+    // MARK: - Properties
+    
     var group: Group?
+    var usersGroup: Group?
 
+    @IBOutlet weak var groupNameLabel: UILabel!
+    @IBOutlet weak var inviteButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        inviteButton.layer.cornerRadius = 6.0
+        groupNameLabel.text = group?.name
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func inviteButtonTapped(sender: AnyObject) {
+        if let usersGroup = self.usersGroup, group = self.group {
+            ConversationController.createConversation("\(usersGroup.name) & \(group.name)", groups: [usersGroup, group]) { (conversation) -> Void in
+                print("\(usersGroup.name) has started a conversation with \(group.name)")
+            }
+        }
     }
-    
 
     /*
     // MARK: - Navigation

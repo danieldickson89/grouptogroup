@@ -67,30 +67,3 @@ class LoginViewController: UIViewController {
     */
 
 }
-
-
-//        UserController.createUser("daniel") { (user) -> Void in
-//            if let firstUser = user {
-//                UserController.createUser("someGirl", completion: { (user) -> Void in
-//                    if let secondUser = user {
-//                        GroupController.createGroup("boys group", users: [firstUser], completion: { (group) -> Void in
-//                            if let firstGroup = group {
-//                                GroupController.createGroup("girls group", users: [secondUser], completion: { (group) -> Void in
-//                                    if let secondGroup = group {
-//                                        ConversationController.createConversation("first conversation on here", groups: [firstGroup, secondGroup], users: [firstUser, secondUser], completion: { (conversation) -> Void in
-//                                            if let conversation = conversation {
-//                                                MessageController.createMessage("sending first message ever!", sender: firstUser, conversation: conversation, group: firstGroup, completion: { (message) -> Void in
-//                                                    if let message = message {
-//                                                        print(message)
-//                                                    }
-//                                                })
-//                                            }
-//                                        })
-//                                    }
-//                                })
-//                            }
-//                        })
-//                    }
-//                })
-//            }
-//        }

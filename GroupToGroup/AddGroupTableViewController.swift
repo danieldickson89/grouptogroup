@@ -12,6 +12,7 @@ class AddGroupTableViewController: UITableViewController, UISearchResultsUpdatin
     
     // MARK: - Properties
     
+    var usersGroup: Group?
     var groupsDataSource: [Group] = []
     var searchController: UISearchController!
 
@@ -24,7 +25,7 @@ class AddGroupTableViewController: UITableViewController, UISearchResultsUpdatin
     
     func updateView() {
         GroupController.fetchAllGroups { (groups) -> Void in
-            self.groupsDataSource = groups
+            self.groupsDataSource = groups.filter({$0.name != self.usersGroup?.name})
             self.tableView.reloadData()
         }
     }
@@ -80,16 +81,20 @@ class AddGroupTableViewController: UITableViewController, UISearchResultsUpdatin
             if let indexPath = tableView.indexPathForCell(cell) {
                 
                 let group = groupsDataSource[indexPath.row]
+                let usersGroup = self.usersGroup
                 
                 let destinationViewController = segue.destinationViewController as? GroupProfileViewController
                 destinationViewController?.group = group
+                destinationViewController?.usersGroup = usersGroup
                 
             } else if let indexPath = (searchController.searchResultsController as? GroupsSearchResultsTableViewController)?.tableView.indexPathForCell(cell) {
                 
                 let group = (searchController.searchResultsController as! GroupsSearchResultsTableViewController).groupsResultsDataSource[indexPath.row]
+                let usersGroup = self.usersGroup
                 
                 let destinationViewController = segue.destinationViewController as? GroupProfileViewController
                 destinationViewController?.group = group
+                destinationViewController?.usersGroup = usersGroup
             }
         }
     }
