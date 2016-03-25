@@ -26,10 +26,14 @@ class ConversationController {
     
     static func createConversation(name: String, groups: [Group], messages: [Message] = [], completion: (conversation: Conversation?) -> Void) {
         var conversation = Conversation(name: name, groups: groups, messages: messages)
+        // conversation.save() works up here but duplicates group names
         conversation.save()
         for group in groups {
             linkGroupAndConversation(conversation, group: group)
         }
+        // down here conversation.save() fixes groupName duplication, but loses conversationsArray.appending & group.conversationIDs.append
+        //conversation.save()
+        
         completion(conversation: conversation)
     }
     

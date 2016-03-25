@@ -24,25 +24,9 @@ class MessageController {
         })
     }
     
-//    static func fetchAllMessages(completion: (messages: [Message]) -> Void) {
-//        
-//        FirebaseController.dataAtEndpoint("messages") { (data) -> Void in
-//            
-//            if let json = data as? [String: AnyObject] {
-//                
-//                let messages = json.flatMap({Message(json: $0.1 as! [String : AnyObject], identifier: $0.0)})
-//                
-//                completion(messages: messages)
-//                
-//            } else {
-//                completion(messages: [])
-//            }
-//        }
-//    }
-    
-    static func createMessage(text: String, sender: User, conversation: Conversation, completion: (message: Message?) -> Void) {
-        var message = Message(text: text, sender: sender)
-        message.save()
+    static func createMessage(text: String, sender: User, var conversation: Conversation, completion: (message: Message?) -> Void) {
+        let message = Message(text: text, sender: sender)
+        conversation.save()
         addMessageToConversation(message, conversation: conversation)
         completion(message: message)
     }
