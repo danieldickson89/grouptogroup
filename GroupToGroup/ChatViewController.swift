@@ -71,7 +71,7 @@ class ChatViewController: UIViewController, UITextViewDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         if let _ = conversation {
-            updateWithMessages()
+            updateViewWithMessages()
         }
         messageTextView.autocorrectionType = .No
         
@@ -93,14 +93,21 @@ class ChatViewController: UIViewController, UITextViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func updateWithMessages() {
-        messagesArray = []
-        tableView.reloadData()
-        if let conversationID = conversation?.identifier {
-            MessageController.observeMessagesForConversation(conversationID, completion: { (messages) -> Void in
-                self.messagesArray = messages
-                self.tableView.reloadData()
-            })
+//    func updateWithMessages() {
+//        messagesArray = []
+//        tableView.reloadData()
+//        if let conversationID = conversation?.identifier {
+//            MessageController.observeMessagesForConversation(conversationID, completion: { (messages) -> Void in
+//                self.messagesArray = messages
+//                self.tableView.reloadData()
+//            })
+//        }
+//    }
+    
+    func updateViewWithMessages() {
+        MessageController.fetchAllMessages((self.conversation?.identifier)!) { (messages) in
+            self.messagesArray = messages
+            self.tableView.reloadData()
         }
     }
    
@@ -109,7 +116,7 @@ class ChatViewController: UIViewController, UITextViewDelegate {
             MessageController.createMessage(text, sender: currentUser.username, conversation: self.conversation!, completion: { (message) -> Void in
                 print("\(currentUser.username): \(text)")
             })
-            updateWithMessages()
+            updateViewWithMessages()
             messageTextView.resignFirstResponder()
         }
     }
