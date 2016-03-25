@@ -68,6 +68,7 @@ class GroupChatsListTableViewController: UITableViewController {
                 let chatViewController = segue.destinationViewController as! ChatViewController
                 let conversation = conversationsArray[indexPath.row]
                 chatViewController.conversation = conversation
+                chatViewController.updateWithConversation(conversation)
             }
         }
     }

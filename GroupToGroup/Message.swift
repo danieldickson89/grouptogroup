@@ -26,7 +26,6 @@ class Message: FirebaseType {
     
     var jsonValue: [String : AnyObject] {
         return [kSender : sender, kText : text]
-        //return [kConversation: conversationID]
     }
     
     init(text: String, sender: String) {
@@ -35,11 +34,9 @@ class Message: FirebaseType {
     }
     
     required init?(json: [String : AnyObject], identifier: String) {
-        guard let conversationID = json[kConversation] as? String,
-              let text = json[kText] as? String,
+        guard let text = json[kText] as? String,
               let sender = json[kSender] as? String else {return nil}
         self.identifier = identifier
-        self.conversationID = conversationID
         self.text = text
         self.sender = sender
     }

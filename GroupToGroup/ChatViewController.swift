@@ -21,17 +21,25 @@ class ChatViewController: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        sendButton.layer.cornerRadius = 6.0
-//        messageTextView.layer.cornerRadius = 6.0
-//        messageTextView.layer.borderWidth = 1.0
-//        messageTextView.layer.borderColor = UIColor.grayColor().CGColor
-//        messageTextView.text = "Text Message"
-//        messageTextView.textColor = UIColor.lightGrayColor()
-//        messageTextView.delegate = self
-//        
-//        NSNotificationCenter.defaultCenter().addObserver(self,
-//            selector: #selector(ChatViewController.keyboardShown(_:)), name: UIKeyboardDidShowNotification, object: nil)
-//        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ChatViewController.keyboardHidden(_:)), name: UIKeyboardDidHideNotification, object: nil)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+
+        messageTextView.autocorrectionType = .No
+        
+        sendButton.layer.cornerRadius = 6.0
+        messageTextView.layer.cornerRadius = 6.0
+        messageTextView.layer.borderWidth = 1.0
+        messageTextView.layer.borderColor = UIColor.grayColor().CGColor
+        messageTextView.text = "Text Message"
+        messageTextView.textColor = UIColor.lightGrayColor()
+        messageTextView.delegate = self
+        
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(ChatViewController.keyboardShown(_:)), name: UIKeyboardDidShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ChatViewController.keyboardHidden(_:)), name: UIKeyboardDidHideNotification, object: nil)
+    
     }
     
     func keyboardShown(notification: NSNotification) {
@@ -68,45 +76,18 @@ class ChatViewController: UIViewController, UITextViewDelegate {
         }
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(true)
-        if let _ = conversation {
-            updateViewWithMessages()
-        }
-        messageTextView.autocorrectionType = .No
-        
-        sendButton.layer.cornerRadius = 6.0
-        messageTextView.layer.cornerRadius = 6.0
-        messageTextView.layer.borderWidth = 1.0
-        messageTextView.layer.borderColor = UIColor.grayColor().CGColor
-        messageTextView.text = "Text Message"
-        messageTextView.textColor = UIColor.lightGrayColor()
-        messageTextView.delegate = self
-        
-        NSNotificationCenter.defaultCenter().addObserver(self,
-                                                         selector: #selector(ChatViewController.keyboardShown(_:)), name: UIKeyboardDidShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ChatViewController.keyboardHidden(_:)), name: UIKeyboardDidHideNotification, object: nil)
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-//    func updateWithMessages() {
-//        messagesArray = []
-//        tableView.reloadData()
-//        if let conversationID = conversation?.identifier {
-//            MessageController.observeMessagesForConversation(conversationID, completion: { (messages) -> Void in
-//                self.messagesArray = messages
-//                self.tableView.reloadData()
-//            })
-//        }
-//    }
-    
-    func updateViewWithMessages() {
-        MessageController.fetchAllMessages((self.conversation?.identifier)!) { (messages) in
-            self.messagesArray = messages
+    func updateWithConversation(conversation: Conversation) {
+        
+        self.conversation = conversation
+        
+        MessageController.observeMessagesForConversation(conversation) { (messages) in
+            
+            self.messagesArray = conversation.messages
             self.tableView.reloadData()
         }
     }
@@ -116,7 +97,6 @@ class ChatViewController: UIViewController, UITextViewDelegate {
             MessageController.createMessage(text, sender: currentUser.username, conversation: self.conversation!, completion: { (message) -> Void in
                 print("\(currentUser.username): \(text)")
             })
-            updateViewWithMessages()
             messageTextView.resignFirstResponder()
         }
     }

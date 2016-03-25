@@ -17,11 +17,7 @@ class Conversation: FirebaseType {
     let name: String
     var groups: [Group] = []
     var groupIDs: [String] = []
-    var messages: [Message] = [] {
-        set {
-            
-        }
-    }
+    var messages: [Message] = [] 
     
     var identifier: String?
     var endpoint: String {
@@ -56,11 +52,6 @@ class Conversation: FirebaseType {
             self.messages = messageDictionaries.flatMap({Message(json: $0.1 as! [String : AnyObject], identifier: $0.0)})
         } else {
             self.messages = []
-        }
-        
-        MessageController.observeMessagesForConversation(identifier) { (messages) in
-            
-            self.messages = messages
         }
     }
 }
