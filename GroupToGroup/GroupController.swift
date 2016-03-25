@@ -49,7 +49,9 @@ class GroupController {
         completion(group: group)
     }
     
-    static func linkUserAndGroup(var group: Group, var user: User) {
+    static func linkUserAndGroup(group: Group, user: User) {
+        var group = group
+        var user = user
         guard let groupID = group.identifier,
             userID = user.identifier else {return}
         user.groupIDs.append(groupID)

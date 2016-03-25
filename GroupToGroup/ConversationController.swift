@@ -37,7 +37,9 @@ class ConversationController {
         completion(conversation: conversation)
     }
     
-    static func linkGroupAndConversation(var conversation: Conversation, var group: Group) {
+    static func linkGroupAndConversation(conversation: Conversation, group: Group) {
+        var group = group
+        var conversation = conversation
         guard let conversationID = conversation.identifier,
             groupID = group.identifier else {return}
         group.conversationIDs.append(conversationID)

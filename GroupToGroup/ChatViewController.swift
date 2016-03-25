@@ -21,17 +21,17 @@ class ChatViewController: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        sendButton.layer.cornerRadius = 6.0
-        messageTextView.layer.cornerRadius = 6.0
-        messageTextView.layer.borderWidth = 1.0
-        messageTextView.layer.borderColor = UIColor.grayColor().CGColor
-        messageTextView.text = "Text Message"
-        messageTextView.textColor = UIColor.lightGrayColor()
-        messageTextView.delegate = self
-        
-        NSNotificationCenter.defaultCenter().addObserver(self,
-            selector: "keyboardShown:", name: UIKeyboardDidShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardHidden:", name: UIKeyboardDidHideNotification, object: nil)
+//        sendButton.layer.cornerRadius = 6.0
+//        messageTextView.layer.cornerRadius = 6.0
+//        messageTextView.layer.borderWidth = 1.0
+//        messageTextView.layer.borderColor = UIColor.grayColor().CGColor
+//        messageTextView.text = "Text Message"
+//        messageTextView.textColor = UIColor.lightGrayColor()
+//        messageTextView.delegate = self
+//        
+//        NSNotificationCenter.defaultCenter().addObserver(self,
+//            selector: #selector(ChatViewController.keyboardShown(_:)), name: UIKeyboardDidShowNotification, object: nil)
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ChatViewController.keyboardHidden(_:)), name: UIKeyboardDidHideNotification, object: nil)
     }
     
     func keyboardShown(notification: NSNotification) {
@@ -74,6 +74,18 @@ class ChatViewController: UIViewController, UITextViewDelegate {
             updateWithMessages()
         }
         messageTextView.autocorrectionType = .No
+        
+        sendButton.layer.cornerRadius = 6.0
+        messageTextView.layer.cornerRadius = 6.0
+        messageTextView.layer.borderWidth = 1.0
+        messageTextView.layer.borderColor = UIColor.grayColor().CGColor
+        messageTextView.text = "Text Message"
+        messageTextView.textColor = UIColor.lightGrayColor()
+        messageTextView.delegate = self
+        
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(ChatViewController.keyboardShown(_:)), name: UIKeyboardDidShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ChatViewController.keyboardHidden(_:)), name: UIKeyboardDidHideNotification, object: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -91,11 +103,11 @@ class ChatViewController: UIViewController, UITextViewDelegate {
             })
         }
     }
-    
+   
     @IBAction func sendButtonTapped(sender: AnyObject) {
         if let text = messageTextView.text, currentUser = UserController.currentUser {
-            MessageController.createMessage(text, sender: currentUser, conversation: self.conversation!, completion: { (message) -> Void in
-                print("\(sender): \(text)")
+            MessageController.createMessage(text, sender: currentUser.username, conversation: self.conversation!, completion: { (message) -> Void in
+                print("\(currentUser.username): \(text)")
             })
             updateWithMessages()
             messageTextView.resignFirstResponder()

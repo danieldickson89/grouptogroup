@@ -37,10 +37,7 @@ class User: FirebaseType {
     }
     
     required init?(json: [String : AnyObject], identifier: String) {
-        guard let username = json[kUsername] as? String else {
-            self.username = ""
-            return nil
-        }
+        guard let username = json[kUsername] as? String else {return nil}
         self.identifier = identifier
         self.username = username
         

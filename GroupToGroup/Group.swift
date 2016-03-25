@@ -47,10 +47,7 @@ class Group: FirebaseType {
     }
     
     required init?(json: [String : AnyObject], identifier: String) {
-        guard let name = json[kName] as? String else {
-            self.name = ""
-            return nil
-        }
+        guard let name = json[kName] as? String else {return nil}
         
         self.identifier = identifier
         self.name = name

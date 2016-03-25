@@ -15,19 +15,21 @@ class Message: FirebaseType {
     let kSender: String = "sender"
     
     let text: String
-    let sender: User
+    //let sender: User
+    let sender: String
     var conversationID: String = ""
     
     var identifier: String?
     var endpoint: String {
-        return "messages"
+        return "conversations/\(conversationID)/messages"
     }
     
     var jsonValue: [String : AnyObject] {
-        return [kConversation: conversationID]
+        return [kSender : sender, kText : text]
+        //return [kConversation: conversationID]
     }
     
-    init(text: String, sender: User) {
+    init(text: String, sender: String) {
         self.text = text
         self.sender = sender
     }
@@ -35,12 +37,7 @@ class Message: FirebaseType {
     required init?(json: [String : AnyObject], identifier: String) {
         guard let conversationID = json[kConversation] as? String,
               let text = json[kText] as? String,
-              let sender = json[kSender] as? User else {
-            self.text = ""
-            self.sender = User(username: "nil")
-            self.conversationID = ""
-            return nil
-        }
+              let sender = json[kSender] as? String else {return nil}
         self.identifier = identifier
         self.conversationID = conversationID
         self.text = text
