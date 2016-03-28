@@ -12,34 +12,42 @@ class GroupChatsListTableViewController: UITableViewController {
     
     var usersGroup: Group?
     var conversationsArray: [Conversation] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
-
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         if let _ = usersGroup {
             updateWithConversations()
         }
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return conversationsArray.count
     }
-
+    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("conversationCell", forIndexPath: indexPath)
         
         let conversation = conversationsArray[indexPath.row]
         
+//        for group in conversation.groups {
+//            if usersGroup?.identifier != group.identifier {
+//                cell.textLabel?.text = group.name
+//            } else {
+//                cell.textLabel?.text = conversation.name
+//            }
+//        }
+        
         cell.textLabel?.text = conversation.name
-
+        
         return cell
     }
     
@@ -55,7 +63,7 @@ class GroupChatsListTableViewController: UITableViewController {
     }
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
@@ -72,5 +80,5 @@ class GroupChatsListTableViewController: UITableViewController {
             }
         }
     }
-
+    
 }

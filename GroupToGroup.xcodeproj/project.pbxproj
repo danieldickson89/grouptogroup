@@ -35,6 +35,8 @@
 		3938FC091C8F8D2900BAD9CD /* ConversationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3938FC081C8F8D2900BAD9CD /* ConversationController.swift */; };
 		3938FC0B1C8F8D5500BAD9CD /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3938FC0A1C8F8D5500BAD9CD /* Conversation.swift */; };
 		3938FC0E1C8F993700BAD9CD /* MessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3938FC0D1C8F993700BAD9CD /* MessageController.swift */; };
+		394D73221CA9C4AA00505DDD /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394D73211CA9C4AA00505DDD /* ChatTableViewCell.swift */; };
+		394D73241CA9CC2100505DDD /* ColorPallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394D73231CA9CC2100505DDD /* ColorPallet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -81,6 +83,8 @@
 		3938FC081C8F8D2900BAD9CD /* ConversationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationController.swift; sourceTree = "<group>"; };
 		3938FC0A1C8F8D5500BAD9CD /* Conversation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
 		3938FC0D1C8F993700BAD9CD /* MessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageController.swift; sourceTree = "<group>"; };
+		394D73211CA9C4AA00505DDD /* ChatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		394D73231CA9CC2100505DDD /* ColorPallet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPallet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +130,7 @@
 				3938FC0C1C8F8D5D00BAD9CD /* Model Controllers */,
 				3938FBE71C8F872700BAD9CD /* ViewControllers */,
 				3938FBD01C8F7BEE00BAD9CD /* Assets.xcassets */,
+				394D73231CA9CC2100505DDD /* ColorPallet.swift */,
 				3938FBD21C8F7BEE00BAD9CD /* LaunchScreen.storyboard */,
 				3938FBD51C8F7BEE00BAD9CD /* Info.plist */,
 			);
@@ -143,6 +148,7 @@
 				3918B42C1CA361E200E16407 /* GroupsSearchResultsTableViewController.swift */,
 				3918B42E1CA3651E00E16407 /* GroupProfileViewController.swift */,
 				392A9D131CA48D8D00964522 /* ChatViewController.swift */,
+				394D73211CA9C4AA00505DDD /* ChatTableViewCell.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -260,6 +266,7 @@
 				3938FBDE1C8F809100BAD9CD /* SignUpViewController.swift in Sources */,
 				3938FC0B1C8F8D5500BAD9CD /* Conversation.swift in Sources */,
 				3938FBE41C8F810800BAD9CD /* GroupChatsListTableViewController.swift in Sources */,
+				394D73221CA9C4AA00505DDD /* ChatTableViewCell.swift in Sources */,
 				3938FBDC1C8F806E00BAD9CD /* LoginViewController.swift in Sources */,
 				3938FBE91C8F874A00BAD9CD /* User.swift in Sources */,
 				3938FC051C8F8D1100BAD9CD /* UserController.swift in Sources */,
@@ -271,6 +278,7 @@
 				3938FC0E1C8F993700BAD9CD /* MessageController.swift in Sources */,
 				3938FBCA1C8F7BEE00BAD9CD /* AppDelegate.swift in Sources */,
 				3938FBF31C8F8B7C00BAD9CD /* FirebaseController.swift in Sources */,
+				394D73241CA9CC2100505DDD /* ColorPallet.swift in Sources */,
 				3938FC091C8F8D2900BAD9CD /* ConversationController.swift in Sources */,
 				3938FBE01C8F80CC00BAD9CD /* YourGroupsViewController.swift in Sources */,
 			);

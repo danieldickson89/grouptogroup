@@ -20,7 +20,7 @@ class ChatViewController: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -42,6 +42,20 @@ class ChatViewController: UIViewController, UITextViewDelegate {
     
     }
     
+    func updateWithConversation(conversation: Conversation) {
+        
+        self.conversation = conversation
+        
+        MessageController.observeMessagesForConversation(conversation) { (messages) in
+            
+            self.messagesArray = conversation.messages
+            self.messagesArray.sortInPlace() {$0.0.identifier < $0.1.identifier}
+            dispatch_async(dispatch_get_main_queue(), { 
+                self.tableView.reloadData()
+            })
+        }
+    }
+    
     func keyboardShown(notification: NSNotification) {
         let info  = notification.userInfo!
         let value: AnyObject = info[UIKeyboardFrameEndUserInfoKey]!
@@ -57,6 +71,7 @@ class ChatViewController: UIViewController, UITextViewDelegate {
     
     func keyboardHidden(notification: NSNotification) {
         uiViewBottomContstraint.constant = 20
+        messageTextView.text = ""
         UIView.animateWithDuration(0.40) { () -> Void in
             self.view.layoutIfNeeded()
         }
@@ -76,21 +91,7 @@ class ChatViewController: UIViewController, UITextViewDelegate {
         }
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    func updateWithConversation(conversation: Conversation) {
-        
-        self.conversation = conversation
-        
-        MessageController.observeMessagesForConversation(conversation) { (messages) in
-            
-            self.messagesArray = conversation.messages
-            self.tableView.reloadData()
-        }
-    }
+    // MARK: - Actions
    
     @IBAction func sendButtonTapped(sender: AnyObject) {
         if let text = messageTextView.text, currentUser = UserController.currentUser {
@@ -107,17 +108,34 @@ extension ChatViewController: UITableViewDataSource, UITableViewDelegate {
     
     // MARK: - Table view data source
     
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 70
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return messagesArray.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("messageCell", forIndexPath: indexPath)
+        
+        if let cell = tableView.dequeueReusableCellWithIdentifier("messageCell", forIndexPath: indexPath) as! ChatTableViewCell {
+            
+        }
         
         let message = messagesArray[indexPath.row]
         
-        cell.textLabel?.text = message.text
+        if message.sender.containsString(UserController.currentUser.username) {
+            cell.updateWithMessage(message, isUsersMessage: true)
+        } else {
+            cell.updateWithMessage(message, isUsersMessage: false)
+        }
+        
+        //cell.textLabel?.text = message.text
         
         return cell
     }
