@@ -15,9 +15,10 @@ class Message: FirebaseType {
     let kSender: String = "sender"
     
     let text: String
-    //let sender: User
     let sender: String
     var conversationID: String = ""
+    var senderGroup: Group?
+    
     
     var identifier: String?
     var endpoint: String {

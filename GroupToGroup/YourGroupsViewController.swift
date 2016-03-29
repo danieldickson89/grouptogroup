@@ -98,6 +98,7 @@ class YourGroupsViewController: UIViewController {
                     self.presentViewController(alert, animated: true, completion: nil)
                 }
             })
+            enterGroupIDTextField.text = ""
         }
     }
     
