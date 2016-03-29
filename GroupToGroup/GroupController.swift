@@ -60,6 +60,31 @@ class GroupController {
         group.save()
     }
     
+    static func unLinkUserAndGroup(group: Group, user: User) {
+        var group = group
+        var user = user
+        guard let groupID = group.identifier,
+                  userID = user.identifier else {return}
+        for groupIdentifier in user.groupIDs {
+            if groupIdentifier == groupID {
+                let index = user.groupIDs.indexOf(groupIdentifier)
+                if let index = index {
+                    user.groupIDs.removeAtIndex(index)
+                    user.save()
+                }
+            }
+        }
+        for userIdentifier in group.userIDs {
+            if userIdentifier == userID {
+                let index = group.userIDs.indexOf(userIdentifier)
+                if let index = index {
+                    group.userIDs.removeAtIndex(index)
+                    group.save()
+                }
+            }
+        }
+    }
+    
     static func observeGroupsForUser(userID: String, completion: (groups: [Group])->Void) {
         FirebaseController.base.childByAppendingPath("users/\(userID)/groups").observeEventType(.Value, withBlock: { (data) -> Void in
             if let groupIDs = data.value as? [String] {

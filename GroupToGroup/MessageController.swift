@@ -13,7 +13,6 @@ class MessageController {
     static func createMessage(text: String, sender: String, conversation: Conversation, completion: (message: Message?) -> Void) {
         let conversation = conversation
         let message = Message(text: text, sender: sender)
-        conversation.currentGroup = message.senderGroup
         addMessageToConversation(message, conversation: conversation)
         completion(message: message)
     }

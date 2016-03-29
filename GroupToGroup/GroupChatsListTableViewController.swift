@@ -20,6 +20,9 @@ class GroupChatsListTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
+        
+        self.navigationController?.title = usersGroup?.name
+        self.navigationController?.setToolbarHidden(false, animated: true)
         if let _ = usersGroup {
             updateWithConversations()
         }
@@ -52,6 +55,22 @@ class GroupChatsListTableViewController: UITableViewController {
                 self.tableView.reloadData()
             }
         }
+    }
+    
+    // MARK: - Actions
+    
+    @IBAction func optionsToolBarButtonTapped(sender: AnyObject) {
+        let options = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+        options.addAction(UIAlertAction(title: "Leave Group", style: .Destructive, handler: { (leaveGroup) in
+            if let usersGroup = self.usersGroup {
+                GroupController.unLinkUserAndGroup(usersGroup, user: UserController.currentUser)
+                self.navigationController?.popViewControllerAnimated(true)
+            } else {
+                print("error leaving the group")
+            }
+        }))
+        options.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+        self.presentViewController(options, animated: true, completion: nil)
     }
     
     // MARK: - Navigation

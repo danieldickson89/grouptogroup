@@ -27,6 +27,7 @@ class ChatViewController: UIViewController, UITextViewDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         
+        self.navigationController?.setToolbarHidden(true, animated: true)
         messageTextView.autocorrectionType = .No
         
         sendButton.layer.cornerRadius = 6.0
@@ -126,6 +127,7 @@ extension ChatViewController: UITableViewDataSource, UITableViewDelegate {
         
         let message = messagesArray[indexPath.row]
         
+        //if conversation?.currentGroup?.identifier == message.senderGroup?.identifier
         if message.sender.containsString(UserController.currentUser.username) {
             let cell = tableView.dequeueReusableCellWithIdentifier("rightMessageCell", forIndexPath: indexPath) as! ChatTableViewCell
                 cell.updateWithBlueMessage(message)
