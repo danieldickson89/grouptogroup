@@ -37,16 +37,18 @@ class GroupChatsListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("conversationCell", forIndexPath: indexPath)
         
         let conversation = conversationsArray[indexPath.row]
+        var chatName: String = ""
         
-//        for group in conversation.groups {
-//            if usersGroup?.identifier != group.identifier {
-//                cell.textLabel?.text = group.name
-//            } else {
-//                cell.textLabel?.text = conversation.name
-//            }
-//        }
+        chatName = conversation.name
+        for groupID in conversation.groupIDs {
+            if self.usersGroup?.identifier != groupID {
+                chatName = groupID
+            }
+        }
         
-        cell.textLabel?.text = conversation.name
+        cell.textLabel?.text = chatName
+        
+//        cell.textLabel?.text = conversation.name
         
         return cell
     }

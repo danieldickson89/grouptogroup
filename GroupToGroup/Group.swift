@@ -63,3 +63,11 @@ class Group: FirebaseType {
     }
     
 }
+
+func == (lhs: Group, rhs: Group) -> Bool {
+    return lhs.name == rhs.name
+}
+
+func > (lhs: Group, rhs: Group) -> Bool {
+    return lhs.name < rhs.name
+}
