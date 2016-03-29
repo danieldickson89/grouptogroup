@@ -48,13 +48,15 @@ class ConversationController {
         conversation.save()
     }
     
-    static func observeConversationsForGroup(groupID: String, completion: (conversations: [Conversation])->Void) {
+    static func observeConversationsForGroup(group: Group, completion: (conversations: [Conversation])->Void) {
+        guard let groupID = group.identifier else {completion(conversations: []); return}
         FirebaseController.base.childByAppendingPath("groups/\(groupID)/conversations").observeEventType(.Value, withBlock: { (data) -> Void in
             if let conversationIDs = data.value as? [String] {
                 var conversationsArray: [Conversation] = []
                 for conversationIdentifier in conversationIDs {
                     fetchConversationForIdentifier(conversationIdentifier, completion: { (conversation) -> Void in
                         if let conversation = conversation {
+                            conversation.currentGroup = group
                             conversationsArray.append(conversation)
                             completion(conversations: conversationsArray)
                         }

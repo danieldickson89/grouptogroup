@@ -34,21 +34,11 @@ class GroupChatsListTableViewController: UITableViewController {
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("conversationCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("conversationCell", forIndexPath: indexPath) as! ConversationListTableViewCell
         
         let conversation = conversationsArray[indexPath.row]
-        var chatName: String = ""
         
-        chatName = conversation.name
-        for groupID in conversation.groupIDs {
-            if self.usersGroup?.identifier != groupID {
-                chatName = groupID
-            }
-        }
-        
-        cell.textLabel?.text = chatName
-        
-//        cell.textLabel?.text = conversation.name
+        cell.updateWithConversation(conversation)
         
         return cell
     }
@@ -56,8 +46,8 @@ class GroupChatsListTableViewController: UITableViewController {
     func updateWithConversations() {
         conversationsArray = []
         tableView.reloadData()
-        if let groupID = usersGroup?.identifier {
-            ConversationController.observeConversationsForGroup(groupID) { (conversations) -> Void in
+        if let group = usersGroup {
+            ConversationController.observeConversationsForGroup(group) { (conversations) -> Void in
                 self.conversationsArray = conversations
                 self.tableView.reloadData()
             }

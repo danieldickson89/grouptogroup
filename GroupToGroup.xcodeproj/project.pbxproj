@@ -37,6 +37,7 @@
 		3938FC0E1C8F993700BAD9CD /* MessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3938FC0D1C8F993700BAD9CD /* MessageController.swift */; };
 		394D73221CA9C4AA00505DDD /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394D73211CA9C4AA00505DDD /* ChatTableViewCell.swift */; };
 		394D73241CA9CC2100505DDD /* ColorPallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394D73231CA9CC2100505DDD /* ColorPallet.swift */; };
+		396BE9FC1CAB16A3004DB4F1 /* ConversationListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BE9FB1CAB16A3004DB4F1 /* ConversationListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -85,6 +86,7 @@
 		3938FC0D1C8F993700BAD9CD /* MessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageController.swift; sourceTree = "<group>"; };
 		394D73211CA9C4AA00505DDD /* ChatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		394D73231CA9CC2100505DDD /* ColorPallet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPallet.swift; sourceTree = "<group>"; };
+		396BE9FB1CAB16A3004DB4F1 /* ConversationListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationListTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 				3938FBDD1C8F809100BAD9CD /* SignUpViewController.swift */,
 				3938FBDF1C8F80CC00BAD9CD /* YourGroupsViewController.swift */,
 				3938FBE31C8F810800BAD9CD /* GroupChatsListTableViewController.swift */,
+				396BE9FB1CAB16A3004DB4F1 /* ConversationListTableViewCell.swift */,
 				3938FBE11C8F80EA00BAD9CD /* AddGroupTableViewController.swift */,
 				3918B42C1CA361E200E16407 /* GroupsSearchResultsTableViewController.swift */,
 				3918B42E1CA3651E00E16407 /* GroupProfileViewController.swift */,
@@ -273,6 +276,7 @@
 				3918B42D1CA361E200E16407 /* GroupsSearchResultsTableViewController.swift in Sources */,
 				3938FBE21C8F80EA00BAD9CD /* AddGroupTableViewController.swift in Sources */,
 				392A9D141CA48D8D00964522 /* ChatViewController.swift in Sources */,
+				396BE9FC1CAB16A3004DB4F1 /* ConversationListTableViewCell.swift in Sources */,
 				3938FBF11C8F8A7B00BAD9CD /* Message.swift in Sources */,
 				3918B42F1CA3651E00E16407 /* GroupProfileViewController.swift in Sources */,
 				3938FC0E1C8F993700BAD9CD /* MessageController.swift in Sources */,

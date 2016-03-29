@@ -17,7 +17,8 @@ class Conversation: FirebaseType {
     let name: String
     var groups: [Group] = []
     var groupIDs: [String] = []
-    var messages: [Message] = [] 
+    var messages: [Message] = []
+    var currentGroup: Group?
     
     var identifier: String?
     var endpoint: String {
@@ -39,6 +40,7 @@ class Conversation: FirebaseType {
             }
         }
         self.groupIDs = groupIdentifiers
+        
     }
     
     required init?(json: [String : AnyObject], identifier: String) {
@@ -53,5 +55,13 @@ class Conversation: FirebaseType {
         } else {
             self.messages = []
         }
+        for groupID in groupIDs {
+            GroupController.fetchGroupForIdentifier(groupID, completion: { (group) in
+                if let group = group {
+                    self.groups.append(group)
+                }
+            })
+        }
+        
     }
 }

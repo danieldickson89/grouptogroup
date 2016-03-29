@@ -584,14 +584,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="conversationCell" id="iiP-TX-zoa">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="conversationCell" id="iiP-TX-zoa" customClass="ConversationListTableViewCell" customModule="GroupToGroup" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iiP-TX-zoa" id="rdI-hf-rA7">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQ9-xM-gxW">
+                                            <rect key="frame" x="8" y="8" width="584" height="28"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="dQ9-xM-gxW" firstAttribute="leading" secondItem="rdI-hf-rA7" secondAttribute="leadingMargin" id="WqF-cv-nUJ"/>
+                                        <constraint firstItem="dQ9-xM-gxW" firstAttribute="top" secondItem="rdI-hf-rA7" secondAttribute="topMargin" id="ei9-O1-P0O"/>
+                                        <constraint firstItem="dQ9-xM-gxW" firstAttribute="trailing" secondItem="rdI-hf-rA7" secondAttribute="trailingMargin" id="g92-LM-RUR"/>
+                                        <constraint firstItem="dQ9-xM-gxW" firstAttribute="centerY" secondItem="rdI-hf-rA7" secondAttribute="centerY" id="hkY-zc-oEL"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="conversationNameLabel" destination="dQ9-xM-gxW" id="pcv-LD-cT1"/>
                                     <segue destination="gIh-3i-yFQ" kind="show" identifier="toConversation" id="VUs-v4-g8A"/>
                                 </connections>
                             </tableViewCell>
