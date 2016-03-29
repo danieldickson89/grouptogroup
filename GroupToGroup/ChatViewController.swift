@@ -9,23 +9,24 @@
 import UIKit
 
 class ChatViewController: UIViewController, UITextViewDelegate {
-
+    
     var conversation: Conversation?
     var messagesArray: [Message] = []
     
     @IBOutlet weak var messageTextView: UITextView!
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var uiViewBottomContstraint: NSLayoutConstraint!
+    @IBOutlet weak var uiViewBottomConstraint: NSLayoutConstraint!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
-
+        
         messageTextView.autocorrectionType = .No
         
         sendButton.layer.cornerRadius = 6.0
@@ -39,7 +40,7 @@ class ChatViewController: UIViewController, UITextViewDelegate {
         NSNotificationCenter.defaultCenter().addObserver(self,
                                                          selector: #selector(ChatViewController.keyboardShown(_:)), name: UIKeyboardDidShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ChatViewController.keyboardHidden(_:)), name: UIKeyboardDidHideNotification, object: nil)
-    
+        
     }
     
     func updateWithConversation(conversation: Conversation) {
@@ -50,7 +51,7 @@ class ChatViewController: UIViewController, UITextViewDelegate {
             
             self.messagesArray = conversation.messages
             self.messagesArray.sortInPlace() {$0.0.identifier < $0.1.identifier}
-            dispatch_async(dispatch_get_main_queue(), { 
+            dispatch_async(dispatch_get_main_queue(), {
                 self.tableView.reloadData()
             })
         }
@@ -63,14 +64,14 @@ class ChatViewController: UIViewController, UITextViewDelegate {
         let rawFrame = value.CGRectValue
         let keyboardFrame = view.convertRect(rawFrame, fromView: nil)
         
-        uiViewBottomContstraint.constant = keyboardFrame.height
+        uiViewBottomConstraint.constant = keyboardFrame.height
         UIView.animateWithDuration(0.20) { () -> Void in
             self.view.layoutIfNeeded()
         }
     }
     
     func keyboardHidden(notification: NSNotification) {
-        uiViewBottomContstraint.constant = 20
+        uiViewBottomConstraint.constant = 20
         messageTextView.text = ""
         UIView.animateWithDuration(0.40) { () -> Void in
             self.view.layoutIfNeeded()
@@ -92,7 +93,7 @@ class ChatViewController: UIViewController, UITextViewDelegate {
     }
     
     // MARK: - Actions
-   
+    
     @IBAction func sendButtonTapped(sender: AnyObject) {
         if let text = messageTextView.text, currentUser = UserController.currentUser {
             MessageController.createMessage(text, sender: currentUser.username, conversation: self.conversation!, completion: { (message) -> Void in
@@ -123,21 +124,17 @@ extension ChatViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        if let cell = tableView.dequeueReusableCellWithIdentifier("messageCell", forIndexPath: indexPath) as! ChatTableViewCell {
-            
-        }
-        
         let message = messagesArray[indexPath.row]
         
         if message.sender.containsString(UserController.currentUser.username) {
-            cell.updateWithMessage(message, isUsersMessage: true)
+            let cell = tableView.dequeueReusableCellWithIdentifier("rightMessageCell", forIndexPath: indexPath) as! ChatTableViewCell
+                cell.updateWithBlueMessage(message)
+                return cell
         } else {
-            cell.updateWithMessage(message, isUsersMessage: false)
+            let cell = tableView.dequeueReusableCellWithIdentifier("leftMessageCell", forIndexPath: indexPath) as! ChatTableViewCell
+                cell.updateWithGrayMessage(message)
+                return cell
         }
-        
-        //cell.textLabel?.text = message.text
-        
-        return cell
     }
 }
 

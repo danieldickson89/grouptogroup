@@ -10,13 +10,13 @@ import UIKit
 
 class ChatTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var rightUILabel: UILabel!
-    @IBOutlet weak var rightUIImageView: UIImageView!
-    @IBOutlet weak var rightUIView: UIView!
-    
-    @IBOutlet weak var leftUILabel: UILabel!
     @IBOutlet weak var leftUIImageView: UIImageView!
     @IBOutlet weak var leftUIView: UIView!
+    @IBOutlet weak var leftUILabel: UILabel!
+
+    @IBOutlet weak var rightUIImageView: UIImageView!
+    @IBOutlet weak var rightUIView: UIView!
+    @IBOutlet weak var rightUILabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
