@@ -10,6 +10,8 @@ import UIKit
 
 class YourGroupsViewController: UIViewController {
     
+    // MARK: - Properties
+    
     var groupsArray: [Group] = []
     
     @IBOutlet weak var yourGroupsListTableView: UITableView!
@@ -18,10 +20,15 @@ class YourGroupsViewController: UIViewController {
     
     var tField: UITextField!
     
+    
+    // MARK: - View Setup
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
+    
+    // Set up toolbar and appearance before the view appears
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
@@ -41,15 +48,7 @@ class YourGroupsViewController: UIViewController {
         
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func logoutButtonTapped(sender: AnyObject) {
-        UserController.logoutUser()
-        navigationController?.performSegueWithIdentifier("toLogin", sender: nil)
-    }
+    // Method for filling up the groupsArray with the currentUser's groups
     
     func setupAppearanceForCurrentUser() {
         groupsArray = []
@@ -65,18 +64,33 @@ class YourGroupsViewController: UIViewController {
         }
     }
     
+    // MARK: - Actions
+    
+    // Method for logging out the user
+    
+    @IBAction func logoutButtonTapped(sender: AnyObject) {
+        UserController.logoutUser()
+        navigationController?.performSegueWithIdentifier("toLogin", sender: nil)
+    }
+    
+    // Creating a text field for the Alert Controller that will allow user to enter a group name
+    
     func configurationTextField(textField: UITextField!)
     {
         textField.placeholder = "Enter name of group"
         tField = textField
     }
     
+    // Create an alert to be shown when user enters a duplicate group name that is invalid
+    
     func displayDuplicateGroupAlert(groupName: String) {
         
-        let existingGroupAlert = UIAlertController(title: "\"\(groupName.lowercaseString)\" already exists", message: "Please choose a different group name", preferredStyle: .Alert)
+        let existingGroupAlert = UIAlertController(title: "The group name: \"\(groupName.lowercaseString)\" already exists", message: "Please choose a different group name", preferredStyle: .Alert)
         existingGroupAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
         presentViewController(existingGroupAlert, animated: true, completion: nil)
     }
+    
+    // Allow user to create a new group
     
     @IBAction func createNewGroupButtonTapped(sender: AnyObject) {
         
@@ -86,17 +100,21 @@ class YourGroupsViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Create", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) in
             
-            GroupController.createGroup(self.tField.text!, users: [UserController.currentUser]) { (group, success) -> Void in
-                if success {
-                    print("\(UserController.currentUser.username) is a member of \(group!.name) now.")
-                } else {
-                    self.displayDuplicateGroupAlert(group!.name)
+            if let text = self.tField.text {
+                
+                GroupController.createGroup(text, users: [UserController.currentUser]) { (group, success) -> Void in
+                    if success {
+                        print("\(UserController.currentUser.username) is a member of \(group?.name) now.")
+                    } else {
+                        self.displayDuplicateGroupAlert(text)
+                    }
                 }
             }
         }))
-        self.presentViewController(alert, animated: true, completion: {
-        })
+        self.presentViewController(alert, animated: true, completion: nil)
     }
+    
+    // Allow user to enter an existing groupID to join that group
     
     @IBAction func joinGroupButtonTapped(sender: AnyObject) {
         if let groupID = enterGroupIDTextField.text {

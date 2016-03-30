@@ -10,6 +10,8 @@ import Foundation
 
 class ConversationController {
     
+    // Method to grab a conversation from Firebase with the provided identifier
+    
     static func fetchConversationForIdentifier(identifier: String, completion: (conversation: Conversation?) -> Void) {
         FirebaseController.base.childByAppendingPath("conversations/\(identifier)").observeSingleEventOfType(.Value, withBlock: { (data) -> Void in
             if let conversationDictionary = data.value as? [String: AnyObject] {
@@ -24,6 +26,8 @@ class ConversationController {
         })
     }
     
+    // Method for creating a conversation between the user's current group and the selected group
+    
     static func createConversation(name: String, groups: [Group], messages: [Message] = [], completion: (conversation: Conversation?) -> Void) {
         var conversation = Conversation(name: name, groups: groups, messages: messages)
         // conversation.save() works up here but duplicates group names
@@ -37,6 +41,8 @@ class ConversationController {
         completion(conversation: conversation)
     }
     
+    // Method for nesting the group under the conversation and vice versa
+    
     static func linkGroupAndConversation(conversation: Conversation, group: Group) {
         var group = group
         var conversation = conversation
@@ -47,6 +53,8 @@ class ConversationController {
         conversation.groupIDs.append(groupID)
         conversation.save()
     }
+    
+    // Method used for listing all of the conversations for the provided group (on GroupChatsListTableViewController)
     
     static func observeConversationsForGroup(group: Group, completion: (conversations: [Conversation])->Void) {
         guard let groupID = group.identifier else {completion(conversations: []); return}

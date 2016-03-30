@@ -10,6 +10,8 @@ import Foundation
 
 class GroupController {
     
+    // Method for grabbing a group from Firebase, provided you have the group identifier
+    
     static func fetchGroupForIdentifier(identifier: String, completion: (group: Group?) -> Void) {
         FirebaseController.base.childByAppendingPath("groups/\(identifier)").observeSingleEventOfType(.Value, withBlock: { (data) -> Void in
             if let groupDictionary = data.value as? [String: AnyObject] {
@@ -23,6 +25,8 @@ class GroupController {
             }
         })
     }
+    
+    // Method that will grab all the groups in Firebase (for the Search Controller)
     
     static func fetchAllGroups(completion: (groups: [Group]) -> Void) {
         
@@ -40,31 +44,29 @@ class GroupController {
         }
     }
     
+    // Method to create a new group
+    
     static func createGroup(name: String, users: [User], conversations: [Conversation] = [], completion: (group: Group?, success: Bool) -> Void) {
         var group = Group(name: name.lowercaseString, users: users, conversations: conversations)
         
         // Check to see if the entered group name is still available
-        FirebaseController.base.childByAppendingPath("groups").queryOrderedByChild("name").queryEqualToValue(group.name.lowercaseString).observeEventType(.ChildAdded, withBlock: { snapshot in
+        FirebaseController.base.childByAppendingPath("groups").queryOrderedByChild("name").queryEqualToValue(group.name.lowercaseString).observeSingleEventOfType(.Value, withBlock: { snapshot in
             print(snapshot.key)
             
-            if snapshot == nil {
+            if snapshot.value is NSNull {
                 group.save()
                 for user in users {
                     linkUserAndGroup(group, user: user)
                 }
                 completion(group: group, success: true)
             } else {
-                print("That group name is already taken!")
-                completion(group: group, success: false)
+                //print("The name \"\(group.name)\" is already taken!")
+                completion(group: nil, success: false)
             }
         })
-        
-//        group.save()
-//        for user in users {
-//            linkUserAndGroup(group, user: user)
-//        }
-//        completion(group: group)
     }
+    
+    // Method that nests user under the group and vice versa
     
     static func linkUserAndGroup(group: Group, user: User) {
         var group = group
@@ -77,11 +79,13 @@ class GroupController {
         group.save()
     }
     
+    // Method that unlinks the user and group from each other
+    
     static func unLinkUserAndGroup(group: Group, user: User) {
         var group = group
         var user = user
         guard let groupID = group.identifier,
-                  userID = user.identifier else {return}
+            userID = user.identifier else {return}
         for groupIdentifier in user.groupIDs {
             if groupIdentifier == groupID {
                 let index = user.groupIDs.indexOf(groupIdentifier)
@@ -101,6 +105,8 @@ class GroupController {
             }
         }
     }
+    
+    // Method that grabs all the groups nested under the provided user (for the group list view)
     
     static func observeGroupsForUser(userID: String, completion: (groups: [Group])->Void) {
         FirebaseController.base.childByAppendingPath("users/\(userID)/groups").observeEventType(.Value, withBlock: { (data) -> Void in

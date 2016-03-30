@@ -21,7 +21,7 @@ class GroupChatsListTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         
-        self.navigationController?.title = usersGroup?.name
+        navigationItem.title = usersGroup?.name
         self.navigationController?.setToolbarHidden(false, animated: true)
         if let _ = usersGroup {
             updateWithConversations()
