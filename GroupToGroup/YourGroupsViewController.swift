@@ -25,6 +25,8 @@ class YourGroupsViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
+        
+        self.navigationController?.setToolbarHidden(true, animated: true)
         if let _ = UserController.currentUser {
             setupAppearanceForCurrentUser()
         }
@@ -82,7 +84,6 @@ class YourGroupsViewController: UIViewController {
             }
         }))
         self.presentViewController(alert, animated: true, completion: {
-            //print("completion block")
         })
     }
     

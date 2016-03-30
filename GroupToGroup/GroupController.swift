@@ -42,11 +42,27 @@ class GroupController {
     
     static func createGroup(name: String, users: [User], conversations: [Conversation] = [], completion: (group: Group?) -> Void) {
         var group = Group(name: name, users: users, conversations: conversations)
-        group.save()
-        for user in users {
-            linkUserAndGroup(group, user: user)
-        }
-        completion(group: group)
+        
+        // Check to see if the entered group name is still available
+        FirebaseController.base.childByAppendingPath("groups").queryOrderedByChild("name").queryEqualToValue(group.name).observeEventType(.ChildAdded, withBlock: { snapshot in
+            print(snapshot.key)
+            
+            if snapshot == nil {
+                group.save()
+                for user in users {
+                    linkUserAndGroup(group, user: user)
+                }
+                completion(group: group)
+            } else {
+                print("That group name is already taken!")
+            }
+        })
+        
+//        group.save()
+//        for user in users {
+//            linkUserAndGroup(group, user: user)
+//        }
+//        completion(group: group)
     }
     
     static func linkUserAndGroup(group: Group, user: User) {
