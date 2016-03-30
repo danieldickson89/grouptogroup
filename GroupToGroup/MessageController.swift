@@ -10,10 +10,10 @@ import Foundation
 
 class MessageController {
     
-    static func createMessage(text: String, sender: String, conversation: Conversation, completion: (message: Message?) -> Void) {
+    static func createMessage(text: String, senderID: String, conversation: Conversation, completion: (message: Message?) -> Void) {
         let conversation = conversation
         if let  currentGroupID = conversation.currentGroup?.identifier {
-            let message = Message(text: text, sender: sender, senderGroupID: currentGroupID)
+            let message = Message(text: text, senderID: senderID, senderGroupID: currentGroupID)
             addMessageToConversation(message, conversation: conversation)
             completion(message: message)
         }

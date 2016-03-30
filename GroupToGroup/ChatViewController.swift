@@ -97,7 +97,7 @@ class ChatViewController: UIViewController, UITextViewDelegate {
     
     @IBAction func sendButtonTapped(sender: AnyObject) {
         if let text = messageTextView.text, currentUser = UserController.currentUser {
-            MessageController.createMessage(text, sender: currentUser.username, conversation: self.conversation!, completion: { (message) -> Void in
+            MessageController.createMessage(text, senderID: currentUser.identifier!, conversation: self.conversation!, completion: { (message) -> Void in
                 print("\(currentUser.username): \(text)")
             })
             messageTextView.resignFirstResponder()
@@ -128,14 +128,21 @@ extension ChatViewController: UITableViewDataSource, UITableViewDelegate {
         let message = messagesArray[indexPath.row]
         
         //if message.sender.containsString(UserController.currentUser.username)
-        if conversation?.currentGroup?.identifier == message.senderGroupID {
+        if conversation?.currentGroup?.identifier == message.senderGroupID &&
+            UserController.currentUser.identifier == message.senderID {
             let cell = tableView.dequeueReusableCellWithIdentifier("rightMessageCell", forIndexPath: indexPath) as! ChatTableViewCell
-                cell.updateWithBlueMessage(message)
-                return cell
+            cell.updateWithBlueMessage(message)
+            return cell
+            
+        } else if conversation?.currentGroup?.identifier == message.senderGroupID {
+            let cell = tableView.dequeueReusableCellWithIdentifier("rightMessageCell", forIndexPath: indexPath) as! ChatTableViewCell
+            cell.updateWithRightGrayMessage(message)
+            return cell
+            
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier("leftMessageCell", forIndexPath: indexPath) as! ChatTableViewCell
-                cell.updateWithGrayMessage(message)
-                return cell
+            cell.updateWithGrayMessage(message)
+            return cell
         }
     }
 }

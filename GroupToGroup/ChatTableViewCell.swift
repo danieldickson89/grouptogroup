@@ -43,6 +43,15 @@ extension ChatTableViewCell {
         
     }
     
+    func updateWithRightGrayMessage(message: Message) {
+        
+        rightUILabel.text = message.text
+        rightUILabel.textColor = UIColor.blackColor()
+        rightUIView.backgroundColor = UIColor.myGrayColor()
+        rightUIView.layer.cornerRadius = 6.0
+        rightUIImageView.image = UIImage(named: "sample")
+    }
+    
     func updateWithGrayMessage(message: Message) {
      
         leftUILabel.text = message.text
