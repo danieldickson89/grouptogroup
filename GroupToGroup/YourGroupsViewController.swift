@@ -11,7 +11,7 @@ import UIKit
 class YourGroupsViewController: UIViewController {
     
     var groupsArray: [Group] = []
-
+    
     @IBOutlet weak var yourGroupsListTableView: UITableView!
     @IBOutlet weak var enterGroupIDTextField: UITextField!
     @IBOutlet weak var joinGroupButton: UIButton!
@@ -20,7 +20,7 @@ class YourGroupsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -38,9 +38,9 @@ class YourGroupsViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         
         joinGroupButton.layer.cornerRadius = 4
-
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -70,7 +70,14 @@ class YourGroupsViewController: UIViewController {
         textField.placeholder = "Enter name of group"
         tField = textField
     }
-
+    
+    func displayDuplicateGroupAlert(groupName: String) {
+        
+        let existingGroupAlert = UIAlertController(title: "\"\(groupName.lowercaseString)\" already exists", message: "Please choose a different group name", preferredStyle: .Alert)
+        existingGroupAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+        presentViewController(existingGroupAlert, animated: true, completion: nil)
+    }
+    
     @IBAction func createNewGroupButtonTapped(sender: AnyObject) {
         
         let alert = UIAlertController(title: "Create a New Group", message: "", preferredStyle: UIAlertControllerStyle.Alert)
@@ -79,8 +86,12 @@ class YourGroupsViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Create", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) in
             
-            GroupController.createGroup(self.tField.text!, users: [UserController.currentUser]) { (group) -> Void in
-                print("\(UserController.currentUser.username) is a member of \(group!.name) now.")
+            GroupController.createGroup(self.tField.text!, users: [UserController.currentUser]) { (group, success) -> Void in
+                if success {
+                    print("\(UserController.currentUser.username) is a member of \(group!.name) now.")
+                } else {
+                    self.displayDuplicateGroupAlert(group!.name)
+                }
             }
         }))
         self.presentViewController(alert, animated: true, completion: {
@@ -91,7 +102,7 @@ class YourGroupsViewController: UIViewController {
         if let groupID = enterGroupIDTextField.text {
             GroupController.fetchGroupForIdentifier(groupID, completion: { (group) -> Void in
                 if let group = group {
-                   GroupController.linkUserAndGroup(group, user: UserController.currentUser)
+                    GroupController.linkUserAndGroup(group, user: UserController.currentUser)
                 } else {
                     // Add alert to tell user that group doesn't exist
                     let alert = UIAlertController(title: "Invalid Group", message: "the group \"\(groupID)\" does not exist", preferredStyle: .Alert)
@@ -106,7 +117,7 @@ class YourGroupsViewController: UIViewController {
     
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         

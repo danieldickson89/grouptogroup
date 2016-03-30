@@ -40,11 +40,11 @@ class GroupController {
         }
     }
     
-    static func createGroup(name: String, users: [User], conversations: [Conversation] = [], completion: (group: Group?) -> Void) {
-        var group = Group(name: name, users: users, conversations: conversations)
+    static func createGroup(name: String, users: [User], conversations: [Conversation] = [], completion: (group: Group?, success: Bool) -> Void) {
+        var group = Group(name: name.lowercaseString, users: users, conversations: conversations)
         
         // Check to see if the entered group name is still available
-        FirebaseController.base.childByAppendingPath("groups").queryOrderedByChild("name").queryEqualToValue(group.name).observeEventType(.ChildAdded, withBlock: { snapshot in
+        FirebaseController.base.childByAppendingPath("groups").queryOrderedByChild("name").queryEqualToValue(group.name.lowercaseString).observeEventType(.ChildAdded, withBlock: { snapshot in
             print(snapshot.key)
             
             if snapshot == nil {
@@ -52,9 +52,10 @@ class GroupController {
                 for user in users {
                     linkUserAndGroup(group, user: user)
                 }
-                completion(group: group)
+                completion(group: group, success: true)
             } else {
                 print("That group name is already taken!")
+                completion(group: group, success: false)
             }
         })
         
