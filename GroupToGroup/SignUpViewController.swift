@@ -37,7 +37,7 @@ class SignUpViewController: UIViewController {
                 email = emailTextField.text,
                 password = passwordTextField.text where email.characters.contains("@") && password.characters.count >= 6 {
             
-                    UserController.createUserFirebase(username, email: email, password: password, completion: { (success) -> Void in
+                    UserController.createUserFirebase(username.lowercaseString, email: email, password: password, completion: { (success) -> Void in
                         if success {
                             ((self.presentingViewController as? UINavigationController)?.viewControllers.first as? YourGroupsViewController)?.setupAppearanceForCurrentUser()
                             self.dismissViewControllerAnimated(true, completion: nil)

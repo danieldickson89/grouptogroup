@@ -127,8 +127,8 @@ extension ChatViewController: UITableViewDataSource, UITableViewDelegate {
         
         let message = messagesArray[indexPath.row]
         
-        //if conversation?.currentGroup?.identifier == message.senderGroup?.identifier
-        if message.sender.containsString(UserController.currentUser.username) {
+        //if message.sender.containsString(UserController.currentUser.username)
+        if conversation?.currentGroup?.identifier == message.senderGroupID {
             let cell = tableView.dequeueReusableCellWithIdentifier("rightMessageCell", forIndexPath: indexPath) as! ChatTableViewCell
                 cell.updateWithBlueMessage(message)
                 return cell

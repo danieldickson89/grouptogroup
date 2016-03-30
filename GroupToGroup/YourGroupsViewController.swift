@@ -104,7 +104,7 @@ class YourGroupsViewController: UIViewController {
                 
                 GroupController.createGroup(text, users: [UserController.currentUser]) { (group, success) -> Void in
                     if success {
-                        print("\(UserController.currentUser.username) is a member of \(group?.name) now.")
+                        print("\(UserController.currentUser.username) is a member of \(group!.name) now.")
                     } else {
                         self.displayDuplicateGroupAlert(text)
                     }
@@ -121,6 +121,7 @@ class YourGroupsViewController: UIViewController {
             GroupController.fetchGroupForIdentifier(groupID, completion: { (group) -> Void in
                 if let group = group {
                     GroupController.linkUserAndGroup(group, user: UserController.currentUser)
+                    print("\(UserController.currentUser) has joined group: \(group)")
                 } else {
                     // Add alert to tell user that group doesn't exist
                     let alert = UIAlertController(title: "Invalid Group", message: "the group \"\(groupID)\" does not exist", preferredStyle: .Alert)

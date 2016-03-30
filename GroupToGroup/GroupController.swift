@@ -51,7 +51,6 @@ class GroupController {
         
         // Check to see if the entered group name is still available
         FirebaseController.base.childByAppendingPath("groups").queryOrderedByChild("name").queryEqualToValue(group.name.lowercaseString).observeSingleEventOfType(.Value, withBlock: { snapshot in
-            print(snapshot.key)
             
             if snapshot.value is NSNull {
                 group.save()

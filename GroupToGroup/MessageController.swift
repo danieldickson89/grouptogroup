@@ -12,9 +12,11 @@ class MessageController {
     
     static func createMessage(text: String, sender: String, conversation: Conversation, completion: (message: Message?) -> Void) {
         let conversation = conversation
-        let message = Message(text: text, sender: sender)
-        addMessageToConversation(message, conversation: conversation)
-        completion(message: message)
+        if let  currentGroupID = conversation.currentGroup?.identifier {
+            let message = Message(text: text, sender: sender, senderGroupID: currentGroupID)
+            addMessageToConversation(message, conversation: conversation)
+            completion(message: message)
+        }
     }
     
     static func addMessageToConversation(message: Message, conversation: Conversation) {
