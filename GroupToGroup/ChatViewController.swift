@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChatViewController: UIViewController {
+class ChatViewController: UIViewController, UITextViewDelegate {
     
     var conversation: Conversation?
     var messagesArray: [Message] = []
@@ -28,6 +28,9 @@ class ChatViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        textView.delegate = self
+        mockTextView.delegate = self
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ChatViewController.keyboardShown(_:)), name: UIKeyboardDidShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ChatViewController.keyboardHidden(_:)), name: UIKeyboardDidHideNotification, object: nil)
@@ -102,6 +105,10 @@ class ChatViewController: UIViewController {
         textView.text = ""
         mockTextView.text = ""
         scrollToMostRecentMessage(true)
+    }
+    
+    func textViewDidBeginEditing(textView: UITextView) {
+        self.textView.becomeFirstResponder()
     }
     
     // MARK: - Actions
