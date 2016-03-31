@@ -98,7 +98,7 @@ class ChatViewController: UIViewController, UITextViewDelegate {
     @IBAction func sendButtonTapped(sender: AnyObject) {
         if let text = messageTextView.text, currentUser = UserController.currentUser {
             MessageController.createMessage(text, senderID: currentUser.identifier!, conversation: self.conversation!, completion: { (message) -> Void in
-                print("\(currentUser.username): \(text)")
+                //print("\(currentUser.username): \(text)")
             })
             messageTextView.resignFirstResponder()
         }

@@ -16,7 +16,7 @@ class FirebaseController {
     static func dataAtEndpoint(endpoint: String, completion: (data: AnyObject?) -> Void) {
         
         let baseForEndpoint = FirebaseController.base.childByAppendingPath(endpoint)
-        //print(baseForEndpoint)
+      
         baseForEndpoint.observeSingleEventOfType(.Value, withBlock: { snapshot in
             
             if snapshot.value is NSNull {

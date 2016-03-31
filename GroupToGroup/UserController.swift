@@ -59,7 +59,7 @@ class UserController {
                     loginUser(email, password: password, completion: { (success, user) -> Void in
                         if success {
                             completion(success: true)
-                            print("success! created new user \(uid) aka \(UserController.currentUser.username)")
+                            // print("success! created new user \(uid) aka \(UserController.currentUser.username)")
                         } else {
                             completion(success: false)
                             
@@ -80,7 +80,7 @@ class UserController {
                     if let user = user {
                         UserController.currentUser = user
                         completion(success: true, user: user)
-                        print("success logging \(UserController.currentUser.username) in \(authData.uid)")
+                        // print("success logging \(UserController.currentUser.username) in \(authData.uid)")
                     } else {
                         completion(success: false, user: user)
                         print("invalid user data: \(user)")
