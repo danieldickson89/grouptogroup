@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChatViewController: UIViewController, UITextViewDelegate {
+class ChatViewController: UIViewController {
     
     var conversation: Conversation?
     var messagesArray: [Message] = []
@@ -23,13 +23,11 @@ class ChatViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var sendButton: UIButton!
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var mockBottomConstraint: NSLayoutConstraint!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        mockTextView.delegate = self
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ChatViewController.keyboardShown(_:)), name: UIKeyboardDidShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ChatViewController.keyboardHidden(_:)), name: UIKeyboardDidHideNotification, object: nil)
@@ -89,12 +87,14 @@ class ChatViewController: UIViewController, UITextViewDelegate {
         
         mockTextView.hidden = true
         mockSendButton.hidden = true
-        bottomConstraint.constant = keyboardFrame.height
+        //bottomConstraint.constant = keyboardFrame.height
+        mockBottomConstraint.constant = 48 - keyboardFrame.height
         scrollToMostRecentMessage(true)
     }
     
     func keyboardHidden(notification: NSNotification) {
-        bottomConstraint.constant = 0
+        //bottomConstraint.constant = 0
+        mockBottomConstraint.constant = 0
         mockTextView.hidden = false
         mockSendButton.hidden = false
         textView.text = ""

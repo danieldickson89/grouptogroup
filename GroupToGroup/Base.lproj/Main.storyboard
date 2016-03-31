@@ -498,7 +498,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VjV-lV-zzx">
-                                <rect key="frame" x="0.0" y="64" width="600" height="444"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="446"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <prototypes>
@@ -645,16 +645,16 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dNy-oV-aU1">
-                                <rect key="frame" x="0.0" y="508" width="600" height="48"/>
+                                <rect key="frame" x="0.0" y="510" width="600" height="46"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QdN-rR-Jp6">
-                                        <rect key="frame" x="8" y="8" width="504" height="32"/>
+                                        <rect key="frame" x="8" y="8" width="504" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p95-bb-O7w">
-                                        <rect key="frame" x="520" y="8" width="72" height="32"/>
+                                        <rect key="frame" x="520" y="8" width="72" height="30"/>
                                         <color key="backgroundColor" red="0.17098673780000001" green="0.52627159180000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="72" id="qXr-RM-lKt"/>
@@ -682,7 +682,6 @@
                             <constraint firstItem="dNy-oV-aU1" firstAttribute="bottom" secondItem="fUi-P2-7W5" secondAttribute="top" id="5Mv-o5-iIP"/>
                             <constraint firstItem="dNy-oV-aU1" firstAttribute="leading" secondItem="VjV-lV-zzx" secondAttribute="leading" id="Bq4-9h-oO2"/>
                             <constraint firstItem="dNy-oV-aU1" firstAttribute="trailing" secondItem="VjV-lV-zzx" secondAttribute="trailing" id="FWs-P7-uD8"/>
-                            <constraint firstItem="fUi-P2-7W5" firstAttribute="top" secondItem="VjV-lV-zzx" secondAttribute="bottom" constant="48" id="H1Z-N0-FjZ"/>
                             <constraint firstItem="VjV-lV-zzx" firstAttribute="leading" secondItem="hNR-0z-Ih6" secondAttribute="leading" id="KgS-3U-zMw"/>
                             <constraint firstAttribute="trailing" secondItem="VjV-lV-zzx" secondAttribute="trailing" id="hfr-Cn-SCW"/>
                             <constraint firstItem="VjV-lV-zzx" firstAttribute="top" secondItem="Olg-W0-akt" secondAttribute="bottom" id="pB7-Nb-E2k"/>
@@ -691,7 +690,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ZMq-Fc-z2G"/>
                     <connections>
-                        <outlet property="bottomConstraint" destination="H1Z-N0-FjZ" id="bdF-KL-1YL"/>
+                        <outlet property="mockBottomConstraint" destination="5Mv-o5-iIP" id="RYo-SN-zNU"/>
                         <outlet property="mockSendButton" destination="p95-bb-O7w" id="lq1-e4-2xN"/>
                         <outlet property="mockTextView" destination="QdN-rR-Jp6" id="pba-KA-lKC"/>
                         <outlet property="mockUIView" destination="dNy-oV-aU1" id="JZr-c9-77B"/>
