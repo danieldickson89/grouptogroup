@@ -10,13 +10,11 @@ import UIKit
 
 class ChatTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var leftUIImageView: UIImageView!
-    @IBOutlet weak var leftUIView: UIView!
-    @IBOutlet weak var leftUILabel: UILabel!
-
-    @IBOutlet weak var rightUIImageView: UIImageView!
     @IBOutlet weak var rightUIView: UIView!
-    @IBOutlet weak var rightUILabel: UILabel!
+    @IBOutlet weak var rightLabel: UILabel!
+    
+    @IBOutlet weak var leftUIView: UIView!
+    @IBOutlet weak var leftLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,30 +33,30 @@ extension ChatTableViewCell {
     
     func updateWithBlueMessage(message: Message) {
         
-        rightUILabel.text = message.text
-        rightUILabel.textColor = UIColor.whiteColor()
+        rightLabel.text = message.text
+        rightLabel.textColor = UIColor.whiteColor()
         rightUIView.backgroundColor = UIColor.myBlueColor()
         rightUIView.layer.cornerRadius = 6.0
-        rightUIImageView.image = UIImage(named: "sample")
+        //rightImageView.image = UIImage(named: "sample")
         
     }
     
     func updateWithRightGrayMessage(message: Message) {
         
-        rightUILabel.text = message.text
-        rightUILabel.textColor = UIColor.blackColor()
+        rightLabel.text = message.text
+        rightLabel.textColor = UIColor.blackColor()
         rightUIView.backgroundColor = UIColor.myGrayColor()
         rightUIView.layer.cornerRadius = 6.0
-        rightUIImageView.image = UIImage(named: "sample")
+        //rightImageView.image = UIImage(named: "sample")
     }
     
     func updateWithGrayMessage(message: Message) {
      
-        leftUILabel.text = message.text
-        leftUILabel.textColor = UIColor.blackColor()
+        leftLabel.text = message.text
+        leftLabel.textColor = UIColor.blackColor()
         leftUIView.backgroundColor = UIColor.myGrayColor()
         leftUIView.layer.cornerRadius = 6.0
-        leftUIImageView.image = UIImage(named: "sample")
+        //leftImageView.image = UIImage(named: "sample")
         
     }
 }

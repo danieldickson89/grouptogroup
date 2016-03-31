@@ -13,34 +13,45 @@ class ChatViewController: UIViewController, UITextViewDelegate {
     var conversation: Conversation?
     var messagesArray: [Message] = []
     
-    @IBOutlet weak var messageTextView: UITextView!
+    @IBOutlet weak var mockUIView: UIView!
+    @IBOutlet weak var mockTextView: UITextView!
+    @IBOutlet weak var mockSendButton: UIButton!
+    
+    @IBOutlet var myUIView: UIView!
+    @IBOutlet weak var myUIView2: UIView!
+    @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var sendButton: UIButton!
+    
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var uiViewBottomConstraint: NSLayoutConstraint!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        mockTextView.delegate = self
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         
-        self.navigationController?.setToolbarHidden(true, animated: true)
-        messageTextView.autocorrectionType = .No
+        textView.autocorrectionType = .No
+        navigationController?.setToolbarHidden(true, animated: false)
+        mockTextView.inputAccessoryView = myUIView
         
+        // Appearance for mock text/send/view stuff
+        mockTextView.layer.borderWidth = 2.0
+        mockTextView.layer.borderColor = UIColor.myGrayColor().CGColor
+        mockTextView.layer.cornerRadius = 6.0
+        mockSendButton.layer.cornerRadius = 6.0
+        mockUIView.backgroundColor = UIColor(white: 0.75, alpha: 0.25)
+        
+        // Appearnce for the real text/send/view accessory input
+        textView.layer.borderWidth = 2.0
+        textView.layer.borderColor = UIColor.myGrayColor().CGColor
+        textView.layer.cornerRadius = 6.0
         sendButton.layer.cornerRadius = 6.0
-        messageTextView.layer.cornerRadius = 6.0
-        messageTextView.layer.borderWidth = 1.0
-        messageTextView.layer.borderColor = UIColor.grayColor().CGColor
-        messageTextView.text = "Text Message"
-        messageTextView.textColor = UIColor.lightGrayColor()
-        messageTextView.delegate = self
-        
-        NSNotificationCenter.defaultCenter().addObserver(self,
-                                                         selector: #selector(ChatViewController.keyboardShown(_:)), name: UIKeyboardDidShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ChatViewController.keyboardHidden(_:)), name: UIKeyboardDidHideNotification, object: nil)
+        myUIView.backgroundColor = UIColor(white: 0.75, alpha: 0.25)
+        myUIView2.backgroundColor = UIColor(white: 0.75, alpha: 0.25)
         
     }
     
@@ -58,52 +69,21 @@ class ChatViewController: UIViewController, UITextViewDelegate {
         }
     }
     
-    func keyboardShown(notification: NSNotification) {
-        let info  = notification.userInfo!
-        let value: AnyObject = info[UIKeyboardFrameEndUserInfoKey]!
-        
-        let rawFrame = value.CGRectValue
-        let keyboardFrame = view.convertRect(rawFrame, fromView: nil)
-        
-        uiViewBottomConstraint.constant = keyboardFrame.height
-        UIView.animateWithDuration(0.20) { () -> Void in
-            self.view.layoutIfNeeded()
-        }
-    }
-    
-    func keyboardHidden(notification: NSNotification) {
-        uiViewBottomConstraint.constant = 20
-        messageTextView.text = ""
-        UIView.animateWithDuration(0.40) { () -> Void in
-            self.view.layoutIfNeeded()
-        }
-    }
-    
-    func textViewShouldBeginEditing(textView: UITextView) -> Bool {
-        messageTextView.text = ""
-        messageTextView.textColor = UIColor.blackColor()
-        return true
-    }
-    
-    func textViewDidChange(textView: UITextView) {
-        if messageTextView.text == "" {
-            messageTextView.text = "Text Message"
-            messageTextView.textColor = UIColor.lightGrayColor()
-            messageTextView.resignFirstResponder()
-        }
+    func textViewDidEndEditing(textView: UITextView) {
+        mockUIView.hidden = true
     }
     
     // MARK: - Actions
     
     @IBAction func sendButtonTapped(sender: AnyObject) {
-        if let text = messageTextView.text, currentUser = UserController.currentUser {
+        
+        if let text = textView.text, currentUser = UserController.currentUser {
             MessageController.createMessage(text, senderID: currentUser.identifier!, conversation: self.conversation!, completion: { (message) -> Void in
                 //print("\(currentUser.username): \(text)")
             })
-            messageTextView.resignFirstResponder()
+            textView.resignFirstResponder()
         }
     }
-    
 }
 
 extension ChatViewController: UITableViewDataSource, UITableViewDelegate {
@@ -127,7 +107,6 @@ extension ChatViewController: UITableViewDataSource, UITableViewDelegate {
         
         let message = messagesArray[indexPath.row]
         
-        //if message.sender.containsString(UserController.currentUser.username)
         if conversation?.currentGroup?.identifier == message.senderGroupID &&
             UserController.currentUser.identifier == message.senderID {
             let cell = tableView.dequeueReusableCellWithIdentifier("rightMessageCell", forIndexPath: indexPath) as! ChatTableViewCell
