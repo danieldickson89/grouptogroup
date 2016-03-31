@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MessageUI
 
-class GroupChatsListTableViewController: UITableViewController {
+class GroupChatsListTableViewController: UITableViewController, UINavigationControllerDelegate, MFMessageComposeViewControllerDelegate {
     
     var usersGroup: Group?
     var conversationsArray: [Conversation] = []
@@ -69,9 +70,25 @@ class GroupChatsListTableViewController: UITableViewController {
                 print("error leaving the group")
             }
         }))
-        
+        options.addAction(UIAlertAction(title: "Share this GroupID", style: .Default, handler: { (invite) in
+            self.sendTextMessage()
+            //print("Inviting friend now")
+        }))
         options.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
         self.presentViewController(options, animated: true, completion: nil)
+    }
+    
+    func sendTextMessage() {
+        
+        let composeMessageController = MFMessageComposeViewController()
+        composeMessageController.delegate = self
+        composeMessageController.recipients = []
+        composeMessageController.body = "Hey man you should totally join my group!"
+        presentViewController(composeMessageController, animated: true, completion: nil)
+    }
+    
+    func messageComposeViewController(controller: MFMessageComposeViewController, didFinishWithResult result: MessageComposeResult) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     // MARK: - Navigation
