@@ -46,8 +46,8 @@ class GroupController {
     
     // Method to create a new group
     
-    static func createGroup(name: String, users: [User], conversations: [Conversation] = [], completion: (group: Group?, success: Bool) -> Void) {
-        var group = Group(name: name.lowercaseString, users: users, conversations: conversations)
+    static func createGroup(name: String, users: [User], conversations: [Conversation] = [], blockedGroups: [String] = [], completion: (group: Group?, success: Bool) -> Void) {
+        var group = Group(name: name.lowercaseString, users: users, conversations: conversations, blockedGroupsIDs: blockedGroups)
         
         // Check to see if the entered group name is still available
         FirebaseController.base.childByAppendingPath("groups").queryOrderedByChild("name").queryEqualToValue(group.name.lowercaseString).observeSingleEventOfType(.Value, withBlock: { snapshot in
@@ -102,6 +102,19 @@ class GroupController {
                     group.save()
                 }
             }
+        }
+    }
+    
+    // Method for adding blocked groups to an array so they won't find each other EVER AGAIN!
+    
+    static func blockGroup(blockerGroup: Group, blockeeGroup: Group) {
+        var blockerGroup = blockerGroup
+        var blockeeGroup = blockeeGroup
+        if let blockerGroupID = blockerGroup.identifier, blockeeGroupID = blockeeGroup.identifier {
+            blockerGroup.blockedGroupIDs.append(blockeeGroupID)
+            blockerGroup.save()
+            blockeeGroup.blockedGroupIDs.append(blockerGroupID)
+            blockeeGroup.save()
         }
     }
     

@@ -112,6 +112,7 @@ class GroupChatsListTableViewController: UITableViewController, UINavigationCont
                 let chatViewController = segue.destinationViewController as! ChatViewController
                 let conversation = conversationsArray[indexPath.row]
                 chatViewController.conversation = conversation
+                chatViewController.usersGroup = self.usersGroup
                 chatViewController.updateWithConversation(conversation)
             }
         }

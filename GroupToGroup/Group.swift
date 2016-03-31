@@ -13,25 +13,28 @@ class Group: FirebaseType {
     let kName: String = "name"
     let kUsers: String = "users"
     let kConversations: String = "conversations"
+    let kBlockedGroups: String = "blockedGroups"
     
     let name: String
     var users: [User] = []
     var userIDs: [String] = []
     var conversations: [Conversation] = []
     var conversationIDs: [String] = []
+    var blockedGroupIDs: [String] = []
     var identifier: String?
     var endpoint: String {
         return "groups"
     }
     
     var jsonValue: [String : AnyObject] {
-        return [kName: name, kUsers: userIDs, kConversations: conversationIDs]
+        return [kName: name, kUsers: userIDs, kConversations: conversationIDs, kBlockedGroups: blockedGroupIDs]
     }
     
-    init(name: String, users: [User], conversations: [Conversation]) {
+    init(name: String, users: [User], conversations: [Conversation], blockedGroupsIDs: [String]) {
         self.name = name
         self.users = users
         self.conversations = conversations
+        self.blockedGroupIDs = blockedGroupsIDs
         var userIdentifiers: [String] = []
         for user in users {
             if let identifier = user.identifier {
@@ -58,6 +61,10 @@ class Group: FirebaseType {
         
         if let userIDs = json[kUsers] as? [String] {
             self.userIDs = userIDs
+        }
+        
+        if let blockedGroupIDs = json[kBlockedGroups] as? [String] {
+            self.blockedGroupIDs = blockedGroupIDs
         }
         
     }
