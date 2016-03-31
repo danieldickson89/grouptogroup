@@ -82,6 +82,9 @@ class ChatViewController: UIViewController, UITextViewDelegate {
                 //print("\(currentUser.username): \(text)")
             })
             textView.resignFirstResponder()
+            mockTextView.resignFirstResponder()
+            textView.text = ""
+            mockUIView.hidden = false
         }
     }
 }
