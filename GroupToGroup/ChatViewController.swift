@@ -74,9 +74,11 @@ class ChatViewController: UIViewController {
     }
     
     func scrollToMostRecentMessage(bool: Bool) {
-        let lastRowNumber = self.messagesArray.count - 1
-        let indexPath = NSIndexPath(forRow: lastRowNumber, inSection: 0)
-        self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: bool)
+        if self.messagesArray.count > 0 {
+            let lastRowNumber = self.messagesArray.count - 1
+            let indexPath = NSIndexPath(forRow: lastRowNumber, inSection: 0)
+            self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: bool)
+        }
     }
     
     func keyboardShown(notification: NSNotification) {
@@ -102,10 +104,6 @@ class ChatViewController: UIViewController {
         scrollToMostRecentMessage(true)
     }
     
-//    func textViewDidEndEditing(textView: UITextView) {
-//        mockUIView.hidden = true
-//    }
-    
     // MARK: - Actions
     
     @IBAction func sendButtonTapped(sender: AnyObject) {
@@ -120,6 +118,26 @@ class ChatViewController: UIViewController {
             mockTextView.text = ""
             mockUIView.hidden = false
         }
+    }
+    
+    @IBAction func moreButtonTapped(sender: AnyObject) {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+        alert.addAction(UIAlertAction(title: "Block Group", style: .Destructive, handler: { (blockGroup) in
+            let areYouSure = UIAlertController(title: "Are you sure you want to block this group?", message: nil, preferredStyle: .Alert)
+            areYouSure.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (leaveGroup) in
+                if let conversation = self.conversation  {
+                    ConversationController.unlinkConversationFromGroups(conversation, groups: conversation.groups)
+                    conversation.delete()
+                    self.navigationController?.popViewControllerAnimated(true)
+                } else {
+                    print("error deleting the conversation")
+                }
+            }))
+            areYouSure.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+            self.presentViewController(areYouSure, animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+        presentViewController(alert, animated: true, completion: nil)
     }
 }
 

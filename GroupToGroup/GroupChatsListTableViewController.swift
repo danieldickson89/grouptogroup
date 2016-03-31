@@ -63,16 +63,21 @@ class GroupChatsListTableViewController: UITableViewController, UINavigationCont
     @IBAction func optionsToolBarButtonTapped(sender: AnyObject) {
         let options = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
         options.addAction(UIAlertAction(title: "Leave Group", style: .Destructive, handler: { (leaveGroup) in
-            if let usersGroup = self.usersGroup {
-                GroupController.unLinkUserAndGroup(usersGroup, user: UserController.currentUser)
-                self.navigationController?.popViewControllerAnimated(true)
-            } else {
-                print("error leaving the group")
-            }
+            let areYouSure = UIAlertController(title: "Are you sure you want to leave?", message: "You will have to re-join this group if you leave", preferredStyle: .Alert)
+            areYouSure.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (leaveGroup) in
+                if let usersGroup = self.usersGroup {
+                    GroupController.unLinkUserAndGroup(usersGroup, user: UserController.currentUser)
+                    self.navigationController?.popViewControllerAnimated(true)
+                } else {
+                    print("error leaving the group")
+                }
+            }))
+            areYouSure.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+            self.presentViewController(areYouSure, animated: true, completion: nil)
+
         }))
         options.addAction(UIAlertAction(title: "Share this GroupID", style: .Default, handler: { (invite) in
             self.sendTextMessage()
-            //print("Inviting friend now")
         }))
         options.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
         self.presentViewController(options, animated: true, completion: nil)
@@ -81,9 +86,11 @@ class GroupChatsListTableViewController: UITableViewController, UINavigationCont
     func sendTextMessage() {
         
         let composeMessageController = MFMessageComposeViewController()
-        composeMessageController.delegate = self
+        composeMessageController.messageComposeDelegate = self
         composeMessageController.recipients = []
-        composeMessageController.body = "Hey man you should totally join my group!"
+        if let groupID = usersGroup?.identifier {
+            composeMessageController.body = "Copy and paste the following to join my group: \n\(groupID)\n"
+        }
         presentViewController(composeMessageController, animated: true, completion: nil)
     }
     

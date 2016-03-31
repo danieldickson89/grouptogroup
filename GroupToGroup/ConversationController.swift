@@ -54,6 +54,23 @@ class ConversationController {
         conversation.save()
     }
     
+    static func unlinkConversationFromGroups(conversation: Conversation, groups: [Group]) {
+        let conversation = conversation
+        let groups = groups
+        guard let conversationID = conversation.identifier else {return}
+        for var group in groups {
+            for conversationIdentifier in group.conversationIDs {
+                if conversationIdentifier == conversationID {
+                    let index = group.conversationIDs.indexOf(conversationIdentifier)
+                    if let index = index {
+                        group.conversationIDs.removeAtIndex(index)
+                        group.save()
+                    }
+                }
+            }
+        }
+    }
+    
     // Method used for listing all of the conversations for the provided group (on GroupChatsListTableViewController)
     
     static func observeConversationsForGroup(group: Group, completion: (conversations: [Conversation])->Void) {

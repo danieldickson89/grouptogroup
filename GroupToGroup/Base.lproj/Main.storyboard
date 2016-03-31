@@ -688,7 +688,13 @@
                             <constraint firstItem="dNy-oV-aU1" firstAttribute="top" secondItem="VjV-lV-zzx" secondAttribute="bottom" id="vv0-I9-sTl"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ZMq-Fc-z2G"/>
+                    <navigationItem key="navigationItem" id="ZMq-Fc-z2G">
+                        <barButtonItem key="rightBarButtonItem" image="more" id="Xcu-9y-qmW">
+                            <connections>
+                                <action selector="moreButtonTapped:" destination="VVM-hB-Ueq" id="xJD-Ai-8Bf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="mockBottomConstraint" destination="5Mv-o5-iIP" id="RYo-SN-zNU"/>
                         <outlet property="mockSendButton" destination="p95-bb-O7w" id="lq1-e4-2xN"/>
