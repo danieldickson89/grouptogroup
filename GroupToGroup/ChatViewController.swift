@@ -67,11 +67,15 @@ class ChatViewController: UIViewController, UITextViewDelegate {
             self.messagesArray.sortInPlace() {$0.0.identifier < $0.1.identifier}
             dispatch_async(dispatch_get_main_queue(), {
                 self.tableView.reloadData()
-                let lastRowNumber = self.messagesArray.count - 1
-                let indexPath = NSIndexPath(forRow: lastRowNumber, inSection: 0)
-                self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: false)
+                self.scrollToMostRecentMessage(true)
             })
         }
+    }
+    
+    func scrollToMostRecentMessage(bool: Bool) {
+        let lastRowNumber = self.messagesArray.count - 1
+        let indexPath = NSIndexPath(forRow: lastRowNumber, inSection: 0)
+        self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: bool)
     }
     
     func textViewDidEndEditing(textView: UITextView) {
