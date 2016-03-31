@@ -23,12 +23,14 @@ class ChatViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var sendButton: UIButton!
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         mockTextView.delegate = self
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -65,6 +67,9 @@ class ChatViewController: UIViewController, UITextViewDelegate {
             self.messagesArray.sortInPlace() {$0.0.identifier < $0.1.identifier}
             dispatch_async(dispatch_get_main_queue(), {
                 self.tableView.reloadData()
+                let lastRowNumber = self.messagesArray.count - 1
+                let indexPath = NSIndexPath(forRow: lastRowNumber, inSection: 0)
+                self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: false)
             })
         }
     }
@@ -84,6 +89,7 @@ class ChatViewController: UIViewController, UITextViewDelegate {
             textView.resignFirstResponder()
             mockTextView.resignFirstResponder()
             textView.text = ""
+            mockTextView.text = ""
             mockUIView.hidden = false
         }
     }
@@ -127,5 +133,6 @@ extension ChatViewController: UITableViewDataSource, UITableViewDelegate {
             return cell
         }
     }
+    
 }
 

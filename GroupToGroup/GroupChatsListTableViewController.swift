@@ -69,6 +69,7 @@ class GroupChatsListTableViewController: UITableViewController {
                 print("error leaving the group")
             }
         }))
+        
         options.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
         self.presentViewController(options, animated: true, completion: nil)
     }
