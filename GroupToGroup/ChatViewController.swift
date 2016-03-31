@@ -31,6 +31,9 @@ class ChatViewController: UIViewController, UITextViewDelegate {
         
         mockTextView.delegate = self
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ChatViewController.keyboardShown(_:)), name: UIKeyboardDidShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ChatViewController.keyboardHidden(_:)), name: UIKeyboardDidHideNotification, object: nil)
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -78,9 +81,30 @@ class ChatViewController: UIViewController, UITextViewDelegate {
         self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: bool)
     }
     
-    func textViewDidEndEditing(textView: UITextView) {
-        mockUIView.hidden = true
+    func keyboardShown(notification: NSNotification) {
+        let info  = notification.userInfo!
+        let value: AnyObject = info[UIKeyboardFrameEndUserInfoKey]!
+        let rawFrame = value.CGRectValue
+        let keyboardFrame = view.convertRect(rawFrame, fromView: nil)
+        
+        mockTextView.hidden = true
+        mockSendButton.hidden = true
+        bottomConstraint.constant = keyboardFrame.height
+        scrollToMostRecentMessage(true)
     }
+    
+    func keyboardHidden(notification: NSNotification) {
+        bottomConstraint.constant = 0
+        mockTextView.hidden = false
+        mockSendButton.hidden = false
+        textView.text = ""
+        mockTextView.text = ""
+        scrollToMostRecentMessage(true)
+    }
+    
+//    func textViewDidEndEditing(textView: UITextView) {
+//        mockUIView.hidden = true
+//    }
     
     // MARK: - Actions
     
