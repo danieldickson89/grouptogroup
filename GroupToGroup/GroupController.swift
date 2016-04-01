@@ -28,18 +28,22 @@ class GroupController {
     
     // Method that will grab all the groups in Firebase (for the Search Controller)
     
-    static func fetchAllGroups(completion: (groups: [Group]) -> Void) {
+    static func fetchAllGroups(usersGroup: Group, completion: (groups: [Group]?) -> Void) {
+        
+        var groups: [Group] = []
         
         FirebaseController.dataAtEndpoint("groups") { (data) -> Void in
             
             if let json = data as? [String: AnyObject] {
                 
-                let groups = json.flatMap({Group(json: $0.1 as! [String : AnyObject], identifier: $0.0)})
-                
+                groups = json.flatMap({Group(json: $0.1 as! [String : AnyObject], identifier: $0.0)})
+                groups = groups.filter({$0.identifier != usersGroup.identifier})
+                for groupID in usersGroup.blockedGroupIDs {
+                    groups = groups.filter({$0.identifier != groupID})
+                }
                 completion(groups: groups)
-                
             } else {
-                completion(groups: [])
+                completion(groups: nil)
             }
         }
     }
@@ -127,8 +131,11 @@ class GroupController {
         if let blockerGroupID = blockerGroup.identifier, blockeeGroupID = blockeeGroup.identifier {
             blockerGroup.blockedGroupIDs.append(blockeeGroupID)
             blockerGroup.save()
+            print("\(blockerGroup.identifier!) has blocked: \(blockerGroup.blockedGroupIDs)")
+            
             blockeeGroup.blockedGroupIDs.append(blockerGroupID)
             blockeeGroup.save()
+            print("\(blockeeGroup.identifier!) has blocked: \(blockeeGroup.blockedGroupIDs)")
         }
     }
     

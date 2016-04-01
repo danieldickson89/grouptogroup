@@ -45,30 +45,27 @@ class ConversationController {
     
     static func linkGroupAndConversation(conversation: Conversation, group: Group) {
         var group = group
-        var conversation = conversation
-        guard let conversationID = conversation.identifier,
-            groupID = group.identifier else {return}
+        let conversation = conversation
+        guard let conversationID = conversation.identifier else {return}
         group.conversationIDs.append(conversationID)
         group.save()
-        conversation.groupIDs.append(groupID)
-        conversation.save()
     }
     
-    static func unlinkConversationFromGroups(conversation: Conversation, groups: [Group]) {
-        let conversation = conversation
-        let groups = groups
-        guard let conversationID = conversation.identifier else {return}
-        for var group in groups {
-            for conversationIdentifier in group.conversationIDs {
-                if conversationIdentifier == conversationID {
-                    let index = group.conversationIDs.indexOf(conversationIdentifier)
-                    if let index = index {
-                        group.conversationIDs.removeAtIndex(index)
-                        group.save()
-                    }
-                }
-            }
+    static func blockGroupsInConversation(conversation: Conversation) {
+        for var group in conversation.groups {
+            group.blockedGroupIDs += conversation.groupIDs.filter({$0 != group.identifier})
+            group.save()
         }
+        unlinkConversation(conversation)
+    }
+    
+    static func unlinkConversation(conversation: Conversation) {
+        guard let conversationID = conversation.identifier else {return}
+        for var group in conversation.groups {
+            group.conversationIDs = group.conversationIDs.filter({$0 != conversationID})
+            group.save()
+        }
+        conversation.delete()
     }
     
     // Method used for listing all of the conversations for the provided group (on GroupChatsListTableViewController)

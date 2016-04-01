@@ -15,22 +15,27 @@ class AddGroupTableViewController: UITableViewController, UISearchResultsUpdatin
     var usersGroup: Group?
     var groupsDataSource: [Group] = []
     var searchController: UISearchController!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         updateView()
         setUpSearchController()
     }
     
     func updateView() {
-        GroupController.fetchAllGroups { (groups) -> Void in
-            self.groupsDataSource = groups.filter({$0.name != self.usersGroup?.name})
-            self.tableView.reloadData()
+
+        if let usersGroup = usersGroup {
+            GroupController.fetchAllGroups(usersGroup, completion: { (groups) in
+                if let groups = groups {
+                    self.groupsDataSource = groups
+                    self.tableView.reloadData()
+                }
+            })
         }
     }
-
-
+    
+    
     func setUpSearchController() {
         
         let resultsController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("GroupsSearchResultsTableViewController")
@@ -53,27 +58,27 @@ class AddGroupTableViewController: UITableViewController, UISearchResultsUpdatin
         resultsViewController.groupsResultsDataSource = groupsDataSource.filter({$0.name.lowercaseString.containsString(searchTerm)})
         resultsViewController.tableView.reloadData()
     }
-
-
-    // MARK: - Table view data source
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     
+    
+    // MARK: - Table view data source
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return groupsDataSource.count
     }
-
+    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("groupCell", forIndexPath: indexPath)
-
+        
         let group = groupsDataSource[indexPath.row]
         cell.textLabel?.text = group.name
-
+        
         return cell
     }
     
     // MARK: - Navigation
-
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toGroupProfileView" {
             guard let cell = sender as? UITableViewCell else { return }
@@ -98,5 +103,5 @@ class AddGroupTableViewController: UITableViewController, UISearchResultsUpdatin
             }
         }
     }
-
+    
 }

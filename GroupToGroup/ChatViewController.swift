@@ -134,15 +134,8 @@ class ChatViewController: UIViewController, UITextViewDelegate {
         alert.addAction(UIAlertAction(title: "Block Group", style: .Destructive, handler: { (blockGroup) in
             let areYouSure = UIAlertController(title: "Are you sure you want to block this group?", message: nil, preferredStyle: .Alert)
             areYouSure.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (leaveGroup) in
-                if let conversation = self.conversation, usersGroup = self.usersGroup {
-                    for group in self.conversationGroups {
-                        if group.identifier != self.usersGroup?.identifier {
-                            GroupController.blockGroup(usersGroup, blockeeGroup: group)
-                            break
-                        }
-                    }
-                    ConversationController.unlinkConversationFromGroups(conversation, groups: conversation.groups)
-                    conversation.delete()
+                if let conversation = self.conversation {
+                    ConversationController.blockGroupsInConversation(conversation)
                     self.navigationController?.popViewControllerAnimated(true)
                 } else {
                     print("error deleting the conversation")
