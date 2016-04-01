@@ -44,10 +44,24 @@ class GroupController {
         }
     }
     
+    // Method that will grab all of the blocked groups in Firebase for the currentGroup
+    
+    static func fetchAllBlockedGroups(usersGroup: Group, completion: (blockedGroups: [Group]) -> Void) {
+        FirebaseController.dataAtEndpoint("groups/\(usersGroup.identifier)/blockedGroups") { (data) in
+            if let json = data as? [String : AnyObject] {
+                let blockedGroups = json.flatMap({Group(json: $0.1 as! [String : AnyObject], identifier: $0.0)})
+                
+                completion(blockedGroups: blockedGroups)
+            } else {
+                completion(blockedGroups: [])
+            }
+        }
+    }
+    
     // Method to create a new group
     
-    static func createGroup(name: String, users: [User], conversations: [Conversation] = [], blockedGroups: [String] = [], completion: (group: Group?, success: Bool) -> Void) {
-        var group = Group(name: name.lowercaseString, users: users, conversations: conversations, blockedGroupsIDs: blockedGroups)
+    static func createGroup(name: String, users: [User], conversations: [Conversation] = [], blockedGroups: [Group] = [], completion: (group: Group?, success: Bool) -> Void) {
+        var group = Group(name: name.lowercaseString, users: users, conversations: conversations, blockedGroups: blockedGroups)
         
         // Check to see if the entered group name is still available
         FirebaseController.base.childByAppendingPath("groups").queryOrderedByChild("name").queryEqualToValue(group.name.lowercaseString).observeSingleEventOfType(.Value, withBlock: { snapshot in

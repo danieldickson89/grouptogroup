@@ -10,7 +10,7 @@ import Foundation
 
 class Message: FirebaseType {
     
-    let kConversation: String = "conversation"
+    //let kConversation: String = "conversation"
     let kText: String = "text"
     let kSenderID: String = "sender"
     let kSenderGroupID: String = "senderGroup"

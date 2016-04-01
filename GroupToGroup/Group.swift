@@ -20,6 +20,7 @@ class Group: FirebaseType {
     var userIDs: [String] = []
     var conversations: [Conversation] = []
     var conversationIDs: [String] = []
+    var blockedGroups: [Group] = []
     var blockedGroupIDs: [String] = []
     var identifier: String?
     var endpoint: String {
@@ -30,11 +31,11 @@ class Group: FirebaseType {
         return [kName: name, kUsers: userIDs, kConversations: conversationIDs, kBlockedGroups: blockedGroupIDs]
     }
     
-    init(name: String, users: [User], conversations: [Conversation], blockedGroupsIDs: [String]) {
+    init(name: String, users: [User], conversations: [Conversation], blockedGroups: [Group]) {
         self.name = name
         self.users = users
         self.conversations = conversations
-        self.blockedGroupIDs = blockedGroupsIDs
+        self.blockedGroups = blockedGroups
         var userIdentifiers: [String] = []
         for user in users {
             if let identifier = user.identifier {
@@ -45,6 +46,12 @@ class Group: FirebaseType {
         for conversation in conversations {
             if let identifier = conversation.identifier {
                 conversationIdentifiers.append(identifier)
+            }
+        }
+        var blockedGroupsIdentifiers: [String] = []
+        for blockedGroup in blockedGroups {
+            if let identifier = blockedGroup.identifier {
+                blockedGroupsIdentifiers.append(identifier)
             }
         }
     }
