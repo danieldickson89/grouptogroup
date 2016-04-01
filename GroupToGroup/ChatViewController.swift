@@ -13,6 +13,9 @@ class ChatViewController: UIViewController, UITextViewDelegate {
     var conversation: Conversation?
     var usersGroup: Group?
     var messagesArray: [Message] = []
+    var conversationGroups: [Group] {
+        return conversation!.groups
+    }
     
     @IBOutlet weak var mockUIView: UIView!
     @IBOutlet weak var mockTextView: UITextView!
@@ -93,13 +96,11 @@ class ChatViewController: UIViewController, UITextViewDelegate {
         
         mockTextView.hidden = true
         mockSendButton.hidden = true
-        //bottomConstraint.constant = keyboardFrame.height
         mockBottomConstraint.constant = 48 - keyboardFrame.height
         scrollToMostRecentMessage(true)
     }
     
     func keyboardHidden(notification: NSNotification) {
-        //bottomConstraint.constant = 0
         mockBottomConstraint.constant = 0
         mockTextView.hidden = false
         mockSendButton.hidden = false
@@ -134,7 +135,7 @@ class ChatViewController: UIViewController, UITextViewDelegate {
             let areYouSure = UIAlertController(title: "Are you sure you want to block this group?", message: nil, preferredStyle: .Alert)
             areYouSure.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (leaveGroup) in
                 if let conversation = self.conversation, usersGroup = self.usersGroup {
-                    for group in conversation.groups {
+                    for group in self.conversationGroups {
                         if group.identifier != self.usersGroup?.identifier {
                             GroupController.blockGroup(usersGroup, blockeeGroup: group)
                             break
@@ -168,7 +169,6 @@ extension ChatViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return messagesArray.count
     }
     
