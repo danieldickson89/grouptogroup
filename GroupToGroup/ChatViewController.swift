@@ -29,7 +29,6 @@ class ChatViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var mockBottomConstraint: NSLayoutConstraint!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,7 +37,6 @@ class ChatViewController: UIViewController, UITextViewDelegate {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ChatViewController.keyboardShown(_:)), name: UIKeyboardDidShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ChatViewController.keyboardHidden(_:)), name: UIKeyboardDidHideNotification, object: nil)
-        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -62,7 +60,6 @@ class ChatViewController: UIViewController, UITextViewDelegate {
         sendButton.layer.cornerRadius = 6.0
         myUIView.backgroundColor = UIColor(white: 0.75, alpha: 0.25)
         myUIView2.backgroundColor = UIColor(white: 0.75, alpha: 0.25)
-        
     }
     
     func updateWithConversation(conversation: Conversation) {
@@ -106,7 +103,7 @@ class ChatViewController: UIViewController, UITextViewDelegate {
         mockSendButton.hidden = false
         textView.text = ""
         mockTextView.text = ""
-        scrollToMostRecentMessage(true)
+        scrollToMostRecentMessage(false)
     }
     
     func textViewDidBeginEditing(textView: UITextView) {
