@@ -28,7 +28,7 @@ class AddGroupTableViewController: UITableViewController, UISearchResultsUpdatin
         if let usersGroup = usersGroup {
             GroupController.fetchAllGroups(usersGroup, completion: { (groups) in
                 if let groups = groups {
-                    self.groupsDataSource = groups
+                    self.groupsDataSource = groups.sort({$0.name < $1.name})
                     self.tableView.reloadData()
                 }
             })

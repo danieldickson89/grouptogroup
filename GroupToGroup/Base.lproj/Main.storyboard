@@ -170,7 +170,7 @@
                                             <constraint firstItem="css-pf-F64" firstAttribute="width" secondItem="Yho-WY-bQJ" secondAttribute="width" multiplier="2.5" id="7yc-vm-uuB"/>
                                         </constraints>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Groups:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="leu-XY-bf6">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   My Groups:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="leu-XY-bf6">
                                         <rect key="frame" x="0.0" y="33" width="512" height="33.5"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -402,17 +402,17 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQ9-xM-gxW">
-                                            <rect key="frame" x="8" y="8" width="584" height="28"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQ9-xM-gxW">
+                                            <rect key="frame" x="16" y="8" width="568" height="28"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="dQ9-xM-gxW" firstAttribute="leading" secondItem="rdI-hf-rA7" secondAttribute="leadingMargin" id="WqF-cv-nUJ"/>
+                                        <constraint firstItem="dQ9-xM-gxW" firstAttribute="leading" secondItem="rdI-hf-rA7" secondAttribute="leadingMargin" constant="8" id="WqF-cv-nUJ"/>
                                         <constraint firstItem="dQ9-xM-gxW" firstAttribute="top" secondItem="rdI-hf-rA7" secondAttribute="topMargin" id="ei9-O1-P0O"/>
-                                        <constraint firstItem="dQ9-xM-gxW" firstAttribute="trailing" secondItem="rdI-hf-rA7" secondAttribute="trailingMargin" id="g92-LM-RUR"/>
+                                        <constraint firstItem="dQ9-xM-gxW" firstAttribute="trailing" secondItem="rdI-hf-rA7" secondAttribute="trailingMargin" constant="-8" id="g92-LM-RUR"/>
                                         <constraint firstItem="dQ9-xM-gxW" firstAttribute="centerY" secondItem="rdI-hf-rA7" secondAttribute="centerY" id="hkY-zc-oEL"/>
                                     </constraints>
                                 </tableViewCellContentView>

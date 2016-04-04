@@ -41,7 +41,16 @@ class GroupController {
                 for groupID in usersGroup.blockedGroupIDs {
                     groups = groups.filter({$0.identifier != groupID})
                 }
-                completion(groups: groups)
+                ConversationController.observeConversationsForGroup(usersGroup, completion: { (conversations) in
+                    for conversation in conversations {
+                        for groupID in conversation.groupIDs {
+                            groups = groups.filter({$0.identifier != groupID})
+                        }
+                    }
+                    completion(groups: groups)
+                })
+
+                //completion(groups: groups)
             } else {
                 completion(groups: nil)
             }

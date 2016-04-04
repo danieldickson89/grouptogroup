@@ -18,6 +18,7 @@ class GroupChatsListTableViewController: UITableViewController, UINavigationCont
         super.viewDidLoad()
         
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -52,7 +53,7 @@ class GroupChatsListTableViewController: UITableViewController, UINavigationCont
         tableView.reloadData()
         if let group = usersGroup {
             ConversationController.observeConversationsForGroup(group) { (conversations) -> Void in
-                self.conversationsArray = conversations
+                self.conversationsArray = conversations.sort({$0.identifier < $1.identifier})
                 self.tableView.reloadData()
             }
         }
@@ -74,7 +75,7 @@ class GroupChatsListTableViewController: UITableViewController, UINavigationCont
             }))
             areYouSure.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
             self.presentViewController(areYouSure, animated: true, completion: nil)
-
+            
         }))
         options.addAction(UIAlertAction(title: "Share this GroupID", style: .Default, handler: { (invite) in
             self.sendTextMessage()
