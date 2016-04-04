@@ -27,6 +27,7 @@ class ChatViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var sendButton: UIButton!
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var mockBottomConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
@@ -93,12 +94,14 @@ class ChatViewController: UIViewController, UITextViewDelegate {
         
         mockTextView.hidden = true
         mockSendButton.hidden = true
-        mockBottomConstraint.constant = 48 - keyboardFrame.height
+        tableViewBottomConstraint.constant = keyboardFrame.height
+        //mockBottomConstraint.constant = 48 - keyboardFrame.height
         scrollToMostRecentMessage(true)
     }
     
     func keyboardHidden(notification: NSNotification) {
-        mockBottomConstraint.constant = 0
+        tableViewBottomConstraint.constant = 46
+        //mockBottomConstraint.constant = 0
         mockTextView.hidden = false
         mockSendButton.hidden = false
         textView.text = ""

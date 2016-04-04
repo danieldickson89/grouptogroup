@@ -80,17 +80,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="*username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dWj-St-P5L">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="*username" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dWj-St-P5L">
                                 <rect key="frame" x="20" y="154" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="*email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tL7-0j-aEB">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="*email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="tL7-0j-aEB">
                                 <rect key="frame" x="20" y="202" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="*password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dPn-Zg-ifT">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="*password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dPn-Zg-ifT">
                                 <rect key="frame" x="20" y="249" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
@@ -683,9 +683,10 @@
                             <constraint firstItem="dNy-oV-aU1" firstAttribute="leading" secondItem="VjV-lV-zzx" secondAttribute="leading" id="Bq4-9h-oO2"/>
                             <constraint firstItem="dNy-oV-aU1" firstAttribute="trailing" secondItem="VjV-lV-zzx" secondAttribute="trailing" id="FWs-P7-uD8"/>
                             <constraint firstItem="VjV-lV-zzx" firstAttribute="leading" secondItem="hNR-0z-Ih6" secondAttribute="leading" id="KgS-3U-zMw"/>
+                            <constraint firstItem="fUi-P2-7W5" firstAttribute="top" secondItem="VjV-lV-zzx" secondAttribute="bottom" constant="46" id="hSP-g5-QGy"/>
                             <constraint firstAttribute="trailing" secondItem="VjV-lV-zzx" secondAttribute="trailing" id="hfr-Cn-SCW"/>
+                            <constraint firstItem="fUi-P2-7W5" firstAttribute="top" secondItem="dNy-oV-aU1" secondAttribute="bottom" id="omk-Av-lnO"/>
                             <constraint firstItem="VjV-lV-zzx" firstAttribute="top" secondItem="Olg-W0-akt" secondAttribute="bottom" id="pB7-Nb-E2k"/>
-                            <constraint firstItem="dNy-oV-aU1" firstAttribute="top" secondItem="VjV-lV-zzx" secondAttribute="bottom" id="vv0-I9-sTl"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ZMq-Fc-z2G">
@@ -704,6 +705,7 @@
                         <outlet property="myUIView2" destination="TjX-9U-8eI" id="KcH-qv-soh"/>
                         <outlet property="sendButton" destination="s1e-lf-GFK" id="E5T-hZ-SuW"/>
                         <outlet property="tableView" destination="VjV-lV-zzx" id="kBw-FU-Hao"/>
+                        <outlet property="tableViewBottomConstraint" destination="hSP-g5-QGy" id="0ki-eA-MK8"/>
                         <outlet property="textView" destination="RXm-Gk-E3B" id="EL9-5g-faD"/>
                     </connections>
                 </viewController>
