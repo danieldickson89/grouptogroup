@@ -144,20 +144,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dQl-TM-yeO">
-                                <rect key="frame" x="8" y="76" width="584" height="516"/>
+                                <rect key="frame" x="8" y="94" width="512" height="498"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9yS-1I-J3L">
-                                        <rect key="frame" x="0.0" y="0.0" width="584" height="47"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="512" height="33"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Group ID... Then Press 'Join'" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="css-pf-F64">
-                                                <rect key="frame" x="0.0" y="0.0" width="430.5" height="47"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter groupID here..." textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="css-pf-F64">
+                                                <rect key="frame" x="0.0" y="0.0" width="358.5" height="33"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yho-WY-bQJ">
-                                                <rect key="frame" x="440.5" y="0.0" width="143.5" height="47"/>
+                                                <rect key="frame" x="368.5" y="0.0" width="143.5" height="33"/>
                                                 <color key="backgroundColor" red="0.17098673780000001" green="0.52627159180000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="Join Group">
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                                <state key="normal" title="Join">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -166,28 +167,28 @@
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="css-pf-F64" firstAttribute="width" secondItem="Yho-WY-bQJ" secondAttribute="width" multiplier="3" id="7yc-vm-uuB"/>
+                                            <constraint firstItem="css-pf-F64" firstAttribute="width" secondItem="Yho-WY-bQJ" secondAttribute="width" multiplier="2.5" id="7yc-vm-uuB"/>
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Groups:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="leu-XY-bf6">
-                                        <rect key="frame" x="0.0" y="47" width="584" height="47"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="33" width="512" height="33.5"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MEU-BK-xjG">
-                                        <rect key="frame" x="0.0" y="94" width="584" height="422"/>
+                                        <rect key="frame" x="0.0" y="66.5" width="512" height="431.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="yourGroupNameCell" id="qRW-MW-wwr">
-                                                <rect key="frame" x="0.0" y="28" width="584" height="44"/>
+                                                <rect key="frame" x="0.0" y="28" width="512" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qRW-MW-wwr" id="TNy-KF-NfF">
-                                                    <rect key="frame" x="0.0" y="0.0" width="584" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="512" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
                                                 <connections>
-                                                    <segue destination="liP-RG-9nR" kind="custom" identifier="toConversations" trigger="accessoryAction" customClass="SWRevealViewControllerSeguePushController" id="Mpo-HW-LEh"/>
+                                                    <segue destination="vFB-Ci-YAX" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="qyL-HI-1CH"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -200,15 +201,15 @@
                                 <constraints>
                                     <constraint firstItem="css-pf-F64" firstAttribute="height" secondItem="leu-XY-bf6" secondAttribute="height" id="NNj-Is-bWN"/>
                                     <constraint firstItem="9yS-1I-J3L" firstAttribute="height" secondItem="leu-XY-bf6" secondAttribute="height" id="jW2-ef-g9p"/>
-                                    <constraint firstItem="leu-XY-bf6" firstAttribute="height" secondItem="MEU-BK-xjG" secondAttribute="height" multiplier="1/9" id="qmS-JB-3C1"/>
+                                    <constraint firstItem="leu-XY-bf6" firstAttribute="height" secondItem="MEU-BK-xjG" secondAttribute="height" multiplier="1/13" id="qmS-JB-3C1"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="dQl-TM-yeO" firstAttribute="leading" secondItem="y9g-44-Kwo" secondAttribute="leading" constant="8" id="8Lr-NK-jd3"/>
-                            <constraint firstAttribute="trailing" secondItem="dQl-TM-yeO" secondAttribute="trailing" constant="8" id="Y24-QK-zJY"/>
-                            <constraint firstItem="dQl-TM-yeO" firstAttribute="top" secondItem="gQV-73-kNN" secondAttribute="bottom" constant="12" id="eCd-Zh-Buh"/>
+                            <constraint firstAttribute="trailing" secondItem="dQl-TM-yeO" secondAttribute="trailing" constant="80" id="Y24-QK-zJY"/>
+                            <constraint firstItem="dQl-TM-yeO" firstAttribute="top" secondItem="gQV-73-kNN" secondAttribute="bottom" constant="30" id="eCd-Zh-Buh"/>
                             <constraint firstAttribute="bottom" secondItem="dQl-TM-yeO" secondAttribute="bottom" constant="8" id="rK0-Ub-XPu"/>
                         </constraints>
                     </view>
@@ -323,7 +324,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UcB-vZ-QnI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3545" y="0.0"/>
+            <point key="canvasLocation" x="3889" y="316"/>
         </scene>
         <!--Add Group Table View Controller-->
         <scene sceneID="zpi-C9-X4t">
@@ -335,7 +336,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupCell" id="Y1U-5F-FBx">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Y1U-5F-FBx" id="8Sb-AA-bMf">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -355,7 +356,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K9F-Uo-yLp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2793" y="726"/>
+            <point key="canvasLocation" x="3949" y="1042"/>
         </scene>
         <!--Groups Search Results Table View Controller-->
         <scene sceneID="End-An-EhQ">
@@ -383,7 +384,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o23-h7-oMU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3545" y="726"/>
+            <point key="canvasLocation" x="4701" y="1042"/>
         </scene>
         <!--Group Chats List Table View Controller-->
         <scene sceneID="hFI-0N-CIe">
@@ -395,7 +396,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="conversationCell" id="iiP-TX-zoa" customClass="ConversationListTableViewCell" customModule="GroupToGroup" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iiP-TX-zoa" id="rdI-hf-rA7">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -446,7 +447,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mex-Bz-XMD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1911" y="1041"/>
+            <point key="canvasLocation" x="2719" y="1041"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="95C-mI-k9R">
@@ -499,7 +500,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <segue destination="liP-RG-9nR" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="KTP-Nu-tLg"/>
+                        <segue destination="vFB-Ci-YAX" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="KTP-Nu-tLg"/>
                         <segue destination="Lna-vL-Pge" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="f9g-e5-Qtp"/>
                     </connections>
                 </viewController>
@@ -520,12 +521,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VjV-lV-zzx">
-                                <rect key="frame" x="0.0" y="20" width="600" height="490"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="446"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="rightMessageCell" id="5BZ-xl-Pz4" customClass="ChatTableViewCell" customModule="GroupToGroup" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5BZ-xl-Pz4" id="PLs-He-Q4Q">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -590,7 +591,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="leftMessageCell" id="WTz-Xd-j6O" customClass="ChatTableViewCell" customModule="GroupToGroup" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="72" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="136" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WTz-Xd-j6O" id="gtY-uv-2aH">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -780,13 +781,31 @@
                     </constraints>
                 </view>
             </objects>
-            <point key="canvasLocation" x="2793" y="1577"/>
+            <point key="canvasLocation" x="3949" y="1893"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2Yi-zB-1YV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vFB-Ci-YAX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="k3y-Mo-9BH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="liP-RG-9nR" kind="relationship" relationship="rootViewController" id="Pd6-Nm-ry9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="47H-JB-ztM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1907" y="1041"/>
         </scene>
     </scenes>
     <resources>
         <image name="more" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="KTP-Nu-tLg"/>
+        <segue reference="qyL-HI-1CH"/>
     </inferredMetricsTieBreakers>
 </document>

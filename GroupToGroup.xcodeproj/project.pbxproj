@@ -157,10 +157,10 @@
 		3938FBE71C8F872700BAD9CD /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				3938FBE31C8F810800BAD9CD /* GroupChatsListTableViewController.swift */,
 				3938FBDB1C8F806E00BAD9CD /* LoginViewController.swift */,
 				3938FBDD1C8F809100BAD9CD /* SignUpViewController.swift */,
 				3938FBDF1C8F80CC00BAD9CD /* YourGroupsViewController.swift */,
-				3938FBE31C8F810800BAD9CD /* GroupChatsListTableViewController.swift */,
 				396BE9FB1CAB16A3004DB4F1 /* ConversationListTableViewCell.swift */,
 				3938FBE11C8F80EA00BAD9CD /* AddGroupTableViewController.swift */,
 				3918B42C1CA361E200E16407 /* GroupsSearchResultsTableViewController.swift */,

@@ -26,6 +26,7 @@ class YourGroupsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //if let group1 = groupsArray[0]
     }
     
     // Set up toolbar and appearance before the view appears
@@ -140,12 +141,13 @@ class YourGroupsViewController: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if segue.identifier == "toConversations" {
-            if let cell = sender as? UITableViewCell, indexPath = yourGroupsListTableView.indexPathForCell(cell) {
-                let groupChatsListTableViewController = segue.destinationViewController as! GroupChatsListTableViewController
-                let group = groupsArray[indexPath.row]
-                groupChatsListTableViewController.usersGroup = group
-            }
+        if let cell = sender as? UITableViewCell, indexPath = yourGroupsListTableView.indexPathForCell(cell) {
+            let navController = segue.destinationViewController as! UINavigationController
+            let groupChatsListTableViewController = navController.viewControllers[0] as! GroupChatsListTableViewController
+            
+            let group = groupsArray[indexPath.row]
+            groupChatsListTableViewController.usersGroup = group
+            groupChatsListTableViewController.navigationController?.navigationBarHidden = false
         }
     }
     
@@ -160,7 +162,7 @@ extension YourGroupsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("yourGroupNameCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("yourGroupNameCell", forIndexPath: indexPath) as UITableViewCell
         
         let group = groupsArray[indexPath.row]
         
