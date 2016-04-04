@@ -17,6 +17,7 @@ class GroupChatsListTableViewController: UITableViewController, UINavigationCont
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
     }
     
     override func viewWillAppear(animated: Bool) {

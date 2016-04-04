@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Lna-vL-Pge">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Fz5-S2-pIA">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -187,7 +187,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
                                                 <connections>
-                                                    <segue destination="liP-RG-9nR" kind="show" identifier="toConversations" id="LID-9h-RPd"/>
+                                                    <segue destination="liP-RG-9nR" kind="custom" identifier="toConversations" trigger="accessoryAction" customClass="SWRevealViewControllerSeguePushController" id="Mpo-HW-LEh"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -335,7 +335,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupCell" id="Y1U-5F-FBx">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Y1U-5F-FBx" id="8Sb-AA-bMf">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -395,7 +395,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="conversationCell" id="iiP-TX-zoa" customClass="ConversationListTableViewCell" customModule="GroupToGroup" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iiP-TX-zoa" id="rdI-hf-rA7">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -485,6 +485,28 @@
             </objects>
             <point key="canvasLocation" x="263" y="1041"/>
         </scene>
+        <!--Reveal View Controller-->
+        <scene sceneID="nRd-2f-GnG">
+            <objects>
+                <viewController id="Fz5-S2-pIA" customClass="SWRevealViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zXy-OD-EBI"/>
+                        <viewControllerLayoutGuide type="bottom" id="WUm-Tb-EjG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Rpd-7a-koL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="liP-RG-9nR" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="KTP-Nu-tLg"/>
+                        <segue destination="Lna-vL-Pge" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="f9g-e5-Qtp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MYV-ik-Biw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1075" y="1975"/>
+        </scene>
         <!--Chat View Controller-->
         <scene sceneID="TIW-O3-bUF">
             <objects>
@@ -498,12 +520,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VjV-lV-zzx">
-                                <rect key="frame" x="0.0" y="64" width="600" height="446"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="490"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="rightMessageCell" id="5BZ-xl-Pz4" customClass="ChatTableViewCell" customModule="GroupToGroup" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5BZ-xl-Pz4" id="PLs-He-Q4Q">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -568,7 +590,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="leftMessageCell" id="WTz-Xd-j6O" customClass="ChatTableViewCell" customModule="GroupToGroup" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="136" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="72" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WTz-Xd-j6O" id="gtY-uv-2aH">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -764,4 +786,7 @@
     <resources>
         <image name="more" width="25" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="KTP-Nu-tLg"/>
+    </inferredMetricsTieBreakers>
 </document>
