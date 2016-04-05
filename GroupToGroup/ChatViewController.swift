@@ -61,6 +61,13 @@ class ChatViewController: UIViewController, UITextViewDelegate {
         sendButton.layer.cornerRadius = 6.0
         myUIView.backgroundColor = UIColor(white: 0.75, alpha: 0.25)
         myUIView2.backgroundColor = UIColor(white: 0.75, alpha: 0.25)
+        
+        // Color appearance setup
+        self.navigationController?.navigationBar.tintColor = UIColor.myGreenColor()
+        view.backgroundColor = UIColor.menuBackgroundColor()
+        self.navigationController?.navigationBar.barTintColor = UIColor.myNavBarTintColor()
+        tableView.backgroundColor = UIColor.menuBackgroundColor()
+
     }
     
     func updateWithConversation(conversation: Conversation) {
@@ -172,16 +179,19 @@ extension ChatViewController: UITableViewDataSource, UITableViewDelegate {
         if conversation?.currentGroup?.identifier == message.senderGroupID &&
             UserController.currentUser.identifier == message.senderID {
             let cell = tableView.dequeueReusableCellWithIdentifier("rightMessageCell", forIndexPath: indexPath) as! ChatTableViewCell
+            cell.backgroundColor = UIColor.menuBackgroundColor()
             cell.updateWithBlueMessage(message)
             return cell
             
         } else if conversation?.currentGroup?.identifier == message.senderGroupID {
             let cell = tableView.dequeueReusableCellWithIdentifier("rightMessageCell", forIndexPath: indexPath) as! ChatTableViewCell
+            cell.backgroundColor = UIColor.menuBackgroundColor()
             cell.updateWithRightGrayMessage(message)
             return cell
             
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier("leftMessageCell", forIndexPath: indexPath) as! ChatTableViewCell
+            cell.backgroundColor = UIColor.menuBackgroundColor()
             cell.updateWithGrayMessage(message)
             return cell
         }

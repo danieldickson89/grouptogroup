@@ -91,6 +91,7 @@ class YourGroupsViewController: UIViewController {
     {
         textField.placeholder = "Enter name of group"
         tField = textField
+        tField.keyboardAppearance = .Dark
     }
     
     // Create an alert to be shown when user enters a duplicate group name that is invalid

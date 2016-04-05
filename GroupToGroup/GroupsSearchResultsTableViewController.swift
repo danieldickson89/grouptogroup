@@ -12,6 +12,16 @@ class GroupsSearchResultsTableViewController: UITableViewController {
     
     var groupsResultsDataSource: [Group] = []
 
+    override func viewWillAppear(animated: Bool) {
+        view.backgroundColor = UIColor.chatListBackgroundColor()
+        tableView.backgroundColor = UIColor.chatListBackgroundColor()
+        self.navigationController?.navigationBar.tintColor = UIColor.myGreenColor()
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        navigationController?.toolbar.barTintColor = UIColor.myNavBarTintColor()
+        self.navigationController?.setToolbarHidden(true, animated: true)
+        
+    }
+    
     // MARK: - Table view data source
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -24,6 +34,8 @@ class GroupsSearchResultsTableViewController: UITableViewController {
         let group = groupsResultsDataSource[indexPath.row]
         
         cell.textLabel?.text = group.name
+        cell.textLabel?.textColor = UIColor.whiteColor()
+        cell.backgroundColor = UIColor.chatListBackgroundColor()
         
         return cell
     }

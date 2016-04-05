@@ -23,6 +23,16 @@ class AddGroupTableViewController: UITableViewController, UISearchResultsUpdatin
         setUpSearchController()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        view.backgroundColor = UIColor.chatListBackgroundColor()
+        tableView.backgroundColor = UIColor.chatListBackgroundColor()
+        self.navigationController?.navigationBar.tintColor = UIColor.myGreenColor()
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        navigationController?.toolbar.barTintColor = UIColor.myNavBarTintColor()
+        self.navigationController?.setToolbarHidden(true, animated: true)
+
+    }
+    
     func updateView() {
 
         if let usersGroup = usersGroup {
@@ -40,11 +50,20 @@ class AddGroupTableViewController: UITableViewController, UISearchResultsUpdatin
         
         let resultsController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("GroupsSearchResultsTableViewController")
         
+        
         searchController = UISearchController(searchResultsController: resultsController)
         searchController.searchResultsUpdater = self
         searchController.searchBar.sizeToFit()
         searchController.hidesNavigationBarDuringPresentation = false
+        searchController.searchBar.barStyle = .BlackTranslucent
+        searchController.searchBar.tintColor = UIColor.myGreenColor()
+        searchController.searchBar.keyboardAppearance = .Dark
         tableView.tableHeaderView = searchController.searchBar
+        
+        
+        if let textFieldInsideSearchBar = searchController.searchBar.valueForKey("searchField") as? UITextField {
+            textFieldInsideSearchBar.textColor = UIColor.whiteColor()
+        }
         
         definesPresentationContext = true
     }
@@ -73,6 +92,8 @@ class AddGroupTableViewController: UITableViewController, UISearchResultsUpdatin
         
         let group = groupsDataSource[indexPath.row]
         cell.textLabel?.text = group.name
+        cell.textLabel?.textColor = UIColor.whiteColor()
+        cell.backgroundColor = UIColor.chatListBackgroundColor()
         
         return cell
     }
@@ -103,5 +124,4 @@ class AddGroupTableViewController: UITableViewController, UISearchResultsUpdatin
             }
         }
     }
-    
 }

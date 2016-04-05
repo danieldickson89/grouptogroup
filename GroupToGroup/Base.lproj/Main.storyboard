@@ -614,6 +614,8 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="rightLabel" destination="XsB-70-bCN" id="9c2-2t-VPc"/>
+                                            <outlet property="rightMainUIView" destination="heq-zi-HRb" id="Zbm-0d-dZz"/>
+                                            <outlet property="rightTopUIView" destination="PLs-He-Q4Q" id="eHf-bb-2ef"/>
                                             <outlet property="rightUIView" destination="bR6-Jz-pbQ" id="chM-W8-ONJ"/>
                                         </connections>
                                     </tableViewCell>
@@ -685,6 +687,8 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="leftLabel" destination="kOr-Vp-ge2" id="NU8-8g-QUy"/>
+                                            <outlet property="leftMainUIView" destination="u7R-sx-z22" id="rv2-F3-8xN"/>
+                                            <outlet property="leftTopUIView" destination="gtY-uv-2aH" id="30Z-gs-g79"/>
                                             <outlet property="leftUIView" destination="dIr-8Y-I0F" id="xUc-2R-nTy"/>
                                         </connections>
                                     </tableViewCell>
@@ -694,23 +698,24 @@
                                     <outlet property="delegate" destination="VVM-hB-Ueq" id="hzJ-3X-x1W"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dNy-oV-aU1">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dNy-oV-aU1">
                                 <rect key="frame" x="0.0" y="510" width="600" height="46"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QdN-rR-Jp6">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QdN-rR-Jp6">
                                         <rect key="frame" x="8" y="8" width="504" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert"/>
                                     </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p95-bb-O7w">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p95-bb-O7w">
                                         <rect key="frame" x="520" y="8" width="72" height="30"/>
-                                        <color key="backgroundColor" red="0.17098673780000001" green="0.52627159180000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="72" id="qXr-RM-lKt"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
                                         <state key="normal" title="Send">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" red="0.36508461310000001" green="1" blue="0.42784337030000003" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
                                 </subviews>
@@ -772,16 +777,17 @@
                                     <rect key="frame" x="8" y="8" width="504" height="32"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert"/>
                                 </textView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s1e-lf-GFK">
                                     <rect key="frame" x="520" y="8" width="72" height="32"/>
-                                    <color key="backgroundColor" red="0.17098673780000001" green="0.52627159180000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="72" id="cPZ-hD-5tx"/>
                                     </constraints>
+                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
                                     <state key="normal" title="Send">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleColor" red="0.33731000880000001" green="1" blue="0.4138532472" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
                                     <connections>
                                         <action selector="sendButtonTapped:" destination="VVM-hB-Ueq" eventType="touchUpInside" id="mfx-LC-SM5"/>
