@@ -37,7 +37,6 @@ class GroupProfileViewController: UIViewController {
     @IBAction func startChatButtonTapped(sender: AnyObject) {
         if let usersGroup = self.usersGroup, group = self.group {
             ConversationController.createConversation("\(usersGroup.name) vs \(group.name)", groups: [usersGroup, group]) { (conversation) -> Void in
-                // print("\(usersGroup.name) has started a conversation with \(group.name)")
                 self.dismissViewControllerAnimated(true, completion: nil)
             }
         }

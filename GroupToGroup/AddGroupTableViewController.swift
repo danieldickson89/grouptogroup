@@ -30,11 +30,11 @@ class AddGroupTableViewController: UITableViewController, UISearchResultsUpdatin
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         navigationController?.toolbar.barTintColor = UIColor.myNavBarTintColor()
         self.navigationController?.setToolbarHidden(true, animated: true)
-
+        
     }
     
     func updateView() {
-
+        
         if let usersGroup = usersGroup {
             GroupController.fetchAllGroups(usersGroup, completion: { (groups) in
                 if let groups = groups {
@@ -112,7 +112,6 @@ class AddGroupTableViewController: UITableViewController, UISearchResultsUpdatin
                 let destinationViewController = segue.destinationViewController as? GroupProfileViewController
                 destinationViewController?.group = group
                 destinationViewController?.usersGroup = usersGroup
-                
             } else if let indexPath = (searchController.searchResultsController as? GroupsSearchResultsTableViewController)?.tableView.indexPathForCell(cell) {
                 
                 let group = (searchController.searchResultsController as! GroupsSearchResultsTableViewController).groupsResultsDataSource[indexPath.row]

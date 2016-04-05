@@ -351,7 +351,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7d4-kf-wJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3949" y="340"/>
+            <point key="canvasLocation" x="3565" y="316"/>
         </scene>
         <!--Add Group Table View Controller-->
         <scene sceneID="zpi-C9-X4t">
@@ -370,7 +370,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="aTs-Ab-6ad" kind="presentation" identifier="toGroupProfileView" trigger="accessoryAction" id="Gp6-rf-4Xa"/>
+                                    <segue destination="aTs-Ab-6ad" kind="presentation" identifier="toGroupProfileView" id="LrO-hF-EKJ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -383,7 +383,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K9F-Uo-yLp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3949" y="1066"/>
+            <point key="canvasLocation" x="3565" y="1042"/>
         </scene>
         <!--Groups Search Results Table View Controller-->
         <scene sceneID="End-An-EhQ">
@@ -411,7 +411,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o23-h7-oMU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4701" y="1066"/>
+            <point key="canvasLocation" x="4317" y="1042"/>
         </scene>
         <!--Group Chats List Table View Controller-->
         <scene sceneID="hFI-0N-CIe">
@@ -823,7 +823,7 @@
                     </constraints>
                 </view>
             </objects>
-            <point key="canvasLocation" x="3949" y="1893"/>
+            <point key="canvasLocation" x="3565" y="1869"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2Yi-zB-1YV">
