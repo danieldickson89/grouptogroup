@@ -102,13 +102,11 @@ class ChatViewController: UIViewController, UITextViewDelegate {
         mockTextView.hidden = true
         mockSendButton.hidden = true
         tableViewBottomConstraint.constant = keyboardFrame.height
-        //mockBottomConstraint.constant = 48 - keyboardFrame.height
         scrollToMostRecentMessage(true)
     }
     
     func keyboardHidden(notification: NSNotification) {
         tableViewBottomConstraint.constant = 46
-        //mockBottomConstraint.constant = 0
         mockTextView.hidden = false
         mockSendButton.hidden = false
         textView.text = ""
@@ -126,7 +124,6 @@ class ChatViewController: UIViewController, UITextViewDelegate {
         
         if let text = textView.text, currentUser = UserController.currentUser {
             MessageController.createMessage(text, senderID: currentUser.identifier!, conversation: self.conversation!, completion: { (message) -> Void in
-                //print("\(currentUser.username): \(text)")
             })
             textView.resignFirstResponder()
             mockTextView.resignFirstResponder()

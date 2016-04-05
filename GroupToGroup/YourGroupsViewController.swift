@@ -40,6 +40,10 @@ class YourGroupsViewController: UIViewController {
         self.navigationController?.navigationBar.barTintColor = UIColor.myNavBarTintColor()
         yourGroupsListTableView.backgroundColor = UIColor.menuBackgroundColor()
         
+        joinGroupButton.layer.cornerRadius = 6.0
+        logoutButton.layer.cornerRadius = 6.0
+        logoutButton.backgroundColor = UIColor(white: 0.75, alpha: 0.25)
+        
         self.navigationController?.setToolbarHidden(true, animated: true)
         if let _ = UserController.currentUser {
             setupAppearanceForCurrentUser()
@@ -51,9 +55,9 @@ class YourGroupsViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         
-        joinGroupButton.layer.cornerRadius = 6.0
-        logoutButton.layer.cornerRadius = 6.0
-        logoutButton.backgroundColor = UIColor(white: 0.75, alpha: 0.25)
+//        joinGroupButton.layer.cornerRadius = 6.0
+//        logoutButton.layer.cornerRadius = 6.0
+//        logoutButton.backgroundColor = UIColor(white: 0.75, alpha: 0.25)
         
     }
     

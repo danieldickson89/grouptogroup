@@ -274,44 +274,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bXh-e9-0eb">
+                                <rect key="frame" x="20" y="28" width="57" height="36"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelButtonTapped:" destination="aTs-Ab-6ad" eventType="touchUpInside" id="cCX-WL-QJS"/>
+                                </connections>
+                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3T6-kG-lKz">
-                                <rect key="frame" x="20" y="28" width="560" height="552"/>
+                                <rect key="frame" x="20" y="72" width="560" height="508"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="300" translatesAutoresizingMaskIntoConstraints="NO" id="F9U-Ja-JyT">
-                                        <rect key="frame" x="0.0" y="0.0" width="560" height="44"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bXh-e9-0eb">
-                                                <rect key="frame" x="0.0" y="0.0" width="130" height="44"/>
-                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
-                                                <state key="normal" title="Cancel"/>
-                                                <connections>
-                                                    <action selector="cancelButtonTapped:" destination="aTs-Ab-6ad" eventType="touchUpInside" id="cCX-WL-QJS"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8DM-Fw-LkN">
-                                                <rect key="frame" x="430" y="0.0" width="130" height="44"/>
-                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
-                                                <state key="normal" title="Start Chat"/>
-                                                <connections>
-                                                    <action selector="startChatButtonTapped:" destination="aTs-Ab-6ad" eventType="touchUpInside" id="keQ-c4-K0q"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Be7-bw-bfB">
-                                        <rect key="frame" x="0.0" y="44" width="560" height="44"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="42"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Group Members:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NPm-91-km3">
-                                        <rect key="frame" x="0.0" y="88" width="560" height="22.5"/>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <rect key="frame" x="0.0" y="42" width="560" height="42"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1fe-7x-eTT">
-                                        <rect key="frame" x="0.0" y="110.5" width="560" height="441.5"/>
+                                        <rect key="frame" x="0.0" y="84" width="560" height="424"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="groupMemberCell" id="rY0-aT-KtV">
@@ -324,22 +311,34 @@
                                             </tableViewCell>
                                         </prototypes>
                                         <connections>
-                                            <outlet property="dataSource" destination="aTs-Ab-6ad" id="E0K-rz-LGa"/>
-                                            <outlet property="delegate" destination="aTs-Ab-6ad" id="kRm-8p-2UN"/>
+                                            <outlet property="dataSource" destination="aTs-Ab-6ad" id="MZY-Ib-TlR"/>
+                                            <outlet property="delegate" destination="aTs-Ab-6ad" id="I8j-Uf-woO"/>
                                         </connections>
                                     </tableView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="F9U-Ja-JyT" firstAttribute="height" secondItem="Be7-bw-bfB" secondAttribute="height" id="tp6-1T-vUB"/>
+                                    <constraint firstItem="NPm-91-km3" firstAttribute="height" secondItem="Be7-bw-bfB" secondAttribute="height" id="5bP-0e-DzU"/>
                                     <constraint firstItem="Be7-bw-bfB" firstAttribute="height" secondItem="1fe-7x-eTT" secondAttribute="height" multiplier="1/10" id="z54-hu-Rsn"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8DM-Fw-LkN">
+                                <rect key="frame" x="497" y="28" width="83" height="36"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
+                                <state key="normal" title="Start Chat"/>
+                                <connections>
+                                    <action selector="startChatButtonTapped:" destination="aTs-Ab-6ad" eventType="touchUpInside" id="keQ-c4-K0q"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="3T6-kG-lKz" firstAttribute="top" secondItem="nkk-dv-PMf" secondAttribute="bottom" constant="8" id="2F2-uk-ik1"/>
+                            <constraint firstItem="3T6-kG-lKz" firstAttribute="top" secondItem="nkk-dv-PMf" secondAttribute="bottom" constant="52" id="2F2-uk-ik1"/>
                             <constraint firstItem="3T6-kG-lKz" firstAttribute="leading" secondItem="OUO-RX-GYN" secondAttribute="leadingMargin" id="USL-zt-S8n"/>
+                            <constraint firstItem="bXh-e9-0eb" firstAttribute="top" secondItem="nkk-dv-PMf" secondAttribute="bottom" constant="8" id="iPq-r6-wnr"/>
+                            <constraint firstItem="bXh-e9-0eb" firstAttribute="leading" secondItem="OUO-RX-GYN" secondAttribute="leadingMargin" id="q6f-ev-MLd"/>
+                            <constraint firstItem="8DM-Fw-LkN" firstAttribute="top" secondItem="nkk-dv-PMf" secondAttribute="bottom" constant="8" id="rph-E2-vlb"/>
                             <constraint firstItem="WHu-bg-Yqk" firstAttribute="top" secondItem="3T6-kG-lKz" secondAttribute="bottom" constant="20" id="vmg-rW-3I4"/>
+                            <constraint firstItem="8DM-Fw-LkN" firstAttribute="trailing" secondItem="OUO-RX-GYN" secondAttribute="trailingMargin" id="wR2-7M-VMN"/>
                             <constraint firstItem="3T6-kG-lKz" firstAttribute="trailing" secondItem="OUO-RX-GYN" secondAttribute="trailingMargin" id="xtZ-u7-y7l"/>
                         </constraints>
                     </view>
@@ -347,6 +346,7 @@
                         <outlet property="cancelButton" destination="bXh-e9-0eb" id="BVj-p5-HxK"/>
                         <outlet property="groupNameLabel" destination="Be7-bw-bfB" id="VoR-VT-ydz"/>
                         <outlet property="startChatButton" destination="8DM-Fw-LkN" id="RyX-Qb-Bqh"/>
+                        <outlet property="tableView" destination="1fe-7x-eTT" id="tde-xL-6T8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7d4-kf-wJe" userLabel="First Responder" sceneMemberID="firstResponder"/>

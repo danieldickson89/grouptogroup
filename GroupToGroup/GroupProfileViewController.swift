@@ -14,25 +14,44 @@ class GroupProfileViewController: UIViewController {
     
     var group: Group?
     var usersGroup: Group?
+    var membersArray: [User] = []
     
     @IBOutlet weak var groupNameLabel: UILabel!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var startChatButton: UIButton!
+    @IBOutlet weak var tableView: UITableView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        startChatButton.layer.cornerRadius = 6.0
-        startChatButton.backgroundColor = UIColor.blackColor()
-        cancelButton.layer.cornerRadius = 6.0
-        cancelButton.backgroundColor = UIColor.blackColor()
-        if let group = group {
-            groupNameLabel.text = group.name
-        }
     }
     
+    override func viewWillAppear(animated: Bool) {
+        if let _ = self.group {
+            self.groupNameLabel.text = group!.name
+            setupTableViewWithGroupMembers()
+        }
+        view.backgroundColor = UIColor.chatListBackgroundColor()
+        tableView.backgroundColor = UIColor.chatListBackgroundColor()
+        startChatButton.layer.cornerRadius = 6.0
+        startChatButton.tintColor = UIColor.myGreenColor()
+        cancelButton.layer.cornerRadius = 6.0
+        cancelButton.tintColor = .myGreenColor()
+        groupNameLabel.textColor = UIColor.whiteColor()
+        
+    }
     
+    func setupTableViewWithGroupMembers() {
+        membersArray = []
+        //tableView.reloadData()
+        if let groupID = self.group?.identifier {
+            UserController.observeUsersForGroup(groupID, completion: { (users) in
+                self.membersArray = users
+                self.tableView.reloadData()
+            })
+        }
+    }
     
     @IBAction func startChatButtonTapped(sender: AnyObject) {
         if let usersGroup = self.usersGroup, group = self.group {
@@ -53,26 +72,18 @@ extension GroupProfileViewController: UITableViewDataSource, UITableViewDelegate
     //MARK: Table View Data Soure
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let group = group {
-            return group.userIDs.count
-        } else {
-            return 0
-        }
+        return membersArray.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("groupMemberCell", forIndexPath: indexPath) as UITableViewCell
         
-        var groupMember: User?
-        if let group = group {
-            groupMember = group.users[indexPath.row]
-        }
+        let member = membersArray[indexPath.row]
         
         cell.backgroundColor = UIColor.chatListBackgroundColor()
-        cell.textLabel?.text = groupMember!.username
+        cell.textLabel?.text = "\(indexPath.row + 1). \(member.username)"
         cell.textLabel?.textColor = UIColor.whiteColor()
         
         return cell
     }
-    
 }

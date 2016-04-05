@@ -142,10 +142,12 @@ class GroupController {
     
     static func clearConvosDeleteGroup(group: Group) {
         let group = group
-        for conversation in group.conversations {
-            conversation.delete()
+        ConversationController.observeConversationsForGroup(group) { (conversations) in
+            for conversation in conversations {
+                conversation.delete()
+            }
+            group.delete()
         }
-        group.delete()
     }
     
     // Method for adding blocked groups to an array so they won't find each other EVER AGAIN!

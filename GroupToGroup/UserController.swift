@@ -34,7 +34,6 @@ class UserController {
     
     // Also known as the fetchUserForIdentifier method (either way)
     static func userForIdentifier(identifier: String, completion: (user: User?) -> Void) {
-        //print("User for ID: \(identifier)")
         FirebaseController.dataAtEndpoint("users/\(identifier)") { (data) -> Void in
             
             if let json = data as? [String: AnyObject] {
@@ -46,7 +45,22 @@ class UserController {
         }
     }
     
-        
+    static func observeUsersForGroup(groupID: String, completion: (users: [User])->Void) {
+        FirebaseController.base.childByAppendingPath("groups/\(groupID)/users").observeEventType(.Value, withBlock: { (data) -> Void in
+            if let userIDs = data.value as? [String] {
+                var usersArray: [User] = []
+                for userIdentifier in userIDs {
+                    userForIdentifier(userIdentifier, completion: { (user) in
+                        if let user = user {
+                            usersArray.append(user)
+                            completion(users: usersArray)
+                        }
+                    })
+                }
+            }
+        })
+    }
+    
     static func createUserFirebase(username: String, email: String, password: String, completion: (success: Bool) -> Void) {
         FirebaseController.base.createUser(email, password: password) { (error, result) -> Void in
             if error != nil {

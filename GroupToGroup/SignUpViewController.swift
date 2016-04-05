@@ -29,7 +29,7 @@ class SignUpViewController: UIViewController {
         self.navigationController?.navigationBar.barTintColor = UIColor.myNavBarTintColor()
         self.navigationController?.navigationBar.tintColor = UIColor.myGreenColor()
         submitButton.tintColor = UIColor.myGreenColor()
-        usernameTextField.attributedPlaceholder = NSAttributedString(string: "*email", attributes: [NSForegroundColorAttributeName: UIColor.lightGrayColor()])
+        usernameTextField.attributedPlaceholder = NSAttributedString(string: "*username", attributes: [NSForegroundColorAttributeName: UIColor.lightGrayColor()])
         usernameTextField.backgroundColor = UIColor(white: 0.75, alpha: 0.25)
         emailTextField.attributedPlaceholder = NSAttributedString(string: "*email", attributes: [NSForegroundColorAttributeName: UIColor.lightGrayColor()])
         emailTextField.backgroundColor = UIColor(white: 0.75, alpha: 0.25)

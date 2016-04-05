@@ -50,8 +50,8 @@ extension ChatTableViewCell {
         rightTopUIView.backgroundColor = UIColor.menuBackgroundColor()
         
         rightLabel.text = message.text
-        rightLabel.textColor = UIColor.blackColor()
-        rightUIView.backgroundColor = UIColor.myGreenColor()
+        rightLabel.textColor = UIColor.myGreenColor()
+        rightUIView.backgroundColor = UIColor(white: 0.75, alpha: 0.25)
         rightUIView.layer.cornerRadius = 6.0
     }
     
@@ -61,7 +61,7 @@ extension ChatTableViewCell {
         leftTopUIView.backgroundColor = UIColor.menuBackgroundColor()
         leftLabel.text = message.text
         leftLabel.textColor = UIColor.blackColor()
-        leftUIView.backgroundColor = UIColor.myGrayColor()
+        leftUIView.backgroundColor = UIColor.myGreenColor()
         leftUIView.layer.cornerRadius = 6.0
         
     }
