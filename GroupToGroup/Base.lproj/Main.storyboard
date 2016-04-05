@@ -21,13 +21,15 @@
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="*email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zqp-YU-8GY">
                                 <rect key="frame" x="20" y="153" width="560" height="30"/>
+                                <color key="textColor" red="0.36508461310000001" green="1" blue="0.42784337030000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" keyboardAppearance="alert"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="*password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g1H-C9-jwD">
                                 <rect key="frame" x="20" y="201" width="560" height="30"/>
+                                <color key="textColor" red="0.33731000880000001" green="1" blue="0.4138532472" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gc4-6k-u0P">
                                 <rect key="frame" x="218.5" y="245" width="163" height="36"/>
@@ -63,7 +65,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="2ag-vk-WWs"/>
                     <connections>
+                        <outlet property="createNewAccountButton" destination="gVe-YI-7r5" id="e7Y-td-SBI"/>
                         <outlet property="emailTextField" destination="zqp-YU-8GY" id="6am-X1-jju"/>
+                        <outlet property="loginButton" destination="gc4-6k-u0P" id="5iF-jv-WBM"/>
                         <outlet property="passwordTextField" destination="g1H-C9-jwD" id="IIj-Qc-f2G"/>
                     </connections>
                 </viewController>
@@ -85,18 +89,21 @@
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="*username" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dWj-St-P5L">
                                 <rect key="frame" x="20" y="154" width="560" height="30"/>
+                                <color key="textColor" red="0.36508461310000001" green="1" blue="0.42784337030000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="*email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="tL7-0j-aEB">
                                 <rect key="frame" x="20" y="202" width="560" height="30"/>
+                                <color key="textColor" red="0.33731000880000001" green="1" blue="0.4138532472" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" keyboardAppearance="alert"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="*password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dPn-Zg-ifT">
                                 <rect key="frame" x="20" y="249" width="560" height="30"/>
+                                <color key="textColor" red="0.36508461310000001" green="1" blue="0.42784337030000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vIS-gy-4cB">
                                 <rect key="frame" x="273" y="302" width="55" height="36"/>
@@ -128,6 +135,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="tL7-0j-aEB" id="5Bm-jm-EU8"/>
                         <outlet property="passwordTextField" destination="dPn-Zg-ifT" id="C6t-Dz-TGJ"/>
+                        <outlet property="submitButton" destination="vIS-gy-4cB" id="SbA-2F-ddw"/>
                         <outlet property="usernameTextField" destination="dWj-St-P5L" id="lhG-iz-7Dk"/>
                     </connections>
                 </viewController>
@@ -698,17 +706,17 @@
                                     <outlet property="delegate" destination="VVM-hB-Ueq" id="hzJ-3X-x1W"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dNy-oV-aU1">
-                                <rect key="frame" x="0.0" y="510" width="600" height="46"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dNy-oV-aU1">
+                                <rect key="frame" x="0.0" y="507" width="600" height="49"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QdN-rR-Jp6">
-                                        <rect key="frame" x="8" y="8" width="504" height="30"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QdN-rR-Jp6">
+                                        <rect key="frame" x="8" y="8" width="504" height="33"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" keyboardAppearance="alert"/>
                                     </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p95-bb-O7w">
-                                        <rect key="frame" x="520" y="8" width="72" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p95-bb-O7w">
+                                        <rect key="frame" x="520" y="8" width="72" height="33"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="72" id="qXr-RM-lKt"/>
@@ -777,7 +785,7 @@
                                     <rect key="frame" x="8" y="8" width="504" height="32"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" keyboardAppearance="alert"/>
                                 </textView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s1e-lf-GFK">
                                     <rect key="frame" x="520" y="8" width="72" height="32"/>

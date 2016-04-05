@@ -39,8 +39,12 @@ extension UIColor {
         return UIColor(red: 0.729, green: 0.749, blue: 0.753, alpha: 1.00)
     }
     
-    static func menuBackgroundColor() -> UIColor {
+    static func menuBackgroundColor2() -> UIColor {
         return UIColor(red: 0.446, green: 0.328, blue: 0.421, alpha: 1.0)
+    }
+    
+    static func menuBackgroundColor() -> UIColor {
+        return UIColor(red: 0.303, green: 0.280, blue: 0.446, alpha: 1.0)
     }
     
     static func chatListBackgroundColor() -> UIColor {

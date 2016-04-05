@@ -35,6 +35,7 @@ class YourGroupsViewController: UIViewController {
         super.viewWillAppear(true)
         
         enterGroupIDTextField.backgroundColor = UIColor(white: 0.75, alpha: 0.25)
+        enterGroupIDTextField.attributedPlaceholder = NSAttributedString(string: "*email", attributes: [NSForegroundColorAttributeName: UIColor.lightGrayColor()])
         view.backgroundColor = UIColor.menuBackgroundColor()
         self.navigationController?.navigationBar.barTintColor = UIColor.myNavBarTintColor()
         yourGroupsListTableView.backgroundColor = UIColor.menuBackgroundColor()
@@ -89,7 +90,7 @@ class YourGroupsViewController: UIViewController {
     
     func configurationTextField(textField: UITextField!)
     {
-        textField.placeholder = "Enter name of group"
+        textField.placeholder = "Enter a group name"
         tField = textField
         tField.keyboardAppearance = .Dark
     }

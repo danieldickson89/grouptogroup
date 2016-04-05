@@ -10,6 +10,8 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var createNewAccountButton: UIButton!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
@@ -23,6 +25,15 @@ class LoginViewController: UIViewController {
         if UserController.currentUser != nil {
             self.dismissViewControllerAnimated(true, completion: nil)
         }
+        view.backgroundColor = UIColor.chatListBackgroundColor()
+        self.navigationController?.navigationBar.barTintColor = UIColor.myNavBarTintColor()
+        self.navigationController?.navigationBar.tintColor = UIColor.myGreenColor()
+        loginButton.tintColor = UIColor.myGreenColor()
+        createNewAccountButton.tintColor = UIColor.myGreenColor()
+        emailTextField.attributedPlaceholder = NSAttributedString(string: "*email", attributes: [NSForegroundColorAttributeName: UIColor.lightGrayColor()])
+        emailTextField.backgroundColor = UIColor(white: 0.75, alpha: 0.25)
+        passwordTextField.attributedPlaceholder = NSAttributedString(string: "*password", attributes: [NSForegroundColorAttributeName: UIColor.lightGrayColor()])
+        passwordTextField.backgroundColor = UIColor(white: 0.75, alpha: 0.25)
     }
 
     override func didReceiveMemoryWarning() {

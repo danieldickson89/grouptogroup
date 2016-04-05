@@ -180,19 +180,19 @@ extension ChatViewController: UITableViewDataSource, UITableViewDelegate {
             UserController.currentUser.identifier == message.senderID {
             let cell = tableView.dequeueReusableCellWithIdentifier("rightMessageCell", forIndexPath: indexPath) as! ChatTableViewCell
             cell.backgroundColor = UIColor.menuBackgroundColor()
-            cell.updateWithBlueMessage(message)
+            cell.updateWithUsersMessage(message)
             return cell
             
         } else if conversation?.currentGroup?.identifier == message.senderGroupID {
             let cell = tableView.dequeueReusableCellWithIdentifier("rightMessageCell", forIndexPath: indexPath) as! ChatTableViewCell
             cell.backgroundColor = UIColor.menuBackgroundColor()
-            cell.updateWithRightGrayMessage(message)
+            cell.updateWithRightMemberMessage(message)
             return cell
             
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier("leftMessageCell", forIndexPath: indexPath) as! ChatTableViewCell
             cell.backgroundColor = UIColor.menuBackgroundColor()
-            cell.updateWithGrayMessage(message)
+            cell.updateWithLeftMemberMessage(message)
             return cell
         }
     }

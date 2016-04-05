@@ -34,7 +34,18 @@ class ChatTableViewCell: UITableViewCell {
 
 extension ChatTableViewCell {
     
-    func updateWithBlueMessage(message: Message) {
+    func updateWithUsersMessage(message: Message) {
+        rightMainUIView.backgroundColor = UIColor.menuBackgroundColor()
+        rightTopUIView.backgroundColor = UIColor.menuBackgroundColor()
+        
+        rightLabel.text = message.text
+        rightLabel.textColor = UIColor.myGreenColor()
+        rightUIView.backgroundColor = UIColor.blackColor()
+        rightUIView.layer.cornerRadius = 6.0
+        
+    }
+    
+    func updateWithRightMemberMessage(message: Message) {
         rightMainUIView.backgroundColor = UIColor.menuBackgroundColor()
         rightTopUIView.backgroundColor = UIColor.menuBackgroundColor()
         
@@ -42,20 +53,9 @@ extension ChatTableViewCell {
         rightLabel.textColor = UIColor.blackColor()
         rightUIView.backgroundColor = UIColor.myGreenColor()
         rightUIView.layer.cornerRadius = 6.0
-        
     }
     
-    func updateWithRightGrayMessage(message: Message) {
-        rightMainUIView.backgroundColor = UIColor.menuBackgroundColor()
-        rightTopUIView.backgroundColor = UIColor.menuBackgroundColor()
-        
-        rightLabel.text = message.text
-        rightLabel.textColor = UIColor.blackColor()
-        rightUIView.backgroundColor = UIColor.myGrayColor()
-        rightUIView.layer.cornerRadius = 6.0
-    }
-    
-    func updateWithGrayMessage(message: Message) {
+    func updateWithLeftMemberMessage(message: Message) {
      
         leftMainUIView.backgroundColor = UIColor.menuBackgroundColor()
         leftTopUIView.backgroundColor = UIColor.menuBackgroundColor()

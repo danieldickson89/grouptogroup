@@ -10,6 +10,7 @@ import UIKit
 
 class SignUpViewController: UIViewController {
 
+    @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -24,6 +25,16 @@ class SignUpViewController: UIViewController {
         if UserController.currentUser != nil {
             self.dismissViewControllerAnimated(true, completion: nil)
         }
+        view.backgroundColor = UIColor.chatListBackgroundColor()
+        self.navigationController?.navigationBar.barTintColor = UIColor.myNavBarTintColor()
+        self.navigationController?.navigationBar.tintColor = UIColor.myGreenColor()
+        submitButton.tintColor = UIColor.myGreenColor()
+        usernameTextField.attributedPlaceholder = NSAttributedString(string: "*email", attributes: [NSForegroundColorAttributeName: UIColor.lightGrayColor()])
+        usernameTextField.backgroundColor = UIColor(white: 0.75, alpha: 0.25)
+        emailTextField.attributedPlaceholder = NSAttributedString(string: "*email", attributes: [NSForegroundColorAttributeName: UIColor.lightGrayColor()])
+        emailTextField.backgroundColor = UIColor(white: 0.75, alpha: 0.25)
+        passwordTextField.attributedPlaceholder = NSAttributedString(string: "*password", attributes: [NSForegroundColorAttributeName: UIColor.lightGrayColor()])
+        passwordTextField.backgroundColor = UIColor(white: 0.75, alpha: 0.25)
     }
 
     override func didReceiveMemoryWarning() {
