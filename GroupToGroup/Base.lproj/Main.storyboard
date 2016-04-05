@@ -161,7 +161,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9yS-1I-J3L">
                                         <rect key="frame" x="0.0" y="0.0" width="512" height="32"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter groupID here..." textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="css-pf-F64">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="css-pf-F64">
                                                 <rect key="frame" x="0.0" y="0.0" width="358.5" height="32"/>
                                                 <color key="textColor" red="0.36508461310000001" green="1" blue="0.42784337030000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
@@ -263,95 +263,95 @@
             <point key="canvasLocation" x="1075" y="1041"/>
         </scene>
         <!--Group Profile View Controller-->
-        <scene sceneID="xuZ-gQ-zGM">
+        <scene sceneID="onl-ns-j0W">
             <objects>
-                <viewController id="EII-fy-zWz" customClass="GroupProfileViewController" customModule="GroupToGroup" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="aTs-Ab-6ad" customClass="GroupProfileViewController" customModule="GroupToGroup" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="9YR-ED-cS5"/>
-                        <viewControllerLayoutGuide type="bottom" id="qDM-Q8-vLh"/>
+                        <viewControllerLayoutGuide type="top" id="nkk-dv-PMf"/>
+                        <viewControllerLayoutGuide type="bottom" id="WHu-bg-Yqk"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="fO5-Jf-m9S">
+                    <view key="view" contentMode="scaleToFill" id="OUO-RX-GYN">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="wxx-Eg-DaE">
-                                <rect key="frame" x="20" y="20" width="560" height="580"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3T6-kG-lKz">
+                                <rect key="frame" x="20" y="28" width="560" height="552"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pWc-cI-KuD">
-                                        <rect key="frame" x="0.0" y="0.0" width="560" height="145"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WpM-1t-6D8">
-                                        <rect key="frame" x="0.0" y="145" width="560" height="145"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="28"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="vv5-u5-5Q8">
-                                        <rect key="frame" x="0.0" y="290" width="560" height="145"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="300" translatesAutoresizingMaskIntoConstraints="NO" id="F9U-Ja-JyT">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="44"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Af-ds-imC">
-                                                <rect key="frame" x="0.0" y="0.0" width="186.5" height="145"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="K07-SN-Ojb">
-                                                <rect key="frame" x="186.5" y="0.0" width="187" height="145"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eiv-2T-5hw">
-                                                        <rect key="frame" x="0.0" y="0.0" width="187" height="62.5"/>
-                                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="22"/>
-                                                        <state key="normal" title="Invite">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="inviteButtonTapped:" destination="EII-fy-zWz" eventType="touchUpInside" id="hKW-j9-UR6"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wDi-Bx-kX0">
-                                                        <rect key="frame" x="0.0" y="82.5" width="187" height="62.5"/>
-                                                        <color key="backgroundColor" red="1" green="0.0" blue="0.074020686490000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="22"/>
-                                                        <state key="normal" title="Cancel">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="cancelButtonTapped:" destination="EII-fy-zWz" eventType="touchUpInside" id="Th6-Zy-QUp"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SIT-40-Tt5">
-                                                <rect key="frame" x="373.5" y="0.0" width="186.5" height="145"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bXh-e9-0eb">
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="44"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
+                                                <state key="normal" title="Cancel"/>
+                                                <connections>
+                                                    <action selector="cancelButtonTapped:" destination="aTs-Ab-6ad" eventType="touchUpInside" id="cCX-WL-QJS"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8DM-Fw-LkN">
+                                                <rect key="frame" x="430" y="0.0" width="130" height="44"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
+                                                <state key="normal" title="Start Chat"/>
+                                                <connections>
+                                                    <action selector="startChatButtonTapped:" destination="aTs-Ab-6ad" eventType="touchUpInside" id="keQ-c4-K0q"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                     </stackView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XH0-fc-eCc">
-                                        <rect key="frame" x="0.0" y="435" width="560" height="145"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Be7-bw-bfB">
+                                        <rect key="frame" x="0.0" y="44" width="560" height="44"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Group Members:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NPm-91-km3">
+                                        <rect key="frame" x="0.0" y="88" width="560" height="22.5"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1fe-7x-eTT">
+                                        <rect key="frame" x="0.0" y="110.5" width="560" height="441.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="groupMemberCell" id="rY0-aT-KtV">
+                                                <rect key="frame" x="0.0" y="28" width="560" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rY0-aT-KtV" id="HDc-IK-v4d">
+                                                    <rect key="frame" x="0.0" y="0.0" width="560" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="aTs-Ab-6ad" id="E0K-rz-LGa"/>
+                                            <outlet property="delegate" destination="aTs-Ab-6ad" id="kRm-8p-2UN"/>
+                                        </connections>
+                                    </tableView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="F9U-Ja-JyT" firstAttribute="height" secondItem="Be7-bw-bfB" secondAttribute="height" id="tp6-1T-vUB"/>
+                                    <constraint firstItem="Be7-bw-bfB" firstAttribute="height" secondItem="1fe-7x-eTT" secondAttribute="height" multiplier="1/10" id="z54-hu-Rsn"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="wxx-Eg-DaE" secondAttribute="trailing" id="3Ye-X3-O7R"/>
-                            <constraint firstItem="wxx-Eg-DaE" firstAttribute="leading" secondItem="fO5-Jf-m9S" secondAttribute="leadingMargin" id="ARG-CH-rbQ"/>
-                            <constraint firstItem="wxx-Eg-DaE" firstAttribute="top" secondItem="9YR-ED-cS5" secondAttribute="bottom" id="Ohj-U9-L02"/>
-                            <constraint firstItem="qDM-Q8-vLh" firstAttribute="top" secondItem="wxx-Eg-DaE" secondAttribute="bottom" id="Yws-1n-hvH"/>
+                            <constraint firstItem="3T6-kG-lKz" firstAttribute="top" secondItem="nkk-dv-PMf" secondAttribute="bottom" constant="8" id="2F2-uk-ik1"/>
+                            <constraint firstItem="3T6-kG-lKz" firstAttribute="leading" secondItem="OUO-RX-GYN" secondAttribute="leadingMargin" id="USL-zt-S8n"/>
+                            <constraint firstItem="WHu-bg-Yqk" firstAttribute="top" secondItem="3T6-kG-lKz" secondAttribute="bottom" constant="20" id="vmg-rW-3I4"/>
+                            <constraint firstItem="3T6-kG-lKz" firstAttribute="trailing" secondItem="OUO-RX-GYN" secondAttribute="trailingMargin" id="xtZ-u7-y7l"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="cancelButton" destination="wDi-Bx-kX0" id="NWh-cU-VGp"/>
-                        <outlet property="groupNameLabel" destination="WpM-1t-6D8" id="auu-WG-jZa"/>
-                        <outlet property="inviteButton" destination="eiv-2T-5hw" id="wod-eN-QPk"/>
+                        <outlet property="cancelButton" destination="bXh-e9-0eb" id="BVj-p5-HxK"/>
+                        <outlet property="groupNameLabel" destination="Be7-bw-bfB" id="VoR-VT-ydz"/>
+                        <outlet property="startChatButton" destination="8DM-Fw-LkN" id="RyX-Qb-Bqh"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UcB-vZ-QnI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7d4-kf-wJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3949" y="308"/>
+            <point key="canvasLocation" x="3949" y="340"/>
         </scene>
         <!--Add Group Table View Controller-->
         <scene sceneID="zpi-C9-X4t">
@@ -370,7 +370,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="EII-fy-zWz" kind="presentation" identifier="toGroupProfileView" id="G9x-yr-4R9"/>
+                                    <segue destination="aTs-Ab-6ad" kind="presentation" identifier="toGroupProfileView" trigger="accessoryAction" id="Gp6-rf-4Xa"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
