@@ -17,6 +17,7 @@ class YourGroupsViewController: UIViewController {
     @IBOutlet weak var yourGroupsListTableView: UITableView!
     @IBOutlet weak var enterGroupIDTextField: UITextField!
     @IBOutlet weak var joinGroupButton: UIButton!
+    @IBOutlet weak var logoutButton: UIButton!
     
     var tField: UITextField!
     
@@ -33,6 +34,11 @@ class YourGroupsViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         
+        enterGroupIDTextField.backgroundColor = UIColor(white: 0.75, alpha: 0.25)
+        view.backgroundColor = UIColor.menuBackgroundColor()
+        self.navigationController?.navigationBar.backgroundColor = UIColor.blackColor()
+        yourGroupsListTableView.backgroundColor = UIColor.menuBackgroundColor()
+        
         self.navigationController?.setToolbarHidden(true, animated: true)
         if let _ = UserController.currentUser {
             setupAppearanceForCurrentUser()
@@ -44,7 +50,9 @@ class YourGroupsViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         
-        joinGroupButton.layer.cornerRadius = 4
+        joinGroupButton.layer.cornerRadius = 6.0
+        logoutButton.layer.cornerRadius = 6.0
+        logoutButton.backgroundColor = UIColor(white: 0.75, alpha: 0.25)
         
     }
     
@@ -55,7 +63,6 @@ class YourGroupsViewController: UIViewController {
         yourGroupsListTableView.reloadData()
         if let currentUser = UserController.currentUser {
             if let userID = currentUser.identifier {
-                navigationItem.title = currentUser.username
                 GroupController.observeGroupsForUser(userID, completion: { (groups) -> Void in
                     self.groupsArray = groups
                     self.yourGroupsListTableView.reloadData()
@@ -69,6 +76,7 @@ class YourGroupsViewController: UIViewController {
     // Method for logging out the user
     
     @IBAction func logoutButtonTapped(sender: AnyObject) {
+        
         UserController.logoutUser()
         navigationController?.performSegueWithIdentifier("toLogin", sender: nil)
     }
@@ -92,8 +100,7 @@ class YourGroupsViewController: UIViewController {
     
     // Allow user to create a new group
     
-    @IBAction func createNewGroupButtonTapped(sender: AnyObject) {
-        
+    @IBAction func newGroupButtonTapped(sender: AnyObject) {
         let alert = UIAlertController(title: "Create a New Group", message: "", preferredStyle: UIAlertControllerStyle.Alert)
         
         alert.addTextFieldWithConfigurationHandler(configurationTextField)
@@ -165,7 +172,9 @@ extension YourGroupsViewController: UITableViewDataSource, UITableViewDelegate {
         
         let group = groupsArray[indexPath.row]
         
+        cell.backgroundColor = UIColor.menuBackgroundColor()
         cell.textLabel?.text = group.name
+        cell.textLabel?.textColor = UIColor.whiteColor()
         
         return cell
     }

@@ -21,23 +21,25 @@
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="*email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zqp-YU-8GY">
                                 <rect key="frame" x="20" y="153" width="560" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="*password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g1H-C9-jwD">
                                 <rect key="frame" x="20" y="201" width="560" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gc4-6k-u0P">
-                                <rect key="frame" x="279.5" y="245" width="42" height="30"/>
+                                <rect key="frame" x="218.5" y="245" width="163" height="36"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
                                 <state key="normal" title="Log in"/>
                                 <connections>
                                     <action selector="logInButtonTapped:" destination="LBi-K8-OfX" eventType="touchUpInside" id="Sz8-Tg-k3c"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gVe-YI-7r5">
-                                <rect key="frame" x="231" y="283" width="138" height="30"/>
+                                <rect key="frame" x="218.5" y="289" width="163" height="36"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
                                 <state key="normal" title="Create new account"/>
                                 <connections>
                                     <segue destination="off-7i-VO6" kind="show" id="8f6-6O-Tay"/>
@@ -47,6 +49,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="g1H-C9-jwD" firstAttribute="leading" secondItem="zqp-YU-8GY" secondAttribute="leading" id="33O-gd-Aky"/>
+                            <constraint firstItem="gc4-6k-u0P" firstAttribute="width" secondItem="gVe-YI-7r5" secondAttribute="width" id="Fhk-zv-amR"/>
                             <constraint firstItem="zqp-YU-8GY" firstAttribute="trailing" secondItem="iSp-4O-zHb" secondAttribute="trailingMargin" id="Jme-Gt-Pou"/>
                             <constraint firstItem="gVe-YI-7r5" firstAttribute="centerX" secondItem="gc4-6k-u0P" secondAttribute="centerX" id="KuW-Xs-qhV"/>
                             <constraint firstItem="g1H-C9-jwD" firstAttribute="trailing" secondItem="zqp-YU-8GY" secondAttribute="trailing" id="M0K-Gb-DnF"/>
@@ -82,21 +85,22 @@
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="*username" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dWj-St-P5L">
                                 <rect key="frame" x="20" y="154" width="560" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="*email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="tL7-0j-aEB">
                                 <rect key="frame" x="20" y="202" width="560" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="*password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dPn-Zg-ifT">
                                 <rect key="frame" x="20" y="249" width="560" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vIS-gy-4cB">
-                                <rect key="frame" x="276" y="302" width="49" height="30"/>
+                                <rect key="frame" x="273" y="302" width="55" height="36"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
                                 <state key="normal" title="Submit"/>
                                 <connections>
                                     <action selector="submitButtonTapped:" destination="off-7i-VO6" eventType="touchUpInside" id="2px-dw-LNd"/>
@@ -147,19 +151,20 @@
                                 <rect key="frame" x="8" y="94" width="512" height="498"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9yS-1I-J3L">
-                                        <rect key="frame" x="0.0" y="0.0" width="512" height="33"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="512" height="32"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter groupID here..." textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="css-pf-F64">
-                                                <rect key="frame" x="0.0" y="0.0" width="358.5" height="33"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="358.5" height="32"/>
+                                                <color key="textColor" red="0.36508461310000001" green="1" blue="0.42784337030000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yho-WY-bQJ">
-                                                <rect key="frame" x="368.5" y="0.0" width="143.5" height="33"/>
-                                                <color key="backgroundColor" red="0.17098673780000001" green="0.52627159180000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <rect key="frame" x="368.5" y="0.0" width="143.5" height="32"/>
+                                                <color key="backgroundColor" red="0.36508461310000001" green="1" blue="0.42784337030000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                                 <state key="normal" title="Join">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="joinGroupButtonTapped:" destination="2gv-wA-hRn" eventType="touchUpInside" id="kfv-Q1-Lec"/>
@@ -171,13 +176,13 @@
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   My Groups:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="leu-XY-bf6">
-                                        <rect key="frame" x="0.0" y="33" width="512" height="33.5"/>
+                                        <rect key="frame" x="0.0" y="32" width="512" height="31.5"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.36508461310000001" green="1" blue="0.42784337030000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MEU-BK-xjG">
-                                        <rect key="frame" x="0.0" y="66.5" width="512" height="431.5"/>
+                                        <rect key="frame" x="0.0" y="63.5" width="512" height="402.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="yourGroupNameCell" id="qRW-MW-wwr">
@@ -197,9 +202,26 @@
                                             <outlet property="delegate" destination="2gv-wA-hRn" id="hFT-xj-Gpe"/>
                                         </connections>
                                     </tableView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="spO-jg-ZDA">
+                                        <rect key="frame" x="0.0" y="466" width="512" height="32"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="555-u6-O2N">
+                                                <rect key="frame" x="0.0" y="0.0" width="512" height="32"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                                                <state key="normal" title="Logout">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="logoutButtonTapped:" destination="2gv-wA-hRn" eventType="touchUpInside" id="8Ww-hV-7L1"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="css-pf-F64" firstAttribute="height" secondItem="leu-XY-bf6" secondAttribute="height" id="NNj-Is-bWN"/>
+                                    <constraint firstItem="spO-jg-ZDA" firstAttribute="height" secondItem="9yS-1I-J3L" secondAttribute="height" id="Zh9-SW-dJy"/>
                                     <constraint firstItem="9yS-1I-J3L" firstAttribute="height" secondItem="leu-XY-bf6" secondAttribute="height" id="jW2-ef-g9p"/>
                                     <constraint firstItem="leu-XY-bf6" firstAttribute="height" secondItem="MEU-BK-xjG" secondAttribute="height" multiplier="1/13" id="qmS-JB-3C1"/>
                                 </constraints>
@@ -214,20 +236,17 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jFf-aR-6pL">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="YnZ-qE-zJq">
+                        <barButtonItem key="leftBarButtonItem" title="+ New Group" id="YnZ-qE-zJq">
+                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <action selector="logoutButtonTapped:" destination="2gv-wA-hRn" id="1EU-aH-21B"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="New Group" id="onh-Kc-toV">
-                            <connections>
-                                <action selector="createNewGroupButtonTapped:" destination="2gv-wA-hRn" id="0Rd-51-uia"/>
+                                <action selector="newGroupButtonTapped:" destination="2gv-wA-hRn" id="7bu-B6-B4Q"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="enterGroupIDTextField" destination="css-pf-F64" id="RiK-Fr-Alq"/>
                         <outlet property="joinGroupButton" destination="Yho-WY-bQJ" id="hgO-Ep-Rpd"/>
+                        <outlet property="logoutButton" destination="555-u6-O2N" id="PZZ-r6-Gfu"/>
                         <outlet property="yourGroupsListTableView" destination="MEU-BK-xjG" id="tvf-yr-VyB"/>
                     </connections>
                 </viewController>
@@ -324,7 +343,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UcB-vZ-QnI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3889" y="316"/>
+            <point key="canvasLocation" x="3949" y="308"/>
         </scene>
         <!--Add Group Table View Controller-->
         <scene sceneID="zpi-C9-X4t">
@@ -356,7 +375,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K9F-Uo-yLp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3949" y="1042"/>
+            <point key="canvasLocation" x="3949" y="1066"/>
         </scene>
         <!--Groups Search Results Table View Controller-->
         <scene sceneID="End-An-EhQ">
@@ -384,7 +403,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o23-h7-oMU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4701" y="1042"/>
+            <point key="canvasLocation" x="4701" y="1066"/>
         </scene>
         <!--Group Chats List Table View Controller-->
         <scene sceneID="hFI-0N-CIe">
@@ -404,7 +423,7 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQ9-xM-gxW">
                                             <rect key="frame" x="16" y="8" width="568" height="28"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -437,13 +456,19 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="1xA-Fd-EMl"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="dcX-Ia-jih">
-                        <barButtonItem key="rightBarButtonItem" title="New Chat" id="Bnn-22-09E">
+                        <barButtonItem key="leftBarButtonItem" image="groupIcon" id="cQ6-Cu-fOH">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="+ New Chat" id="Bnn-22-09E">
                             <connections>
                                 <segue destination="bmo-vM-yYJ" kind="show" identifier="toAddConversation" id="0Hx-eY-Kwq"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="openMenuButton" destination="cQ6-Cu-fOH" id="kvs-eV-ao9"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mex-Bz-XMD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -803,6 +828,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="groupIcon" width="25" height="25"/>
         <image name="more" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>

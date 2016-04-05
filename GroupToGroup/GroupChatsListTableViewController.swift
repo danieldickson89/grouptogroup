@@ -14,9 +14,13 @@ class GroupChatsListTableViewController: UITableViewController, UINavigationCont
     var usersGroup: Group?
     var conversationsArray: [Conversation] = []
     
+    @IBOutlet weak var openMenuButton: UIBarButtonItem!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        openMenuButton.target = self.revealViewController()
+        openMenuButton.action = #selector(SWRevealViewController.revealToggle(_:))
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         
     }
@@ -24,6 +28,8 @@ class GroupChatsListTableViewController: UITableViewController, UINavigationCont
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         
+        view.backgroundColor = UIColor.chatListBackgroundColor()
+        tableView.backgroundColor = UIColor.chatListBackgroundColor()
         navigationItem.title = usersGroup?.name
         self.navigationController?.setToolbarHidden(false, animated: true)
         if let _ = usersGroup {
@@ -43,6 +49,7 @@ class GroupChatsListTableViewController: UITableViewController, UINavigationCont
         
         let conversation = conversationsArray[indexPath.row]
         
+        cell.backgroundColor = UIColor.chatListBackgroundColor()
         cell.updateWithConversation(conversation)
         
         return cell
