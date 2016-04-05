@@ -14,7 +14,6 @@ class ConversationListTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -24,6 +23,7 @@ class ConversationListTableViewCell: UITableViewCell {
     }
     
     func updateWithConversation(conversation: Conversation) {
+        conversationNameLabel.textColor = UIColor.whiteColor()
         if conversation.groupIDs.count != conversation.groups.count {
             for groupID in conversation.groupIDs {
                 GroupController.fetchGroupForIdentifier(groupID, completion: { (group) in

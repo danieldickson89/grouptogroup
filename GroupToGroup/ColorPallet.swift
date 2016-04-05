@@ -16,7 +16,7 @@ extension UIColor {
     }
     
     static func myGreenColor() -> UIColor {
-        return UIColor(red :0.311, green: 0.785, blue: 0.271, alpha: 1.00)
+        return UIColor(red :0.365, green: 1.0, blue: 0.427, alpha: 1.00)
     }
     
     static func myPurpleColor() -> UIColor {
@@ -44,6 +44,10 @@ extension UIColor {
     }
     
     static func chatListBackgroundColor() -> UIColor {
-        return UIColor(red: 0.940, green: 0.950, blue: 1.0, alpha: 1.0)
+        return UIColor(red: 0.256, green: 0.252, blue: 0.277, alpha: 1.0)
+    }
+    
+    static func myNavBarTintColor() -> UIColor {
+        return UIColor(red: 0.381, green: 0.381, blue: 0.420, alpha: 1.0)
     }
 }

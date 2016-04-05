@@ -31,6 +31,9 @@ class GroupChatsListTableViewController: UITableViewController, UINavigationCont
         view.backgroundColor = UIColor.chatListBackgroundColor()
         tableView.backgroundColor = UIColor.chatListBackgroundColor()
         navigationItem.title = usersGroup?.name
+        navigationController?.navigationBar.barTintColor = UIColor.myNavBarTintColor()
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        navigationController?.toolbar.barTintColor = UIColor.myNavBarTintColor()
         self.navigationController?.setToolbarHidden(false, animated: true)
         if let _ = usersGroup {
             updateWithConversations()

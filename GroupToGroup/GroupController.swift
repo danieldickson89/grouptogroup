@@ -41,16 +41,18 @@ class GroupController {
                 for groupID in usersGroup.blockedGroupIDs {
                     groups = groups.filter({$0.identifier != groupID})
                 }
-                ConversationController.observeConversationsForGroup(usersGroup, completion: { (conversations) in
-                    for conversation in conversations {
-                        for groupID in conversation.groupIDs {
-                            groups = groups.filter({$0.identifier != groupID})
+                if usersGroup.conversationIDs.count > 0 {
+                    ConversationController.observeConversationsForGroup(usersGroup, completion: { (conversations) in
+                        for conversation in conversations {
+                            for groupID in conversation.groupIDs {
+                                groups = groups.filter({$0.identifier != groupID})
+                            }
                         }
-                    }
+                        completion(groups: groups)
+                    })
+                } else {
                     completion(groups: groups)
-                })
-
-                //completion(groups: groups)
+                }
             } else {
                 completion(groups: nil)
             }
@@ -126,10 +128,24 @@ class GroupController {
                 let index = group.userIDs.indexOf(userIdentifier)
                 if let index = index {
                     group.userIDs.removeAtIndex(index)
-                    group.save()
+                    if group.userIDs.count > 0 {
+                        group.save()
+                    } else {
+                        clearConvosDeleteGroup(group)
+                    }
                 }
             }
         }
+    }
+    
+    // Method that will delete a group's conversations, and the group when group.users.count = 0
+    
+    static func clearConvosDeleteGroup(group: Group) {
+        let group = group
+        for conversation in group.conversations {
+            conversation.delete()
+        }
+        group.delete()
     }
     
     // Method for adding blocked groups to an array so they won't find each other EVER AGAIN!

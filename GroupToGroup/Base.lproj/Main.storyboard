@@ -157,7 +157,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="358.5" height="32"/>
                                                 <color key="textColor" red="0.36508461310000001" green="1" blue="0.42784337030000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yho-WY-bQJ">
                                                 <rect key="frame" x="368.5" y="0.0" width="143.5" height="32"/>
@@ -181,7 +181,7 @@
                                         <color key="textColor" red="0.36508461310000001" green="1" blue="0.42784337030000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MEU-BK-xjG">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MEU-BK-xjG">
                                         <rect key="frame" x="0.0" y="63.5" width="512" height="402.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
@@ -189,7 +189,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="512" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qRW-MW-wwr" id="TNy-KF-NfF">
-                                                    <rect key="frame" x="0.0" y="0.0" width="512" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="512" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
                                                 <connections>
@@ -210,7 +210,7 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
                                                 <state key="normal" title="Logout">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="logoutButtonTapped:" destination="2gv-wA-hRn" eventType="touchUpInside" id="8Ww-hV-7L1"/>
@@ -237,7 +237,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="jFf-aR-6pL">
                         <barButtonItem key="leftBarButtonItem" title="+ New Group" id="YnZ-qE-zJq">
-                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.36508461310000001" green="1" blue="0.42784337030000003" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="newGroupButtonTapped:" destination="2gv-wA-hRn" id="7bu-B6-B4Q"/>
                             </connections>
@@ -422,7 +422,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQ9-xM-gxW">
-                                            <rect key="frame" x="16" y="8" width="568" height="28"/>
+                                            <rect key="frame" x="16" y="8" width="560" height="28"/>
                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -431,7 +431,7 @@
                                     <constraints>
                                         <constraint firstItem="dQ9-xM-gxW" firstAttribute="leading" secondItem="rdI-hf-rA7" secondAttribute="leadingMargin" constant="8" id="WqF-cv-nUJ"/>
                                         <constraint firstItem="dQ9-xM-gxW" firstAttribute="top" secondItem="rdI-hf-rA7" secondAttribute="topMargin" id="ei9-O1-P0O"/>
-                                        <constraint firstItem="dQ9-xM-gxW" firstAttribute="trailing" secondItem="rdI-hf-rA7" secondAttribute="trailingMargin" constant="-8" id="g92-LM-RUR"/>
+                                        <constraint firstItem="dQ9-xM-gxW" firstAttribute="trailing" secondItem="rdI-hf-rA7" secondAttribute="trailingMargin" constant="-16" id="g92-LM-RUR"/>
                                         <constraint firstItem="dQ9-xM-gxW" firstAttribute="centerY" secondItem="rdI-hf-rA7" secondAttribute="centerY" id="hkY-zc-oEL"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -448,7 +448,8 @@
                     </tableView>
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Jui-Xr-rjQ"/>
-                        <barButtonItem image="more" id="iha-us-kP6">
+                        <barButtonItem image="moreFilled" id="iha-us-kP6">
+                            <color key="tintColor" red="0.36508461310000001" green="1" blue="0.42784337030000003" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="optionsToolBarButtonTapped:" destination="liP-RG-9nR" id="ocB-ED-727"/>
                             </connections>
@@ -457,9 +458,10 @@
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="dcX-Ia-jih">
                         <barButtonItem key="leftBarButtonItem" image="groupIcon" id="cQ6-Cu-fOH">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="tintColor" red="0.36508461310000001" green="1" blue="0.42784337030000003" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="+ New Chat" id="Bnn-22-09E">
+                            <color key="tintColor" red="0.33731000880000001" green="1" blue="0.4138532472" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="bmo-vM-yYJ" kind="show" identifier="toAddConversation" id="0Hx-eY-Kwq"/>
                             </connections>
@@ -738,7 +740,8 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ZMq-Fc-z2G">
-                        <barButtonItem key="rightBarButtonItem" image="more" id="Xcu-9y-qmW">
+                        <barButtonItem key="rightBarButtonItem" image="moreFilled" id="Xcu-9y-qmW">
+                            <color key="tintColor" red="0.36508461310000001" green="1" blue="0.42784337030000003" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="moreButtonTapped:" destination="VVM-hB-Ueq" id="xJD-Ai-8Bf"/>
                             </connections>
@@ -829,7 +832,7 @@
     </scenes>
     <resources>
         <image name="groupIcon" width="25" height="25"/>
-        <image name="more" width="25" height="25"/>
+        <image name="moreFilled" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="qyL-HI-1CH"/>
