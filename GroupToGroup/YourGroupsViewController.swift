@@ -17,7 +17,8 @@ class YourGroupsViewController: UIViewController {
     @IBOutlet weak var yourGroupsListTableView: UITableView!
     @IBOutlet weak var enterGroupIDTextField: UITextField!
     @IBOutlet weak var joinGroupButton: UIButton!
-    @IBOutlet weak var settingsButton: UIButton!
+    @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var settingsUIView: UIView!
     
     var tField: UITextField!
     
@@ -34,6 +35,8 @@ class YourGroupsViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         
+        settingsUIView.backgroundColor = UIColor(white: 0.75, alpha: 0.25)
+        settingsUIView.layer.cornerRadius = 6.0
         enterGroupIDTextField.backgroundColor = UIColor(white: 0.75, alpha: 0.25)
         enterGroupIDTextField.attributedPlaceholder = NSAttributedString(string: "Enter the GroupID", attributes: [NSForegroundColorAttributeName: UIColor.lightGrayColor()])
         view.backgroundColor = UIColor.menuBackgroundColor()
@@ -41,8 +44,6 @@ class YourGroupsViewController: UIViewController {
         yourGroupsListTableView.backgroundColor = UIColor.menuBackgroundColor()
         
         joinGroupButton.layer.cornerRadius = 6.0
-        settingsButton.layer.cornerRadius = 6.0
-        settingsButton.backgroundColor = UIColor(white: 0.75, alpha: 0.25)
         
         self.navigationController?.setToolbarHidden(true, animated: true)
         if let _ = UserController.currentUser {
@@ -55,9 +56,9 @@ class YourGroupsViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         
-//        joinGroupButton.layer.cornerRadius = 6.0
-//        logoutButton.layer.cornerRadius = 6.0
-//        logoutButton.backgroundColor = UIColor(white: 0.75, alpha: 0.25)
+        joinGroupButton.layer.cornerRadius = 6.0
+        logoutButton.layer.cornerRadius = 6.0
+        logoutButton.backgroundColor = UIColor(white: 0.75, alpha: 0.25)
         
     }
     
@@ -137,6 +138,17 @@ class YourGroupsViewController: UIViewController {
             enterGroupIDTextField.text = ""
         }
     }
+    
+    @IBAction func logoutButtonTapped(sender: AnyObject) {
+        let logoutAlert = UIAlertController(title: "Are you sure you want to logout?", message: "", preferredStyle: .Alert)
+        logoutAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (logout) in
+            UserController.logoutUser()
+            self.navigationController?.performSegueWithIdentifier("toLogin", sender: nil)
+        }))
+        logoutAlert.addAction((UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)))
+        presentViewController(logoutAlert, animated: true, completion: nil)
+    }
+    
     
     
     

@@ -50,7 +50,7 @@ class AddGroupTableViewController: UITableViewController, UISearchResultsUpdatin
         
         let resultsController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("GroupsSearchResultsTableViewController")
         
-        
+        self.view.backgroundColor = UIColor.chatListBackgroundColor()
         searchController = UISearchController(searchResultsController: resultsController)
         searchController.searchResultsUpdater = self
         searchController.searchBar.sizeToFit()
@@ -58,6 +58,7 @@ class AddGroupTableViewController: UITableViewController, UISearchResultsUpdatin
         searchController.searchBar.barStyle = .BlackTranslucent
         searchController.searchBar.tintColor = UIColor.myGreenColor()
         searchController.searchBar.keyboardAppearance = .Dark
+        searchController.searchBar.searchBarStyle = .Minimal
         tableView.tableHeaderView = searchController.searchBar
         
         

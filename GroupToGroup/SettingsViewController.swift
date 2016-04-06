@@ -11,7 +11,6 @@ import UIKit
 class SettingsViewController: UIViewController {
 
     @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var profileImage: UIImageView!
     
@@ -22,23 +21,15 @@ class SettingsViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         usernameLabel.text = UserController.currentUser.username
         view.backgroundColor = UIColor.chatListBackgroundColor()
-        if let currentUserID = UserController.currentUser.identifier {
-            updateWithImageIdentifier(currentUserID)
-        }
+        profileImage.layer.cornerRadius = profileImage.frame.size.width / 2
+        profileImage.layer.masksToBounds = true
+//        if let currentUserID = UserController.currentUser.identifier {
+//            updateWithImageIdentifier(currentUserID)
+//        }
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SettingsViewController.profileImageTapped))
         profileImage.userInteractionEnabled = true
         profileImage.addGestureRecognizer(tapGestureRecognizer)
-    }
-
-    @IBAction func logoutButtonTapped(sender: AnyObject) {
-        let logoutAlert = UIAlertController(title: "Are you sure you want to logout?", message: "", preferredStyle: .Alert)
-        logoutAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (logout) in
-            UserController.logoutUser()
-            self.navigationController?.performSegueWithIdentifier("toLogin", sender: nil)
-        }))
-        logoutAlert.addAction((UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)))
-        presentViewController(logoutAlert, animated: true, completion: nil)
     }
     
     @IBAction func doneButtonTapped(sender: AnyObject) {

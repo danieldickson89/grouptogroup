@@ -40,6 +40,7 @@
 		396BE9FC1CAB16A3004DB4F1 /* ConversationListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BE9FB1CAB16A3004DB4F1 /* ConversationListTableViewCell.swift */; };
 		39FC76C31CB586F500BCE1A8 /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FC76C21CB586F500BCE1A8 /* ImageController.swift */; };
 		39FC76C51CB58AA300BCE1A8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FC76C41CB58AA300BCE1A8 /* SettingsViewController.swift */; };
+		39FC76C91CB5CB2400BCE1A8 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FC76C81CB5CB2400BCE1A8 /* Image.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -93,6 +94,7 @@
 		396BE9FB1CAB16A3004DB4F1 /* ConversationListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationListTableViewCell.swift; sourceTree = "<group>"; };
 		39FC76C21CB586F500BCE1A8 /* ImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageController.swift; sourceTree = "<group>"; };
 		39FC76C41CB58AA300BCE1A8 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		39FC76C81CB5CB2400BCE1A8 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 				3938FBEA1C8F875300BAD9CD /* Group.swift */,
 				3938FC0A1C8F8D5500BAD9CD /* Conversation.swift */,
 				3938FBF01C8F8A7B00BAD9CD /* Message.swift */,
+				39FC76C81CB5CB2400BCE1A8 /* Image.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				3938FC091C8F8D2900BAD9CD /* ConversationController.swift in Sources */,
 				3938FBE01C8F80CC00BAD9CD /* YourGroupsViewController.swift in Sources */,
 				39FC76C51CB58AA300BCE1A8 /* SettingsViewController.swift in Sources */,
+				39FC76C91CB5CB2400BCE1A8 /* Image.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
