@@ -38,6 +38,8 @@
 		394D73221CA9C4AA00505DDD /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394D73211CA9C4AA00505DDD /* ChatTableViewCell.swift */; };
 		394D73241CA9CC2100505DDD /* ColorPallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394D73231CA9CC2100505DDD /* ColorPallet.swift */; };
 		396BE9FC1CAB16A3004DB4F1 /* ConversationListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BE9FB1CAB16A3004DB4F1 /* ConversationListTableViewCell.swift */; };
+		39FC76C31CB586F500BCE1A8 /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FC76C21CB586F500BCE1A8 /* ImageController.swift */; };
+		39FC76C51CB58AA300BCE1A8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FC76C41CB58AA300BCE1A8 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -89,6 +91,8 @@
 		394D73211CA9C4AA00505DDD /* ChatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		394D73231CA9CC2100505DDD /* ColorPallet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPallet.swift; sourceTree = "<group>"; };
 		396BE9FB1CAB16A3004DB4F1 /* ConversationListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationListTableViewCell.swift; sourceTree = "<group>"; };
+		39FC76C21CB586F500BCE1A8 /* ImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageController.swift; sourceTree = "<group>"; };
+		39FC76C41CB58AA300BCE1A8 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +161,7 @@
 			children = (
 				3938FBDB1C8F806E00BAD9CD /* LoginViewController.swift */,
 				3938FBDD1C8F809100BAD9CD /* SignUpViewController.swift */,
+				39FC76C41CB58AA300BCE1A8 /* SettingsViewController.swift */,
 				3938FBDF1C8F80CC00BAD9CD /* YourGroupsViewController.swift */,
 				3938FBE31C8F810800BAD9CD /* GroupChatsListTableViewController.swift */,
 				396BE9FB1CAB16A3004DB4F1 /* ConversationListTableViewCell.swift */,
@@ -201,6 +206,7 @@
 				3938FC061C8F8D2100BAD9CD /* GroupController.swift */,
 				3938FC081C8F8D2900BAD9CD /* ConversationController.swift */,
 				3938FC0D1C8F993700BAD9CD /* MessageController.swift */,
+				39FC76C21CB586F500BCE1A8 /* ImageController.swift */,
 			);
 			name = "Model Controllers";
 			sourceTree = "<group>";
@@ -290,6 +296,7 @@
 				3938FBE21C8F80EA00BAD9CD /* AddGroupTableViewController.swift in Sources */,
 				392A9D141CA48D8D00964522 /* ChatViewController.swift in Sources */,
 				396BE9FC1CAB16A3004DB4F1 /* ConversationListTableViewCell.swift in Sources */,
+				39FC76C31CB586F500BCE1A8 /* ImageController.swift in Sources */,
 				3938FBF11C8F8A7B00BAD9CD /* Message.swift in Sources */,
 				3918B42F1CA3651E00E16407 /* GroupProfileViewController.swift in Sources */,
 				3938FC0E1C8F993700BAD9CD /* MessageController.swift in Sources */,
@@ -299,6 +306,7 @@
 				3905D1741CB305EC00D6ABE6 /* SWRevealViewController.m in Sources */,
 				3938FC091C8F8D2900BAD9CD /* ConversationController.swift in Sources */,
 				3938FBE01C8F80CC00BAD9CD /* YourGroupsViewController.swift in Sources */,
+				39FC76C51CB58AA300BCE1A8 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

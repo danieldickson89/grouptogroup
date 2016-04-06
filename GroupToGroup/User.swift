@@ -12,11 +12,9 @@ class User: FirebaseType {
     
     let kUsername: String = "username"
     let kGroups: String = "groups"
-    let kProfileImage: String = "profilePic"
     
     let username: String
     var groups: [Group] = []
-    var imageEndpoint: String
     var groupIDs: [String] = [] {
         didSet {
             if identifier == UserController.currentUser.identifier {
@@ -31,20 +29,18 @@ class User: FirebaseType {
     }
     
     var jsonValue: [String: AnyObject] {
-        return [kUsername: username, kGroups: groupIDs, kProfileImage: imageEndpoint]
+        
+        return [kUsername: username, kGroups: groupIDs]
     }
     
-    init(username: String, imageString: String = "Default Image") {
+    init(username: String) {
         self.username = username
-        self.imageEndpoint = imageString
     }
     
     required init?(json: [String : AnyObject], identifier: String) {
-        guard let username = json[kUsername] as? String,
-              let imageEndpoint = json[kProfileImage] as? String else {return nil}
+        guard let username = json[kUsername] as? String else {return nil}
         self.identifier = identifier
         self.username = username
-        self.imageEndpoint = imageEndpoint
         
         if let groupIDs = json[kGroups] as? [String] {
             self.groupIDs = groupIDs

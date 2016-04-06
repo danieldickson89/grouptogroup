@@ -217,11 +217,11 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="512" height="32"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
-                                                <state key="normal" title="Logout">
+                                                <state key="normal" title="Settings">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="logoutButtonTapped:" destination="2gv-wA-hRn" eventType="touchUpInside" id="8Ww-hV-7L1"/>
+                                                    <segue destination="JHa-Qz-vvY" kind="presentation" id="UMK-k9-Ikx"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -254,7 +254,7 @@
                     <connections>
                         <outlet property="enterGroupIDTextField" destination="css-pf-F64" id="RiK-Fr-Alq"/>
                         <outlet property="joinGroupButton" destination="Yho-WY-bQJ" id="hgO-Ep-Rpd"/>
-                        <outlet property="logoutButton" destination="555-u6-O2N" id="PZZ-r6-Gfu"/>
+                        <outlet property="settingsButton" destination="555-u6-O2N" id="BCe-Qr-V9x"/>
                         <outlet property="yourGroupsListTableView" destination="MEU-BK-xjG" id="tvf-yr-VyB"/>
                     </connections>
                 </viewController>
@@ -863,8 +863,89 @@
             </objects>
             <point key="canvasLocation" x="1907" y="1041"/>
         </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="3bd-N2-lec">
+            <objects>
+                <viewController id="JHa-Qz-vvY" customClass="SettingsViewController" customModule="GroupToGroup" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3vX-sO-dh9"/>
+                        <viewControllerLayoutGuide type="bottom" id="PHe-8T-onY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JUu-qW-gaC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="eTc-6d-UMw">
+                                <rect key="frame" x="210" y="210" width="180" height="180"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="0L2-4X-fx6"/>
+                                    <constraint firstAttribute="height" constant="180" id="Z9F-z9-tEe"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTB-O7-m5l">
+                                <rect key="frame" x="20" y="160" width="560" height="24"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfM-yI-PaE">
+                                <rect key="frame" x="20" y="20" width="65" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="R4F-Z2-Eew"/>
+                                    <constraint firstAttribute="height" constant="45" id="oea-ec-W1D"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" red="0.33731000880000001" green="1" blue="0.4138532472" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="logoutButtonTapped:" destination="JHa-Qz-vvY" eventType="touchUpInside" id="n5E-OS-qiS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dEO-T6-qz9">
+                                <rect key="frame" x="515" y="20" width="65" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="MIN-Fo-chP"/>
+                                    <constraint firstAttribute="height" constant="45" id="RsY-Tg-Wz4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" red="0.33731000880000001" green="1" blue="0.4138532472" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneButtonTapped:" destination="JHa-Qz-vvY" eventType="touchUpInside" id="4C7-ed-LKd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dEO-T6-qz9" firstAttribute="trailing" secondItem="JUu-qW-gaC" secondAttribute="trailingMargin" id="AdV-Oq-uAz"/>
+                            <constraint firstItem="kTB-O7-m5l" firstAttribute="trailing" secondItem="JUu-qW-gaC" secondAttribute="trailingMargin" id="XGw-ZF-IQV"/>
+                            <constraint firstItem="kTB-O7-m5l" firstAttribute="leading" secondItem="JUu-qW-gaC" secondAttribute="leadingMargin" id="eKl-52-zuG"/>
+                            <constraint firstItem="jfM-yI-PaE" firstAttribute="leading" secondItem="JUu-qW-gaC" secondAttribute="leadingMargin" id="ekH-ox-keh"/>
+                            <constraint firstItem="jfM-yI-PaE" firstAttribute="top" secondItem="3vX-sO-dh9" secondAttribute="bottom" id="gCz-Bb-spp"/>
+                            <constraint firstItem="kTB-O7-m5l" firstAttribute="top" secondItem="3vX-sO-dh9" secondAttribute="bottom" constant="140" id="hJ5-Xa-s44"/>
+                            <constraint firstItem="dEO-T6-qz9" firstAttribute="top" secondItem="3vX-sO-dh9" secondAttribute="bottom" id="izV-10-ahN"/>
+                            <constraint firstItem="eTc-6d-UMw" firstAttribute="centerX" secondItem="kTB-O7-m5l" secondAttribute="centerX" id="jck-YE-cgd"/>
+                            <constraint firstItem="eTc-6d-UMw" firstAttribute="top" secondItem="kTB-O7-m5l" secondAttribute="bottom" constant="26.5" id="mNr-MT-Th4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="doneButton" destination="dEO-T6-qz9" id="S8S-WK-DGb"/>
+                        <outlet property="logoutButton" destination="jfM-yI-PaE" id="fMq-yC-hYa"/>
+                        <outlet property="profileImage" destination="eTc-6d-UMw" id="8Hb-ES-Xqb"/>
+                        <outlet property="usernameLabel" destination="kTB-O7-m5l" id="VQQ-Xs-x4E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XKi-I0-4Ty" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1907" y="1782"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="defaultImage" width="85" height="85"/>
         <image name="groupIcon" width="25" height="25"/>
         <image name="moreFilled" width="25" height="25"/>
     </resources>

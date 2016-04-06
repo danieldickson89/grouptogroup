@@ -17,7 +17,7 @@ class YourGroupsViewController: UIViewController {
     @IBOutlet weak var yourGroupsListTableView: UITableView!
     @IBOutlet weak var enterGroupIDTextField: UITextField!
     @IBOutlet weak var joinGroupButton: UIButton!
-    @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var settingsButton: UIButton!
     
     var tField: UITextField!
     
@@ -41,8 +41,8 @@ class YourGroupsViewController: UIViewController {
         yourGroupsListTableView.backgroundColor = UIColor.menuBackgroundColor()
         
         joinGroupButton.layer.cornerRadius = 6.0
-        logoutButton.layer.cornerRadius = 6.0
-        logoutButton.backgroundColor = UIColor(white: 0.75, alpha: 0.25)
+        settingsButton.layer.cornerRadius = 6.0
+        settingsButton.backgroundColor = UIColor(white: 0.75, alpha: 0.25)
         
         self.navigationController?.setToolbarHidden(true, animated: true)
         if let _ = UserController.currentUser {
@@ -77,18 +77,6 @@ class YourGroupsViewController: UIViewController {
     }
     
     // MARK: - Actions
-    
-    // Method for logging out the user
-    
-    @IBAction func logoutButtonTapped(sender: AnyObject) {
-        let logoutAlert = UIAlertController(title: "Are you sure you want to logout?", message: "", preferredStyle: .Alert)
-        logoutAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (logout) in
-            UserController.logoutUser()
-            self.navigationController?.performSegueWithIdentifier("toLogin", sender: nil)
-        }))
-        logoutAlert.addAction((UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)))
-        presentViewController(logoutAlert, animated: true, completion: nil)
-    }
     
     // Creating a text field for the Alert Controller that will allow user to enter a group name
     
