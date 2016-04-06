@@ -25,7 +25,6 @@
 		3938FBF11C8F8A7B00BAD9CD /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3938FBF01C8F8A7B00BAD9CD /* Message.swift */; };
 		3938FBF31C8F8B7C00BAD9CD /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3938FBF21C8F8B7C00BAD9CD /* FirebaseController.swift */; };
 		3938FBF61C8F8BAE00BAD9CD /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3938FBF41C8F8BA600BAD9CD /* Firebase.framework */; };
-		3938FBF71C8F8BAE00BAD9CD /* Firebase.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3938FBF41C8F8BA600BAD9CD /* Firebase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3938FBFA1C8F8BBF00BAD9CD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3938FBF91C8F8BBF00BAD9CD /* Security.framework */; };
 		3938FBFC1C8F8BC600BAD9CD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3938FBFB1C8F8BC600BAD9CD /* SystemConfiguration.framework */; };
 		3938FBFE1C8F8BD400BAD9CD /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3938FBFD1C8F8BD400BAD9CD /* CFNetwork.framework */; };
@@ -48,7 +47,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				3938FBF71C8F8BAE00BAD9CD /* Firebase.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 1;

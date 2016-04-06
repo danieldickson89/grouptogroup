@@ -12,6 +12,7 @@ class User: FirebaseType {
     
     let kUsername: String = "username"
     let kGroups: String = "groups"
+    let kProfileImage: String = "profilePic"
     
     let username: String
     var groups: [Group] = []
@@ -34,6 +35,7 @@ class User: FirebaseType {
     
     init(username: String) {
         self.username = username
+        //self.imageString = imageString
     }
     
     required init?(json: [String : AnyObject], identifier: String) {
