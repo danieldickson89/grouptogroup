@@ -29,7 +29,13 @@ class LoginViewController: UIViewController {
         self.navigationController?.navigationBar.barTintColor = UIColor.myNavBarTintColor()
         self.navigationController?.navigationBar.tintColor = UIColor.myGreenColor()
         loginButton.tintColor = UIColor.myGreenColor()
+        loginButton.layer.borderColor = UIColor.myGreenColor().CGColor
+        loginButton.layer.borderWidth = 1.5
+        loginButton.layer.cornerRadius = 6.0
         createNewAccountButton.tintColor = UIColor.myGreenColor()
+        createNewAccountButton.layer.borderColor = UIColor.myGreenColor().CGColor
+        createNewAccountButton.layer.borderWidth = 1.5
+        createNewAccountButton.layer.cornerRadius = 6.0
         emailTextField.attributedPlaceholder = NSAttributedString(string: "*email", attributes: [NSForegroundColorAttributeName: UIColor.lightGrayColor()])
         emailTextField.backgroundColor = UIColor(white: 0.75, alpha: 0.25)
         passwordTextField.attributedPlaceholder = NSAttributedString(string: "*password", attributes: [NSForegroundColorAttributeName: UIColor.lightGrayColor()])
