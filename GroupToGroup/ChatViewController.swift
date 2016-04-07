@@ -148,6 +148,11 @@ class ChatViewController: UIViewController, UITextViewDelegate {
             areYouSure.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
             self.presentViewController(areYouSure, animated: true, completion: nil)
         }))
+        alert.addAction(UIAlertAction(title: "View Group's Profile", style: .Default, handler: { (presentGroupProfile) in
+//            let groupProfileViewController = GroupProfileViewController()
+//            self.presentViewController(groupProfileViewController, animated: true, completion: nil)
+            
+        }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
         presentViewController(alert, animated: true, completion: nil)
     }

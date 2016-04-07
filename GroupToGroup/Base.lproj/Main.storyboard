@@ -418,7 +418,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7d4-kf-wJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3565" y="316"/>
+            <point key="canvasLocation" x="4397" y="1042"/>
         </scene>
         <!--Add Group Table View Controller-->
         <scene sceneID="zpi-C9-X4t">
@@ -478,7 +478,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o23-h7-oMU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4317" y="1042"/>
+            <point key="canvasLocation" x="3565" y="310"/>
         </scene>
         <!--Group Chats List Table View Controller-->
         <scene sceneID="hFI-0N-CIe">
