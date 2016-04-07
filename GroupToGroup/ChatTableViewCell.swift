@@ -15,12 +15,14 @@ class ChatTableViewCell: UITableViewCell {
     @IBOutlet weak var rightUIView: UIView!
     @IBOutlet weak var rightLabel: UILabel!
     @IBOutlet weak var rightNameStamp: UILabel!
+    @IBOutlet weak var rightImageView: UIImageView!
     
     @IBOutlet weak var leftTopUIView: UIView!
     @IBOutlet weak var leftMainUIView: UIView!
     @IBOutlet weak var leftUIView: UIView!
     @IBOutlet weak var leftLabel: UILabel!
     @IBOutlet weak var leftNameStamp: UILabel!
+    @IBOutlet weak var leftImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,6 +39,18 @@ class ChatTableViewCell: UITableViewCell {
 extension ChatTableViewCell {
     
     func updateWithUsersMessage(message: Message) {
+        
+        rightImageView.layer.cornerRadius = rightImageView.frame.size.width / 2
+        rightImageView.layer.masksToBounds = true
+        dispatch_async(dispatch_get_main_queue()) {
+            ImageController.imageForUser(message.senderID, completion: { (success, image) in
+                if success {
+                    self.rightImageView.image = image
+                } else {
+                    self.rightImageView.image = UIImage(named: "defaultImage")
+                }
+            })
+        }
         rightMainUIView.backgroundColor = UIColor.menuBackgroundColor()
         rightTopUIView.backgroundColor = UIColor.menuBackgroundColor()
         rightLabel.text = message.text
@@ -50,6 +64,18 @@ extension ChatTableViewCell {
     }
     
     func updateWithRightMemberMessage(message: Message) {
+        
+        rightImageView.layer.cornerRadius = rightImageView.frame.size.width / 2
+        rightImageView.layer.masksToBounds = true
+        dispatch_async(dispatch_get_main_queue()) {
+            ImageController.imageForUser(message.senderID, completion: { (success, image) in
+                if success {
+                    self.rightImageView.image = image
+                } else {
+                    self.rightImageView.image = UIImage(named: "defaultImage")
+                }
+            })
+        }
         rightMainUIView.backgroundColor = UIColor.menuBackgroundColor()
         rightTopUIView.backgroundColor = UIColor.menuBackgroundColor()
         rightLabel.text = message.text
@@ -64,6 +90,17 @@ extension ChatTableViewCell {
     
     func updateWithLeftMemberMessage(message: Message) {
      
+        leftImageView.layer.cornerRadius = leftImageView.frame.size.width / 2
+        leftImageView.layer.masksToBounds = true
+        dispatch_async(dispatch_get_main_queue()) {
+            ImageController.imageForUser(message.senderID, completion: { (success, image) in
+                if success {
+                    self.leftImageView.image = image
+                } else {
+                    self.leftImageView.image = UIImage(named: "defaultImage")
+                }
+            })
+        }
         leftMainUIView.backgroundColor = UIColor.menuBackgroundColor()
         leftTopUIView.backgroundColor = UIColor.menuBackgroundColor()
         leftLabel.text = message.text

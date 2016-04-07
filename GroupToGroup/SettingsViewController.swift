@@ -24,10 +24,14 @@ class SettingsViewController: UIViewController,UIImagePickerControllerDelegate, 
         profileImage.layer.cornerRadius = profileImage.frame.size.width / 2
         profileImage.layer.masksToBounds = true
         
-        dispatch_async(dispatch_get_main_queue()) { 
+        dispatch_async(dispatch_get_main_queue()) {
             if let userID = UserController.currentUser.identifier {
-                ImageController.imageForUser(userID, completion: { (image) in
-                    self.profileImage.image = image
+                ImageController.imageForUser(userID, completion: { (success, image) in
+                    if success {
+                        self.profileImage.image = image
+                    } else {
+                        self.profileImage.image = UIImage(named: "defaultImage")
+                    }
                 })
             }
         }

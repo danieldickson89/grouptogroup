@@ -23,15 +23,15 @@ class ImageController {
         }
     }
     
-    static func imageForUser(userID: String, completion: (image: UIImage?) -> Void) {
+    static func imageForUser(userID: String, completion: (success: Bool, image: UIImage?) -> Void) {
         
         FirebaseController.dataAtEndpoint("users/\(userID)/image") { (data) -> Void in
             
             if let data = data as? String {
                 let image = UIImage(base64: data)
-                completion(image: image)
+                completion(success: true, image: image)
             } else {
-                completion(image: nil)
+                completion(success: false, image: nil)
             }
         }
     }
