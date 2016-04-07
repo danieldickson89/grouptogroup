@@ -76,13 +76,19 @@ extension GroupProfileViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("groupMemberCell", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("groupMemberCell", forIndexPath: indexPath) as! GroupProfileTableViewCell
         
         let member = membersArray[indexPath.row]
         
-        cell.backgroundColor = UIColor.chatListBackgroundColor()
-        cell.textLabel?.text = "\(indexPath.row + 1). \(member.username)"
-        cell.textLabel?.textColor = UIColor.whiteColor()
+//        ImageController.imageForUser(member.identifier!, completion: { (image) in
+//            cell.imageView?.image = image
+//        })
+//        
+//        cell.backgroundColor = UIColor.chatListBackgroundColor()
+//        cell.textLabel?.text = member.username
+//        cell.textLabel?.textColor = UIColor.whiteColor()
+
+        cell.updateWithMemberCell(member)
         
         return cell
     }

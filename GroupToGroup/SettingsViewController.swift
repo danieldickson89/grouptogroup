@@ -23,10 +23,13 @@ class SettingsViewController: UIViewController,UIImagePickerControllerDelegate, 
         view.backgroundColor = UIColor.chatListBackgroundColor()
         profileImage.layer.cornerRadius = profileImage.frame.size.width / 2
         profileImage.layer.masksToBounds = true
-        if let userID = UserController.currentUser.identifier {
-            ImageController.imageForUser(userID, completion: { (image) in
-                self.profileImage.image = image
-            })
+        
+        dispatch_async(dispatch_get_main_queue()) { 
+            if let userID = UserController.currentUser.identifier {
+                ImageController.imageForUser(userID, completion: { (image) in
+                    self.profileImage.image = image
+                })
+            }
         }
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SettingsViewController.profileImageTapped))
         profileImage.userInteractionEnabled = true

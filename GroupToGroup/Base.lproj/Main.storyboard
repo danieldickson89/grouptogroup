@@ -335,17 +335,46 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1fe-7x-eTT">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="89" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1fe-7x-eTT">
                                         <rect key="frame" x="0.0" y="84" width="560" height="424"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="groupMemberCell" id="rY0-aT-KtV">
-                                                <rect key="frame" x="0.0" y="28" width="560" height="44"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="groupMemberCell" rowHeight="89" id="rY0-aT-KtV" customClass="GroupProfileTableViewCell" customModule="GroupToGroup" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="560" height="89"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rY0-aT-KtV" id="HDc-IK-v4d">
-                                                    <rect key="frame" x="0.0" y="0.0" width="560" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="560" height="89"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fo8-Z5-ZJ8">
+                                                            <rect key="frame" x="16" y="8" width="72.5" height="72.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="72.5" id="VyR-pN-eVK"/>
+                                                                <constraint firstAttribute="height" constant="72.5" id="jU2-Mn-B2G"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNl-mC-uvr">
+                                                            <rect key="frame" x="101" y="8" width="451" height="72.5"/>
+                                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="21"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="Fo8-Z5-ZJ8" firstAttribute="top" secondItem="HDc-IK-v4d" secondAttribute="topMargin" id="0tH-Bi-VKP"/>
+                                                        <constraint firstItem="bNl-mC-uvr" firstAttribute="leading" secondItem="Fo8-Z5-ZJ8" secondAttribute="trailing" constant="12.5" id="Ipw-oE-AjA"/>
+                                                        <constraint firstItem="Fo8-Z5-ZJ8" firstAttribute="leading" secondItem="HDc-IK-v4d" secondAttribute="leadingMargin" constant="8" id="Mjj-Dd-Ixz"/>
+                                                        <constraint firstItem="bNl-mC-uvr" firstAttribute="trailing" secondItem="HDc-IK-v4d" secondAttribute="trailingMargin" id="Pad-qO-i42"/>
+                                                        <constraint firstItem="bNl-mC-uvr" firstAttribute="top" secondItem="Fo8-Z5-ZJ8" secondAttribute="top" id="ds9-W7-WFk"/>
+                                                        <constraint firstItem="Fo8-Z5-ZJ8" firstAttribute="bottom" secondItem="HDc-IK-v4d" secondAttribute="bottomMargin" id="ebI-VZ-iF6"/>
+                                                        <constraint firstItem="bNl-mC-uvr" firstAttribute="bottom" secondItem="Fo8-Z5-ZJ8" secondAttribute="bottom" id="uKA-Li-gqj"/>
+                                                    </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="cellView" destination="HDc-IK-v4d" id="9Po-Ss-c1P"/>
+                                                    <outlet property="nameLabel" destination="bNl-mC-uvr" id="lHW-jF-ySs"/>
+                                                    <outlet property="profileImage" destination="Fo8-Z5-ZJ8" id="vO9-uS-Hv6"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                         <connections>
@@ -913,9 +942,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="eTc-6d-UMw">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eTc-6d-UMw">
                                 <rect key="frame" x="210" y="210" width="180" height="180"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="180" id="0L2-4X-fx6"/>
@@ -966,7 +995,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="defaultImage" width="85" height="85"/>
         <image name="groupIcon" width="25" height="25"/>
         <image name="moreFilled" width="25" height="25"/>
         <image name="settings" width="25" height="25"/>
