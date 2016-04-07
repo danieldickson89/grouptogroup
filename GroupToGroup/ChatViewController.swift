@@ -215,6 +215,7 @@ extension ChatViewController: UITableViewDataSource, UITableViewDelegate {
                 destinationVC?.group = otherGroup
                 destinationVC?.usersGroup = usersGroup
             }
+            destinationVC?.isOnlyViewing = true
         }
     }
     

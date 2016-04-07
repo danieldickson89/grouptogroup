@@ -116,6 +116,7 @@ class AddGroupTableViewController: UITableViewController, UISearchResultsUpdatin
                 let destinationViewController = segue.destinationViewController as? GroupProfileViewController
                 destinationViewController?.group = group
                 destinationViewController?.usersGroup = usersGroup
+                destinationViewController?.isOnlyViewing = false
             } else if let indexPath = (searchController.searchResultsController as? GroupsSearchResultsTableViewController)?.tableView.indexPathForCell(cell) {
                 
                 let group = (searchController.searchResultsController as! GroupsSearchResultsTableViewController).groupsResultsDataSource[indexPath.row]
@@ -124,6 +125,7 @@ class AddGroupTableViewController: UITableViewController, UISearchResultsUpdatin
                 let destinationViewController = segue.destinationViewController as? GroupProfileViewController
                 destinationViewController?.group = group
                 destinationViewController?.usersGroup = usersGroup
+                destinationViewController?.isOnlyViewing = false
             }
         }
     }

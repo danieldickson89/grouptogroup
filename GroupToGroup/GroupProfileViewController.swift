@@ -15,6 +15,7 @@ class GroupProfileViewController: UIViewController {
     var group: Group?
     var usersGroup: Group?
     var membersArray: [User] = []
+    var isOnlyViewing: Bool = false
     
     @IBOutlet weak var groupNameLabel: UILabel!
     @IBOutlet weak var cancelButton: UIButton!
@@ -40,6 +41,17 @@ class GroupProfileViewController: UIViewController {
         cancelButton.tintColor = .myGreenColor()
         groupNameLabel.textColor = UIColor.whiteColor()
         
+        if isOnlyViewing {
+            startChatButton.setTitle("Done", forState: .Normal)
+            cancelButton.hidden = true
+            cancelButton.enabled = false
+        } else {
+            startChatButton.setTitle("Start Chat", forState: .Normal)
+            cancelButton.hidden = false
+            cancelButton.enabled = true
+        }
+
+        
     }
     
     func setupTableViewWithGroupMembers() {
@@ -54,9 +66,13 @@ class GroupProfileViewController: UIViewController {
     }
     
     @IBAction func startChatButtonTapped(sender: AnyObject) {
-        if let usersGroup = self.usersGroup, group = self.group {
-            ConversationController.createConversation("\(usersGroup.name) vs \(group.name)", groups: [usersGroup, group]) { (conversation) -> Void in
-                self.dismissViewControllerAnimated(true, completion: nil)
+        if isOnlyViewing {
+            self.dismissViewControllerAnimated(true, completion: nil)
+        } else {
+            if let usersGroup = self.usersGroup, group = self.group {
+                ConversationController.createConversation("\(usersGroup.name) vs \(group.name)", groups: [usersGroup, group]) { (conversation) -> Void in
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                }
             }
         }
     }
@@ -79,14 +95,6 @@ extension GroupProfileViewController: UITableViewDataSource, UITableViewDelegate
         let cell = tableView.dequeueReusableCellWithIdentifier("groupMemberCell", forIndexPath: indexPath) as! GroupProfileTableViewCell
         
         let member = membersArray[indexPath.row]
-        
-//        ImageController.imageForUser(member.identifier!, completion: { (image) in
-//            cell.imageView?.image = image
-//        })
-//        
-//        cell.backgroundColor = UIColor.chatListBackgroundColor()
-//        cell.textLabel?.text = member.username
-//        cell.textLabel?.textColor = UIColor.whiteColor()
 
         cell.updateWithMemberCell(member)
         
