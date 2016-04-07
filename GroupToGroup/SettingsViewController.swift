@@ -10,7 +10,6 @@ import UIKit
 
 class SettingsViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var profileImage: UIImageView!
     
@@ -19,7 +18,6 @@ class SettingsViewController: UIViewController,UIImagePickerControllerDelegate, 
     }
     
     override func viewWillAppear(animated: Bool) {
-        usernameLabel.text = UserController.currentUser.username
         view.backgroundColor = UIColor.chatListBackgroundColor()
         profileImage.layer.cornerRadius = profileImage.frame.size.width / 2
         profileImage.layer.masksToBounds = true

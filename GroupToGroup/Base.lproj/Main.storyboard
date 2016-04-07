@@ -963,7 +963,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eTc-6d-UMw">
-                                <rect key="frame" x="210" y="210" width="180" height="180"/>
+                                <rect key="frame" x="210" y="202.5" width="180" height="180"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -971,9 +971,9 @@
                                     <constraint firstAttribute="height" constant="180" id="Z9F-z9-tEe"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTB-O7-m5l">
-                                <rect key="frame" x="20" y="160" width="560" height="24"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a Profile Pic:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTB-O7-m5l">
+                                <rect key="frame" x="20" y="130" width="560" height="27.5"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="21"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -997,16 +997,15 @@
                             <constraint firstItem="dEO-T6-qz9" firstAttribute="trailing" secondItem="JUu-qW-gaC" secondAttribute="trailingMargin" id="AdV-Oq-uAz"/>
                             <constraint firstItem="kTB-O7-m5l" firstAttribute="trailing" secondItem="JUu-qW-gaC" secondAttribute="trailingMargin" id="XGw-ZF-IQV"/>
                             <constraint firstItem="kTB-O7-m5l" firstAttribute="leading" secondItem="JUu-qW-gaC" secondAttribute="leadingMargin" id="eKl-52-zuG"/>
-                            <constraint firstItem="kTB-O7-m5l" firstAttribute="top" secondItem="3vX-sO-dh9" secondAttribute="bottom" constant="140" id="hJ5-Xa-s44"/>
+                            <constraint firstItem="kTB-O7-m5l" firstAttribute="top" secondItem="3vX-sO-dh9" secondAttribute="bottom" constant="110" id="hJ5-Xa-s44"/>
                             <constraint firstItem="dEO-T6-qz9" firstAttribute="top" secondItem="3vX-sO-dh9" secondAttribute="bottom" id="izV-10-ahN"/>
                             <constraint firstItem="eTc-6d-UMw" firstAttribute="centerX" secondItem="kTB-O7-m5l" secondAttribute="centerX" id="jck-YE-cgd"/>
-                            <constraint firstItem="eTc-6d-UMw" firstAttribute="top" secondItem="kTB-O7-m5l" secondAttribute="bottom" constant="26.5" id="mNr-MT-Th4"/>
+                            <constraint firstItem="eTc-6d-UMw" firstAttribute="top" secondItem="kTB-O7-m5l" secondAttribute="bottom" constant="45" id="mNr-MT-Th4"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="doneButton" destination="dEO-T6-qz9" id="S8S-WK-DGb"/>
                         <outlet property="profileImage" destination="eTc-6d-UMw" id="8Hb-ES-Xqb"/>
-                        <outlet property="usernameLabel" destination="kTB-O7-m5l" id="VQQ-Xs-x4E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XKi-I0-4Ty" userLabel="First Responder" sceneMemberID="firstResponder"/>
