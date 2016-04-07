@@ -23,9 +23,9 @@ class ImageController {
         }
     }
     
-    static func imageForIdentifier(userID: String, identifier: String, completion: (image: UIImage?) -> Void) {
+    static func imageForUser(userID: String, completion: (image: UIImage?) -> Void) {
         
-        FirebaseController.dataAtEndpoint("users/\(userID)/images/\(identifier)") { (data) -> Void in
+        FirebaseController.dataAtEndpoint("users/\(userID)/image") { (data) -> Void in
             
             if let data = data as? String {
                 let image = UIImage(base64: data)
@@ -33,29 +33,6 @@ class ImageController {
             } else {
                 completion(image: nil)
             }
-        }
-    }
-    
-    static func fetchImageForUser(user: User, completion: (image: Image) -> Void) {
-        
-        if let userID = user.identifier {
-            
-            FirebaseController.base.childByAppendingPath("users/\(userID)/image").observeEventType(.Value, withBlock: { (data) -> Void in
-                
-                // serialize the data into message objects
-                // set conversation.messages to the array of messages
-                // run completion handler
-                if let json = data.value as? [String: AnyObject] {
-                    
-                    let image = Image(json: json, identifier: userID)
-                    
-                    if let image = image {
-                    completion(image: image)
-                    }
-                } else {
-                    completion(image: Image(imageEndpoint: "defaultImage"))
-                }
-            })
         }
     }
 }

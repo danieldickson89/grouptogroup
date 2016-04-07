@@ -9,7 +9,7 @@
 import UIKit
 
 class SettingsViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+    
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var profileImage: UIImageView!
@@ -23,10 +23,11 @@ class SettingsViewController: UIViewController,UIImagePickerControllerDelegate, 
         view.backgroundColor = UIColor.chatListBackgroundColor()
         profileImage.layer.cornerRadius = profileImage.frame.size.width / 2
         profileImage.layer.masksToBounds = true
-        if let currentUserID = UserController.currentUser.identifier {
-            updateWithImageIdentifier(currentUserID)
+        if let userID = UserController.currentUser.identifier {
+            ImageController.imageForUser(userID, completion: { (image) in
+                self.profileImage.image = image
+            })
         }
-        
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SettingsViewController.profileImageTapped))
         profileImage.userInteractionEnabled = true
         profileImage.addGestureRecognizer(tapGestureRecognizer)
@@ -60,11 +61,18 @@ class SettingsViewController: UIViewController,UIImagePickerControllerDelegate, 
         
         let image = info[UIImagePickerControllerOriginalImage] as? UIImage
         
-        profileImage.image = image
+        if let userID = UserController.currentUser.identifier, image = image {
+            ImageController.uploadImage(userID, image: image) { (identifier) in
+                self.profileImage.image = image
+            }
+        }
     }
     
-    func updateWithImageIdentifier(identifier: String) {
-
-    }
-    
+//    func updateWithImageIdentifier() {
+//        if let userID = UserController.currentUser.identifier {
+//            ImageController.imageForUser(userID, completion: { (image) in
+//                self.profileImage.image = image
+//            })
+//        }
+//    }
 }
