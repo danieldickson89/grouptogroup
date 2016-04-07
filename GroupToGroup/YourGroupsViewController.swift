@@ -189,6 +189,10 @@ extension YourGroupsViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    func tableView(tableView: UITableView, didHighlightRowAtIndexPath indexPath: NSIndexPath) {
+        let cell = tableView.dequeueReusableCellWithIdentifier("yourGroupNameCell", forIndexPath: indexPath) as UITableViewCell
+    }
+    
 }
 
 

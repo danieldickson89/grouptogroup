@@ -11,6 +11,7 @@ import UIKit
 class TermsOfServiceViewController: UIViewController {
     
     @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var tosTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,10 +20,12 @@ class TermsOfServiceViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        doneButton.tintColor = .blueColor()
-        doneButton.layer.borderColor = UIColor.blueColor().CGColor
+        doneButton.tintColor = .myGreenColor()
+        doneButton.layer.borderColor = UIColor.myGreenColor().CGColor
         doneButton.layer.borderWidth = 1.5
         doneButton.layer.cornerRadius = 6.0
+        tosTextView.layer.borderColor = UIColor.whiteColor().CGColor
+        tosTextView.layer.borderWidth = 1.5
     }
 
     @IBAction func doneButtonTapped(sender: AnyObject) {
