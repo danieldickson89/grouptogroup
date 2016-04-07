@@ -952,6 +952,7 @@
                         <outlet property="tableView" destination="VjV-lV-zzx" id="kBw-FU-Hao"/>
                         <outlet property="tableViewBottomConstraint" destination="hSP-g5-QGy" id="0ki-eA-MK8"/>
                         <outlet property="textView" destination="RXm-Gk-E3B" id="EL9-5g-faD"/>
+                        <segue destination="aTs-Ab-6ad" kind="presentation" identifier="viewGroupsProfile" id="nlu-t8-Ns3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GhO-ck-VRy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1094,6 +1095,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="qyL-HI-1CH"/>
+        <segue reference="nlu-t8-Ns3"/>
         <segue reference="yJy-YH-vSY"/>
     </inferredMetricsTieBreakers>
 </document>

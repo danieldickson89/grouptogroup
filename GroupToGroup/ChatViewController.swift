@@ -149,9 +149,7 @@ class ChatViewController: UIViewController, UITextViewDelegate {
             self.presentViewController(areYouSure, animated: true, completion: nil)
         }))
         alert.addAction(UIAlertAction(title: "View Group's Profile", style: .Default, handler: { (presentGroupProfile) in
-//            let groupProfileViewController = GroupProfileViewController()
-//            self.presentViewController(groupProfileViewController, animated: true, completion: nil)
-            
+            self.performSegueWithIdentifier("viewGroupsProfile", sender: nil)
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
         presentViewController(alert, animated: true, completion: nil)
@@ -196,6 +194,27 @@ extension ChatViewController: UITableViewDataSource, UITableViewDelegate {
             cell.backgroundColor = UIColor.menuBackgroundColor()
             cell.updateWithLeftMemberMessage(message)
             return cell
+        }
+    }
+    
+    // MARK: - Navigation
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "viewGroupsProfile" {
+            
+            let destinationVC = segue.destinationViewController as? GroupProfileViewController
+            let usersGroup = self.usersGroup
+            var otherGroup: Group?
+            let groups = self.conversationGroups
+            for group in groups {
+                if group.identifier != usersGroup?.identifier {
+                    otherGroup = group
+                }
+            }
+            if let usersGroup = usersGroup, otherGroup = otherGroup {
+                destinationVC?.group = otherGroup
+                destinationVC?.usersGroup = usersGroup
+            }
         }
     }
     
