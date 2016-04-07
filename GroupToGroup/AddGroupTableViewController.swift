@@ -15,6 +15,7 @@ class AddGroupTableViewController: UITableViewController, UISearchResultsUpdatin
     var usersGroup: Group?
     var groupsDataSource: [Group] = []
     var searchController: UISearchController!
+    let newView = UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,8 +51,10 @@ class AddGroupTableViewController: UITableViewController, UISearchResultsUpdatin
         
         let resultsController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("GroupsSearchResultsTableViewController")
         
-        self.view.backgroundColor = UIColor.chatListBackgroundColor()
+        self.tableView.backgroundView = newView
+        newView.backgroundColor = UIColor.chatListBackgroundColor()
         searchController = UISearchController(searchResultsController: resultsController)
+        searchController.searchBar.backgroundColor = UIColor.chatListBackgroundColor()
         searchController.searchResultsUpdater = self
         searchController.searchBar.sizeToFit()
         searchController.hidesNavigationBarDuringPresentation = false

@@ -23,9 +23,9 @@ class SettingsViewController: UIViewController,UIImagePickerControllerDelegate, 
         view.backgroundColor = UIColor.chatListBackgroundColor()
         profileImage.layer.cornerRadius = profileImage.frame.size.width / 2
         profileImage.layer.masksToBounds = true
-//        if let currentUserID = UserController.currentUser.identifier {
-//            updateWithImageIdentifier(currentUserID)
-//        }
+        if let currentUserID = UserController.currentUser.identifier {
+            updateWithImageIdentifier(currentUserID)
+        }
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SettingsViewController.profileImageTapped))
         profileImage.userInteractionEnabled = true
@@ -60,14 +60,11 @@ class SettingsViewController: UIViewController,UIImagePickerControllerDelegate, 
         
         let image = info[UIImagePickerControllerOriginalImage] as? UIImage
         
-        self.profileImage.image = image
+        profileImage.image = image
     }
     
     func updateWithImageIdentifier(identifier: String) {
-        
-        ImageController.imageForIdentifier(identifier) { (image) -> Void in
-            self.profileImage.image = image
-        }
+
     }
     
 }
