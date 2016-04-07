@@ -619,6 +619,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="openMenuButton" destination="cQ6-Cu-fOH" id="kvs-eV-ao9"/>
+                        <segue destination="aTs-Ab-6ad" kind="presentation" identifier="viewMyGroup" id="7rr-iX-Pls"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mex-Bz-XMD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1095,7 +1096,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="qyL-HI-1CH"/>
-        <segue reference="nlu-t8-Ns3"/>
+        <segue reference="7rr-iX-Pls"/>
         <segue reference="yJy-YH-vSY"/>
     </inferredMetricsTieBreakers>
 </document>

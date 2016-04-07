@@ -90,6 +90,9 @@ class GroupChatsListTableViewController: UITableViewController, UINavigationCont
         options.addAction(UIAlertAction(title: "Share this GroupID", style: .Default, handler: { (invite) in
             self.sendTextMessage()
         }))
+        options.addAction(UIAlertAction(title: "View My Group", style: .Default, handler: { (presentGroupProfile) in
+            self.performSegueWithIdentifier("viewMyGroup", sender: nil)
+        }))
         options.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
         self.presentViewController(options, animated: true, completion: nil)
     }
@@ -126,6 +129,12 @@ class GroupChatsListTableViewController: UITableViewController, UINavigationCont
                 chatViewController.usersGroup = self.usersGroup
                 chatViewController.updateWithConversation(conversation)
             }
+        } else if segue.identifier == "viewMyGroup" {
+            let destinationVC = segue.destinationViewController as! GroupProfileViewController
+            if let usersGroup = usersGroup {
+                destinationVC.group = usersGroup
+            }
+            destinationVC.isOnlyViewing = true
         }
     }
     
