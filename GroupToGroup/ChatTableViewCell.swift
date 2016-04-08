@@ -16,6 +16,7 @@ class ChatTableViewCell: UITableViewCell {
     @IBOutlet weak var rightLabel: UILabel!
     @IBOutlet weak var rightNameStamp: UILabel!
     @IBOutlet weak var rightImageView: UIImageView!
+    @IBOutlet weak var rightBubbleConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var leftTopUIView: UIView!
     @IBOutlet weak var leftMainUIView: UIView!
@@ -23,23 +24,33 @@ class ChatTableViewCell: UITableViewCell {
     @IBOutlet weak var leftLabel: UILabel!
     @IBOutlet weak var leftNameStamp: UILabel!
     @IBOutlet weak var leftImageView: UIImageView!
+    @IBOutlet weak var leftBubbleConstraint: NSLayoutConstraint!
     
-    var delegate: ChatViewController?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         if let leftImage = leftImageView {
             leftImage.image = UIImage(named: "defaultImage")
-            delegate?.tableView.reloadData()
+
         } else if let rightImage = rightImageView {
             rightImage.image = UIImage(named: "defaultImage")
-            delegate?.tableView.reloadData()
+
         }
     }
     
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        
+    }
+    
+    func rightBubbleConstraint(textCount: Int) {
+        
+        
+    }
+    
+    func leftBubbleConstraint(textCount: Int) {
+        
         
     }
     
@@ -49,6 +60,8 @@ extension ChatTableViewCell {
     
     func updateWithUsersMessage(message: Message) {
         
+        rightImageView.image = UIImage(named: "defaultImage")
+        rightNameStamp.text = ""
         rightImageView.layer.cornerRadius = rightImageView.frame.size.width / 2
         rightImageView.layer.masksToBounds = true
         dispatch_async(dispatch_get_main_queue()) {
@@ -74,6 +87,8 @@ extension ChatTableViewCell {
     
     func updateWithRightMemberMessage(message: Message) {
         
+        rightImageView.image = UIImage(named: "defaultImage")
+        rightNameStamp.text = ""
         rightImageView.layer.cornerRadius = rightImageView.frame.size.width / 2
         rightImageView.layer.masksToBounds = true
         dispatch_async(dispatch_get_main_queue()) {
@@ -99,6 +114,8 @@ extension ChatTableViewCell {
     
     func updateWithLeftMemberMessage(message: Message) {
      
+        leftImageView.image = UIImage(named: "defaultImage")
+        leftNameStamp.text = ""
         leftImageView.layer.cornerRadius = leftImageView.frame.size.width / 2
         leftImageView.layer.masksToBounds = true
         dispatch_async(dispatch_get_main_queue()) {

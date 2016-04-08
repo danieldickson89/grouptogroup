@@ -30,6 +30,7 @@ class ChatViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var tableViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var mockBottomConstraint: NSLayoutConstraint!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -186,21 +187,18 @@ extension ChatViewController: UITableViewDataSource, UITableViewDelegate {
         if conversation?.currentGroup?.identifier == message.senderGroupID &&
             UserController.currentUser.identifier == message.senderID {
             let cell = tableView.dequeueReusableCellWithIdentifier("rightMessageCell", forIndexPath: indexPath) as! ChatTableViewCell
-            cell.delegate = self
             cell.backgroundColor = UIColor.menuBackgroundColor()
             cell.updateWithUsersMessage(message)
             return cell
             
         } else if conversation?.currentGroup?.identifier == message.senderGroupID {
             let cell = tableView.dequeueReusableCellWithIdentifier("rightMessageCell", forIndexPath: indexPath) as! ChatTableViewCell
-            cell.delegate = self
             cell.backgroundColor = UIColor.menuBackgroundColor()
             cell.updateWithRightMemberMessage(message)
             return cell
             
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier("leftMessageCell", forIndexPath: indexPath) as! ChatTableViewCell
-            cell.delegate = self
             cell.backgroundColor = UIColor.menuBackgroundColor()
             cell.updateWithLeftMemberMessage(message)
             return cell
