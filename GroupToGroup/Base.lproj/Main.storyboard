@@ -453,7 +453,7 @@ GroupNight shall not be obligated to indemnify or defend you with respect to any
                                                     <rect key="frame" x="0.0" y="0.0" width="560" height="89"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fo8-Z5-ZJ8">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fo8-Z5-ZJ8">
                                                             <rect key="frame" x="8" y="8" width="72.5" height="72.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="72.5" id="VyR-pN-eVK"/>
@@ -795,7 +795,7 @@ GroupNight shall not be obligated to indemnify or defend you with respect to any
                                                         </view>
                                                     </subviews>
                                                 </stackView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GmC-r4-i8s">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GmC-r4-i8s">
                                                     <rect key="frame" x="547" y="47" width="45" height="45"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="45" id="UPB-m6-nfK"/>
@@ -870,7 +870,7 @@ GroupNight shall not be obligated to indemnify or defend you with respect to any
                                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hcY-lE-zdt">
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hcY-lE-zdt">
                                                                     <rect key="frame" x="8" y="56" width="45" height="45"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="45" id="BZb-qd-bRR"/>

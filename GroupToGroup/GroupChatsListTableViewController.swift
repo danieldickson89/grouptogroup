@@ -35,8 +35,10 @@ class GroupChatsListTableViewController: UITableViewController, UINavigationCont
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         navigationController?.toolbar.barTintColor = UIColor.myNavBarTintColor()
         self.navigationController?.setToolbarHidden(false, animated: true)
-        if let _ = usersGroup {
-            updateWithConversations()
+        dispatch_async(dispatch_get_main_queue()) { 
+            if let _ = self.usersGroup {
+                self.updateWithConversations()
+            }
         }
     }
     
