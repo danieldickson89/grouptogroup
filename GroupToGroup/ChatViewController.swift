@@ -78,7 +78,7 @@ class ChatViewController: UIViewController, UITextViewDelegate {
 
     }
     
-    func updateWithConversation(conversation: Conversation) {
+    func observeChatThread(conversation: Conversation) {
         
         self.conversation = conversation
         

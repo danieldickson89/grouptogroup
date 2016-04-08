@@ -53,7 +53,7 @@ class GroupChatsListTableViewController: UITableViewController, UINavigationCont
         let conversation = conversationsArray[indexPath.row]
         
         cell.backgroundColor = UIColor.chatListBackgroundColor()
-        cell.updateWithConversation(conversation)
+        cell.updateCellWithConversation(conversation)
         
         return cell
     }
@@ -128,7 +128,7 @@ class GroupChatsListTableViewController: UITableViewController, UINavigationCont
                 let conversation = conversationsArray[indexPath.row]
                 chatViewController.conversation = conversation
                 chatViewController.usersGroup = self.usersGroup
-                chatViewController.updateWithConversation(conversation)
+                chatViewController.observeChatThread(conversation)
             }
         } else if segue.identifier == "viewMyGroup" {
             let destinationVC = segue.destinationViewController as! GroupProfileViewController

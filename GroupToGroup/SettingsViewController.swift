@@ -66,8 +66,8 @@ class SettingsViewController: UIViewController,UIImagePickerControllerDelegate, 
         
         let image = info[UIImagePickerControllerOriginalImage] as? UIImage
         
-        if let userID = UserController.currentUser.identifier, image = image {
-            ImageController.uploadImage(userID, image: image) { (identifier) in
+        if let user = UserController.currentUser, image = image {
+            ImageController.uploadImage(user, image: image) { (identifier) in
                 self.profileImage.image = image
             }
         }

@@ -269,13 +269,13 @@ GroupNight shall not be obligated to indemnify or defend you with respect to any
                                         <rect key="frame" x="0.0" y="0.0" width="512" height="31"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="css-pf-F64">
-                                                <rect key="frame" x="0.0" y="0.0" width="359" height="31"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="358.5" height="31"/>
                                                 <color key="textColor" red="0.36508461310000001" green="1" blue="0.42784337030000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yho-WY-bQJ">
-                                                <rect key="frame" x="369" y="0.0" width="144" height="31"/>
+                                                <rect key="frame" x="368.5" y="0.0" width="143.5" height="31"/>
                                                 <color key="backgroundColor" red="0.36508461310000001" green="1" blue="0.42784337030000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                                 <state key="normal" title="Join">
@@ -333,13 +333,13 @@ GroupNight shall not be obligated to indemnify or defend you with respect to any
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sAj-JV-Jsm">
                                                 <rect key="frame" x="261" y="0.0" width="251" height="31"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AO9-sA-iSV">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AO9-sA-iSV">
                                                         <rect key="frame" x="41" y="5" width="56" height="21"/>
                                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRT-ZH-7Fk">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRT-ZH-7Fk">
                                                         <rect key="frame" x="8" y="3" width="25" height="25"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <state key="normal" image="settings">
@@ -831,22 +831,22 @@ GroupNight shall not be obligated to indemnify or defend you with respect to any
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SJt-v2-94G">
-                                                    <rect key="frame" x="0.0" y="8" width="450" height="133"/>
+                                                    <rect key="frame" x="0.0" y="8" width="500" height="133"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u7R-sx-z22">
-                                                            <rect key="frame" x="0.0" y="0.0" width="450" height="133"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="500" height="133"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ajQ-1M-gYH">
-                                                                    <rect key="frame" x="57" y="32" width="385" height="93"/>
+                                                                    <rect key="frame" x="57" y="32" width="435" height="93"/>
                                                                     <subviews>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dIr-8Y-I0F">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="385" height="93"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="435" height="93"/>
                                                                             <subviews>
                                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="obj-Yk-vty">
-                                                                                    <rect key="frame" x="8" y="8" width="369" height="77"/>
+                                                                                    <rect key="frame" x="8" y="8" width="419" height="77"/>
                                                                                     <subviews>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOr-Vp-ge2">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="369" height="77"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="419" height="77"/>
                                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                                             <nil key="highlightedColor"/>
@@ -865,7 +865,7 @@ GroupNight shall not be obligated to indemnify or defend you with respect to any
                                                                     </subviews>
                                                                 </stackView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hcx-oY-wr3">
-                                                                    <rect key="frame" x="57.5" y="8" width="385" height="16"/>
+                                                                    <rect key="frame" x="57.5" y="8" width="435" height="16"/>
                                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
                                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -901,7 +901,7 @@ GroupNight shall not be obligated to indemnify or defend you with respect to any
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="SJt-v2-94G" secondAttribute="trailing" constant="150" id="NYZ-S4-Hct"/>
+                                                <constraint firstAttribute="trailing" secondItem="SJt-v2-94G" secondAttribute="trailing" constant="100" id="NYZ-S4-Hct"/>
                                                 <constraint firstItem="SJt-v2-94G" firstAttribute="top" secondItem="gtY-uv-2aH" secondAttribute="top" constant="8" id="XhE-Ev-Vvc"/>
                                                 <constraint firstAttribute="bottom" secondItem="SJt-v2-94G" secondAttribute="bottom" id="e3S-Ao-IWa"/>
                                                 <constraint firstItem="SJt-v2-94G" firstAttribute="leading" secondItem="gtY-uv-2aH" secondAttribute="leading" id="egE-gS-k3y"/>

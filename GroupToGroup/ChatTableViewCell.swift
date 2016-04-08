@@ -60,7 +60,7 @@ extension ChatTableViewCell {
     
     func updateWithUsersMessage(message: Message) {
         
-        rightImageView.image = UIImage(named: "defaultImage")
+        rightImageView.image = UIImage(named: "blankPic")
         rightNameStamp.text = ""
         rightImageView.layer.cornerRadius = rightImageView.frame.size.width / 2
         rightImageView.layer.masksToBounds = true
@@ -87,7 +87,7 @@ extension ChatTableViewCell {
     
     func updateWithRightMemberMessage(message: Message) {
         
-        rightImageView.image = UIImage(named: "defaultImage")
+        rightImageView.image = UIImage(named: "blankPic")
         rightNameStamp.text = ""
         rightImageView.layer.cornerRadius = rightImageView.frame.size.width / 2
         rightImageView.layer.masksToBounds = true
@@ -114,7 +114,7 @@ extension ChatTableViewCell {
     
     func updateWithLeftMemberMessage(message: Message) {
      
-        leftImageView.image = UIImage(named: "defaultImage")
+        leftImageView.image = UIImage(named: "blankPic")
         leftNameStamp.text = ""
         leftImageView.layer.cornerRadius = leftImageView.frame.size.width / 2
         leftImageView.layer.masksToBounds = true

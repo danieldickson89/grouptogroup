@@ -18,6 +18,8 @@ class Message: FirebaseType {
     let senderID: String
     var conversationID: String = ""
     var senderGroupID: String
+    var senderUser: User?
+    var senderImageString: String?
     
     
     var identifier: String?

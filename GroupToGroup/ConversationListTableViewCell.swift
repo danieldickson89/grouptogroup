@@ -22,7 +22,7 @@ class ConversationListTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func updateWithConversation(conversation: Conversation) {
+    func updateCellWithConversation(conversation: Conversation) {
         conversationNameLabel.textColor = UIColor.whiteColor()
         if conversation.groupIDs.count != conversation.groups.count {
             for groupID in conversation.groupIDs {

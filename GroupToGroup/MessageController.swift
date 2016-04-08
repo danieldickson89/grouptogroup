@@ -50,6 +50,23 @@ class MessageController {
             })
             
         }
+    }
+    
+    // This method takes our array of messages and updates each message with the user
+    
+    static func updateUserForMessages(messages: [Message], completion: (messages: [Message]) -> Void) {
+        
+        var updatedMessages: [Message] = []
+        for message in messages {
+
+            UserController.userForIdentifier(message.senderID, completion: { (user) in
+                message.senderUser = user
+                message.senderImageString = user?.imageString
+            })
+            updatedMessages.append(message)
+        }
         
     }
+    
+    
 }

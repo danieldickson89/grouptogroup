@@ -11,10 +11,11 @@ import UIKit
 
 class ImageController {
     
-    static func uploadImage(userID: String, image: UIImage, completion: (identifier: String?) -> Void) {
+    static func uploadImage(user: User, image: UIImage, completion: (identifier: String?) -> Void) {
         
         if let base64Image = image.base64String {
-            let base = FirebaseController.base.childByAppendingPath("users/\(userID)/image")
+            user.imageString = base64Image
+            let base = FirebaseController.base.childByAppendingPath("users/\(user.identifier)/image")
             base.setValue(base64Image)
             
             completion(identifier: base.key)

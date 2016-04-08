@@ -12,6 +12,7 @@ class User: FirebaseType {
     
     let kUsername: String = "username"
     let kGroups: String = "groups"
+    let kImage: String = "image"
     
     let username: String
     var groups: [Group] = []
@@ -23,6 +24,7 @@ class User: FirebaseType {
             }
         }
     }
+    var imageString: String?
     var identifier: String?
     var endpoint: String {
         return "users"
@@ -44,6 +46,10 @@ class User: FirebaseType {
         
         if let groupIDs = json[kGroups] as? [String] {
             self.groupIDs = groupIDs
+        }
+        
+        if let imageString = json[kImage] as? String {
+            self.imageString = imageString
         }
     }
 }
