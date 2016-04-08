@@ -15,7 +15,7 @@ class ImageController {
         
         if let base64Image = image.base64String {
             user.imageString = base64Image
-            let base = FirebaseController.base.childByAppendingPath("users/\(user.identifier)/image")
+            let base = FirebaseController.base.childByAppendingPath("users/\(user.identifier!)/image")
             base.setValue(base64Image)
             
             completion(identifier: base.key)
@@ -35,6 +35,20 @@ class ImageController {
                 completion(success: false, image: nil)
             }
         }
+    }
+    
+    static func imageForBase64String(imageString: String?, completion: (success: Bool, image: UIImage?) -> Void) {
+        if let imageString = imageString {
+            let image = UIImage(base64: imageString)
+            completion(success: true, image: image)
+        } else {
+            completion(success: false, image: nil)
+        }
+    }
+    
+    static func imageForBase64String2(imageString: String, completion: (image: UIImage?) -> Void) {
+        let image = UIImage(base64: imageString)
+        completion(image: image)
     }
 }
 

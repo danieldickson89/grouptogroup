@@ -10,10 +10,10 @@ import Foundation
 
 class MessageController {
     
-    static func createMessage(text: String, senderID: String, conversation: Conversation, completion: (message: Message?) -> Void) {
+    static func createMessage(text: String, senderID: String, senderUsername: String, senderImageString: String?, conversation: Conversation, completion: (message: Message?) -> Void) {
         let conversation = conversation
         if let  currentGroupID = conversation.currentGroup?.identifier {
-            let message = Message(text: text, senderID: senderID, senderGroupID: currentGroupID)
+            let message = Message(text: text, senderID: senderID, senderGroupID: currentGroupID, senderUsername: senderUsername, senderImageString: senderImageString)
             addMessageToConversation(message, conversation: conversation)
             completion(message: message)
         }
@@ -54,19 +54,19 @@ class MessageController {
     
     // This method takes our array of messages and updates each message with the user
     
-    static func updateUserForMessages(messages: [Message], completion: (messages: [Message]) -> Void) {
-        
-        var updatedMessages: [Message] = []
-        for message in messages {
-
-            UserController.userForIdentifier(message.senderID, completion: { (user) in
-                message.senderUser = user
-                message.senderImageString = user?.imageString
-            })
-            updatedMessages.append(message)
-        }
-        
-    }
+//    static func updateUserForMessages(messages: [Message], completion: (messages: [Message]) -> Void) {
+//        
+//        var updatedMessages: [Message] = []
+//        for message in messages {
+//
+//            UserController.userForIdentifier(message.senderID, completion: { (user) in
+//                message.senderUser = user
+//                message.senderImageString = user?.imageString
+//            })
+//            updatedMessages.append(message)
+//        }
+//        
+//    }
     
     
 }

@@ -22,16 +22,25 @@ class SettingsViewController: UIViewController,UIImagePickerControllerDelegate, 
         profileImage.layer.cornerRadius = profileImage.frame.size.width / 2
         profileImage.layer.masksToBounds = true
         
-        dispatch_async(dispatch_get_main_queue()) {
-            if let userID = UserController.currentUser.identifier {
-                ImageController.imageForUser(userID, completion: { (success, image) in
-                    if success {
-                        self.profileImage.image = image
-                    } else {
-                        self.profileImage.image = UIImage(named: "defaultImage")
-                    }
-                })
-            }
+//        dispatch_async(dispatch_get_main_queue()) {
+//            if let userID = UserController.currentUser.identifier {
+//                ImageController.imageForUser(userID, completion: { (success, image) in
+//                    if success {
+//                        self.profileImage.image = image
+//                    } else {
+//                        self.profileImage.image = UIImage(named: "defaultImage")
+//                    }
+//                })
+//            }
+//        }
+        if let currentUser = UserController.currentUser {
+            ImageController.imageForBase64String(currentUser.imageString, completion: { (success, image) in
+                if success {
+                    self.profileImage.image = image
+                } else {
+                    self.profileImage.image = UIImage(named: "defaultImage")
+                }
+            })
         }
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SettingsViewController.profileImageTapped))
         profileImage.userInteractionEnabled = true
