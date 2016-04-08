@@ -38,7 +38,7 @@ class YourGroupsViewController: UIViewController {
         settingsUIView.backgroundColor = UIColor(white: 0.75, alpha: 0.25)
         settingsUIView.layer.cornerRadius = 6.0
         enterGroupIDTextField.backgroundColor = UIColor(white: 0.75, alpha: 0.25)
-        enterGroupIDTextField.attributedPlaceholder = NSAttributedString(string: "Enter the GroupID", attributes: [NSForegroundColorAttributeName: UIColor.lightGrayColor()])
+        enterGroupIDTextField.attributedPlaceholder = NSAttributedString(string: "Enter the group code", attributes: [NSForegroundColorAttributeName: UIColor.lightGrayColor()])
         view.backgroundColor = UIColor.menuBackgroundColor()
         self.navigationController?.navigationBar.barTintColor = UIColor.myNavBarTintColor()
         yourGroupsListTableView.backgroundColor = UIColor.menuBackgroundColor()
@@ -187,10 +187,6 @@ extension YourGroupsViewController: UITableViewDataSource, UITableViewDelegate {
         cell.textLabel?.textColor = UIColor.whiteColor()
         
         return cell
-    }
-    
-    func tableView(tableView: UITableView, didHighlightRowAtIndexPath indexPath: NSIndexPath) {
-        let cell = tableView.dequeueReusableCellWithIdentifier("yourGroupNameCell", forIndexPath: indexPath) as UITableViewCell
     }
     
 }

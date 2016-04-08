@@ -24,14 +24,23 @@ class ChatTableViewCell: UITableViewCell {
     @IBOutlet weak var leftNameStamp: UILabel!
     @IBOutlet weak var leftImageView: UIImageView!
     
+    var delegate: ChatViewController?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        if let leftImage = leftImageView {
+            leftImage.image = UIImage(named: "defaultImage")
+            delegate?.tableView.reloadData()
+        } else if let rightImage = rightImageView {
+            rightImage.image = UIImage(named: "defaultImage")
+            delegate?.tableView.reloadData()
+        }
     }
     
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
-        // Configure the view for the selected state
     }
     
 }

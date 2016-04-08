@@ -42,7 +42,14 @@ class ChatViewController: UIViewController, UITextViewDelegate {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
-        
+        if let usersGroup = usersGroup {
+            for group in conversationGroups {
+                if group.identifier != usersGroup.identifier {
+                    navigationItem.title = group.name
+                }
+            }
+        }
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         textView.autocorrectionType = .No
         navigationController?.setToolbarHidden(true, animated: false)
         mockTextView.inputAccessoryView = myUIView
@@ -179,18 +186,21 @@ extension ChatViewController: UITableViewDataSource, UITableViewDelegate {
         if conversation?.currentGroup?.identifier == message.senderGroupID &&
             UserController.currentUser.identifier == message.senderID {
             let cell = tableView.dequeueReusableCellWithIdentifier("rightMessageCell", forIndexPath: indexPath) as! ChatTableViewCell
+            cell.delegate = self
             cell.backgroundColor = UIColor.menuBackgroundColor()
             cell.updateWithUsersMessage(message)
             return cell
             
         } else if conversation?.currentGroup?.identifier == message.senderGroupID {
             let cell = tableView.dequeueReusableCellWithIdentifier("rightMessageCell", forIndexPath: indexPath) as! ChatTableViewCell
+            cell.delegate = self
             cell.backgroundColor = UIColor.menuBackgroundColor()
             cell.updateWithRightMemberMessage(message)
             return cell
             
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier("leftMessageCell", forIndexPath: indexPath) as! ChatTableViewCell
+            cell.delegate = self
             cell.backgroundColor = UIColor.menuBackgroundColor()
             cell.updateWithLeftMemberMessage(message)
             return cell

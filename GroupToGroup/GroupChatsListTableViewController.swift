@@ -30,8 +30,8 @@ class GroupChatsListTableViewController: UITableViewController, UINavigationCont
         
         view.backgroundColor = UIColor.chatListBackgroundColor()
         tableView.backgroundColor = UIColor.chatListBackgroundColor()
-        navigationItem.title = usersGroup?.name
         navigationController?.navigationBar.barTintColor = UIColor.myNavBarTintColor()
+        navigationItem.title = usersGroup?.name
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         navigationController?.toolbar.barTintColor = UIColor.myNavBarTintColor()
         self.navigationController?.setToolbarHidden(false, animated: true)
@@ -87,7 +87,7 @@ class GroupChatsListTableViewController: UITableViewController, UINavigationCont
             self.presentViewController(areYouSure, animated: true, completion: nil)
             
         }))
-        options.addAction(UIAlertAction(title: "Share this GroupID", style: .Default, handler: { (invite) in
+        options.addAction(UIAlertAction(title: "Share the Group Code", style: .Default, handler: { (invite) in
             self.sendTextMessage()
         }))
         options.addAction(UIAlertAction(title: "View My Group", style: .Default, handler: { (presentGroupProfile) in
@@ -103,7 +103,8 @@ class GroupChatsListTableViewController: UITableViewController, UINavigationCont
         composeMessageController.messageComposeDelegate = self
         composeMessageController.recipients = []
         if let groupID = usersGroup?.identifier {
-            composeMessageController.body = "Copy and paste the following to join my group: \n\(groupID)\n"
+            //composeMessageController.body = "Copy and paste the following to join my group: \n\(groupID)\n"
+            composeMessageController.body = groupID
         }
         presentViewController(composeMessageController, animated: true, completion: nil)
     }

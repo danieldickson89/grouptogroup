@@ -73,11 +73,15 @@ class SettingsViewController: UIViewController,UIImagePickerControllerDelegate, 
         }
     }
     
-//    func updateWithImageIdentifier() {
-//        if let userID = UserController.currentUser.identifier {
-//            ImageController.imageForUser(userID, completion: { (image) in
-//                self.profileImage.image = image
-//            })
-//        }
-//    }
+    @IBAction func linkButtonTapped(sender: AnyObject) {
+        
+        let alert = UIAlertController(title: "Would you like to see their website?", message: nil, preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "No Thanks", style: .Cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (iconsLink) -> Void in
+            let icons8 = NSURL(string: "https://icons8.com")
+            UIApplication.sharedApplication().openURL(icons8!)
+            
+        }))
+        presentViewController(alert, animated: true, completion: nil)
+    }
 }

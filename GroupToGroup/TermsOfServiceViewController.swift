@@ -24,8 +24,8 @@ class TermsOfServiceViewController: UIViewController {
         doneButton.layer.borderColor = UIColor.myGreenColor().CGColor
         doneButton.layer.borderWidth = 1.5
         doneButton.layer.cornerRadius = 6.0
-        tosTextView.layer.borderColor = UIColor.whiteColor().CGColor
-        tosTextView.layer.borderWidth = 1.5
+        //tosTextView.layer.borderColor = UIColor.whiteColor().CGColor
+        //tosTextView.layer.borderWidth = 1.5
     }
 
     @IBAction func doneButtonTapped(sender: AnyObject) {
