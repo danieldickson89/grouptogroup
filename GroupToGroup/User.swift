@@ -32,7 +32,11 @@ class User: FirebaseType {
     
     var jsonValue: [String: AnyObject] {
         
-        return [kUsername: username, kGroups: groupIDs]
+        if let imageString = imageString {
+            return [kUsername: username, kGroups: groupIDs, kImage: imageString]
+        } else {
+            return [kUsername: username, kGroups: groupIDs]
+        }
     }
     
     init(username: String) {

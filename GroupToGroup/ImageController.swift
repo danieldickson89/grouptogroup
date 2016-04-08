@@ -13,12 +13,15 @@ class ImageController {
     
     static func uploadImage(user: User, image: UIImage, completion: (identifier: String?) -> Void) {
         
+        var user = user
         if let base64Image = image.base64String {
             user.imageString = base64Image
-            let base = FirebaseController.base.childByAppendingPath("users/\(user.identifier!)/image")
-            base.setValue(base64Image)
+//            user.save()
+            FirebaseController.base.childByAppendingPath("users/\(user.identifier!)/image").setValue(base64Image)
             
-            completion(identifier: base.key)
+            print(base64Image)
+            
+            completion(identifier: base64Image)
         } else {
             completion(identifier: nil)
         }
@@ -38,17 +41,13 @@ class ImageController {
     }
     
     static func imageForBase64String(imageString: String?, completion: (success: Bool, image: UIImage?) -> Void) {
+        
         if let imageString = imageString {
             let image = UIImage(base64: imageString)
             completion(success: true, image: image)
         } else {
             completion(success: false, image: nil)
         }
-    }
-    
-    static func imageForBase64String2(imageString: String, completion: (image: UIImage?) -> Void) {
-        let image = UIImage(base64: imageString)
-        completion(image: image)
     }
 }
 

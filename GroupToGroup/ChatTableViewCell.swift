@@ -64,15 +64,6 @@ extension ChatTableViewCell {
         rightNameStamp.text = ""
         rightImageView.layer.cornerRadius = rightImageView.frame.size.width / 2
         rightImageView.layer.masksToBounds = true
-//        dispatch_async(dispatch_get_main_queue()) {
-//            ImageController.imageForUser(message.senderID, completion: { (success, image) in
-//                if success {
-//                    self.rightImageView.image = image
-//                } else {
-//                    self.rightImageView.image = UIImage(named: "defaultImage")
-//                }
-//            })
-//        }
         ImageController.imageForBase64String(message.senderImageString) { (success, image) in
             if success {
                 self.rightImageView.image = image
@@ -87,9 +78,6 @@ extension ChatTableViewCell {
         rightUIView.backgroundColor = UIColor.blackColor()
         rightUIView.layer.cornerRadius = 6.0
         rightNameStamp.textColor = .whiteColor()
-//        UserController.userForIdentifier(message.senderID) { (user) in
-//            self.rightNameStamp.text = user?.username
-//        }
         rightNameStamp.text = message.senderUsername
     }
     
@@ -99,15 +87,6 @@ extension ChatTableViewCell {
         rightNameStamp.text = ""
         rightImageView.layer.cornerRadius = rightImageView.frame.size.width / 2
         rightImageView.layer.masksToBounds = true
-//        dispatch_async(dispatch_get_main_queue()) {
-//            ImageController.imageForUser(message.senderID, completion: { (success, image) in
-//                if success {
-//                    self.rightImageView.image = image
-//                } else {
-//                    self.rightImageView.image = UIImage(named: "defaultImage")
-//                }
-//            })
-//        }
         ImageController.imageForBase64String(message.senderImageString) { (success, image) in
             if success {
                 self.rightImageView.image = image
@@ -122,9 +101,6 @@ extension ChatTableViewCell {
         rightUIView.backgroundColor = UIColor(white: 0.75, alpha: 0.25)
         rightUIView.layer.cornerRadius = 6.0
         rightNameStamp.textColor = .whiteColor()
-//        UserController.userForIdentifier(message.senderID) { (user) in
-//            self.rightNameStamp.text = user?.username
-//        }
         rightNameStamp.text = message.senderUsername
     }
     
@@ -134,15 +110,6 @@ extension ChatTableViewCell {
         leftNameStamp.text = ""
         leftImageView.layer.cornerRadius = leftImageView.frame.size.width / 2
         leftImageView.layer.masksToBounds = true
-//        dispatch_async(dispatch_get_main_queue()) {
-//            ImageController.imageForUser(message.senderID, completion: { (success, image) in
-//                if success {
-//                    self.leftImageView.image = image
-//                } else {
-//                    self.leftImageView.image = UIImage(named: "defaultImage")
-//                }
-//            })
-//        }
         ImageController.imageForBase64String(message.senderImageString) { (success, image) in
             if success {
                 self.leftImageView.image = image
@@ -157,9 +124,6 @@ extension ChatTableViewCell {
         leftUIView.backgroundColor = UIColor.myGreenColor()
         leftUIView.layer.cornerRadius = 6.0
         leftNameStamp.textColor = UIColor.whiteColor()
-//        UserController.userForIdentifier(message.senderID) { (user) in
-//            self.leftNameStamp.text = user?.username
-//        }
         leftNameStamp.text = message.senderUsername
     }
 }

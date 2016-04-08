@@ -23,16 +23,9 @@ class SettingsViewController: UIViewController,UIImagePickerControllerDelegate, 
         profileImage.layer.masksToBounds = true
         
 //        dispatch_async(dispatch_get_main_queue()) {
-//            if let userID = UserController.currentUser.identifier {
-//                ImageController.imageForUser(userID, completion: { (success, image) in
-//                    if success {
-//                        self.profileImage.image = image
-//                    } else {
-//                        self.profileImage.image = UIImage(named: "defaultImage")
-//                    }
-//                })
-//            }
+//
 //        }
+        
         if let currentUser = UserController.currentUser {
             ImageController.imageForBase64String(currentUser.imageString, completion: { (success, image) in
                 if success {
@@ -42,6 +35,7 @@ class SettingsViewController: UIViewController,UIImagePickerControllerDelegate, 
                 }
             })
         }
+
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SettingsViewController.profileImageTapped))
         profileImage.userInteractionEnabled = true
         profileImage.addGestureRecognizer(tapGestureRecognizer)
@@ -89,7 +83,7 @@ class SettingsViewController: UIViewController,UIImagePickerControllerDelegate, 
         alert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (iconsLink) -> Void in
             let icons8 = NSURL(string: "https://icons8.com")
             UIApplication.sharedApplication().openURL(icons8!)
-            
+        
         }))
         presentViewController(alert, animated: true, completion: nil)
     }
