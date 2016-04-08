@@ -28,6 +28,8 @@ class YourGroupsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+//         FirebaseController.base.childByAppendingPath("users/\(UserController.currentUser.identifier!)/image").setValue("")
     }
     
     // Set up toolbar and appearance before the view appears

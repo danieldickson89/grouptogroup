@@ -13,13 +13,11 @@ class ImageController {
     
     static func uploadImage(user: User, image: UIImage, completion: (identifier: String?) -> Void) {
         
-        var user = user
+        let user = user
         if let base64Image = image.base64String {
-            user.imageString = base64Image
-//            user.save()
             FirebaseController.base.childByAppendingPath("users/\(user.identifier!)/image").setValue(base64Image)
-            
-            print(base64Image)
+            user.imageString = base64Image
+            UserController.currentUser = user
             
             completion(identifier: base64Image)
         } else {
