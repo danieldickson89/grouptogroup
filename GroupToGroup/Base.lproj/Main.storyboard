@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -194,38 +195,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dkX-tH-hIj">
                                 <rect key="frame" x="20" y="81" width="560" height="499"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Hi there! Thanks for using GroupNight. GroupNight exists to help you and your friends find other groups of friends. We want to give you the best experience possible, so please feel free to give us feedback on the App Store after use. In order to use this app, you'll need to agree to the below statement. Just to sum it up for you: don't post anything inappropriate, and recognize the limits of the app. That's about it. Have fun!  GroupNight App End User License Agreement
-This End User License Agreement (“Agreement”) is between you and GroupNight and governs use of this app made available through the Apple App Store. By installing the GroupNight App, you agree to be bound by this Agreement and understand that there is no tolerance for objectionable content. If you do not agree with the terms and conditions of this Agreement, you are not entitled to use the GroupNight App.
-
-In order to ensure GroupNight provides the best experience possible for everyone, we strongly enforce a no tolerance policy for objectionable content. If you see inappropriate content, please use the “Report as offensive” feature found under each profile.
-
-1. Parties
-This Agreement is between you and GroupNight only, and not Apple, Inc. (“Apple”). Notwithstanding the foregoing, you acknowledge that Apple and its subsidiaries are third party beneficiaries of this Agreement and Apple has the right to enforce this Agreement against you. GroupNight, not Apple, is solely responsible for the GroupNight App and its content.
-
-2. Privacy
-GroupNight may collect and use information about your usage of the GroupNight App, including certain types of information from and about your device. GroupNight may use this information, as long as it is in a form that does not personally identify you, to measure the use and performance of the GroupNight App.
-
-3. Limited License
-GroupNight grants you a limited, non-exclusive, non-transferable, revocable license to use the GroupNight App for your personal, non-commercial purposes. You may only use the GroupNight App on Apple devices that you own or control and as permitted by the App Store Terms of Service.
-
-4. Age Restrictions
-By using the GroupNight App, you represent and warrant that (a) you are 18 years of age or older and you agree to be bound by this Agreement; and (b) your use of the GroupNight App does not violate any applicable law or regulation. Your access to the GroupNight App may be terminated without warning if GroupNight believes, in its sole discretion, that you are under the age of 18 years.
-
-5. Objectionable Content Policy
-Objectionable content may not be submitted to GroupNight, who will moderate all content and ultimately decide whether or not to post a submission to the extent such content includes, is in conjunction with, or alongside any, Objectionable Content. Objectionable Content includes, but is not limited to: (i) sexually explicit materials; (ii) obscene, defamatory, libelous, slanderous, violent and/or unlawful content or profanity; (iii) content that infringes upon the rights of any third party, including copyright, trademark, privacy, publicity or other personal or proprietary right, or that is deceptive or fraudulent; (iv) content that promotes the use or sale of illegal or regulated substances, tobacco products, ammunition and/or firearms; and (v) gambling, including without limitation, any online casino, sports books, bingo or poker.
-
-6. Warranty
-GroupNight disclaims all warranties about the GroupNight App to the fullest extent permitted by law. To the extent any warranty exists under law that cannot be disclaimed, GroupNight, not Apple, shall be solely responsible for such warranty.
-
-7. Maintenance and Support
-GroupNight does provide minimal maintenance or support for it but not to the extent that any maintenance or support is required by applicable law, GroupNight, not Apple, shall be obligated to furnish any such maintenance or support.
-
-8. Product Claims
-GroupNight, not Apple, is responsible for addressing any claims by you relating to the GroupNight App or use of it, including, but not limited to: (i) any product liability claim; (ii) any claim that the GroupNight App fails to conform to any applicable legal or regulatory requirement; and (iii) any claim arising under consumer protection or similar legislation. Nothing in this Agreement shall be deemed an admission that you may have such claims.
-
-9. Third Party Intellectual Property Claims
-GroupNight shall not be obligated to indemnify or defend you with respect to any third party claim arising out or relating to the GroupNight App. To the extent GroupNight is required to provide indemnification by applicable law, GroupNight, not Apple, shall be solely responsible for the investigation, defense, settlement and discharge of any claim that the GroupNight App or your use of it infringes any third party intellectual property right.
-</string>
+                                <mutableString key="text">Hi there! Thanks for using GroupNight. GroupNight exists to help you and your friends find other groups of friends. We want to give you the best experience possible, so please feel free to give us feedback on the App Store after use. In order to use this app, you'll need to agree to the below statement. Just to sum it up for you: don't post anything inappropriate, and recognize the limits of the app. That's about it. Have fun!  GroupNight App End User License AgreementThis End User License Agreement (“Agreement”) is between you and GroupNight and governs use of this app made available through the Apple App Store. By installing the GroupNight App, you agree to be bound by this Agreement and understand that there is no tolerance for objectionable content. If you do not agree with the terms and conditions of this Agreement, you are not entitled to use the GroupNight App.In order to ensure GroupNight provides the best experience possible for everyone, we strongly enforce a no tolerance policy for objectionable content. If you see inappropriate content, please use the “Report as offensive” feature found under each profile.1. PartiesThis Agreement is between you and GroupNight only, and not Apple, Inc. (“Apple”). Notwithstanding the foregoing, you acknowledge that Apple and its subsidiaries are third party beneficiaries of this Agreement and Apple has the right to enforce this Agreement against you. GroupNight, not Apple, is solely responsible for the GroupNight App and its content.2. PrivacyGroupNight may collect and use information about your usage of the GroupNight App, including certain types of information from and about your device. GroupNight may use this information, as long as it is in a form that does not personally identify you, to measure the use and performance of the GroupNight App.3. Limited LicenseGroupNight grants you a limited, non-exclusive, non-transferable, revocable license to use the GroupNight App for your personal, non-commercial purposes. You may only use the GroupNight App on Apple devices that you own or control and as permitted by the App Store Terms of Service.4. Age RestrictionsBy using the GroupNight App, you represent and warrant that (a) you are 18 years of age or older and you agree to be bound by this Agreement; and (b) your use of the GroupNight App does not violate any applicable law or regulation. Your access to the GroupNight App may be terminated without warning if GroupNight believes, in its sole discretion, that you are under the age of 18 years.5. Objectionable Content PolicyObjectionable content may not be submitted to GroupNight, who will moderate all content and ultimately decide whether or not to post a submission to the extent such content includes, is in conjunction with, or alongside any, Objectionable Content. Objectionable Content includes, but is not limited to: (i) sexually explicit materials; (ii) obscene, defamatory, libelous, slanderous, violent and/or unlawful content or profanity; (iii) content that infringes upon the rights of any third party, including copyright, trademark, privacy, publicity or other personal or proprietary right, or that is deceptive or fraudulent; (iv) content that promotes the use or sale of illegal or regulated substances, tobacco products, ammunition and/or firearms; and (v) gambling, including without limitation, any online casino, sports books, bingo or poker.6. WarrantyGroupNight disclaims all warranties about the GroupNight App to the fullest extent permitted by law. To the extent any warranty exists under law that cannot be disclaimed, GroupNight, not Apple, shall be solely responsible for such warranty.7. Maintenance and SupportGroupNight does provide minimal maintenance or support for it but not to the extent that any maintenance or support is required by applicable law, GroupNight, not Apple, shall be obligated to furnish any such maintenance or support.8. Product ClaimsGroupNight, not Apple, is responsible for addressing any claims by you relating to the GroupNight App or use of it, including, but not limited to: (i) any product liability claim; (ii) any claim that the GroupNight App fails to conform to any applicable legal or regulatory requirement; and (iii) any claim arising under consumer protection or similar legislation. Nothing in this Agreement shall be deemed an admission that you may have such claims.9. Third Party Intellectual Property ClaimsGroupNight shall not be obligated to indemnify or defend you with respect to any third party claim arising out or relating to the GroupNight App. To the extent GroupNight is required to provide indemnification by applicable law, GroupNight, not Apple, shall be solely responsible for the investigation, defense, settlement and discharge of any claim that the GroupNight App or your use of it infringes any third party intellectual property right.10. Reporting Inappropriate ContentIn the case that you wish to report inappropriate content please send us an email to:groupnightfeedback@gmail.com </mutableString>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -433,7 +403,7 @@ GroupNight shall not be obligated to indemnify or defend you with respect to any
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Be7-bw-bfB">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="42"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Group Members:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NPm-91-km3">
@@ -463,7 +433,7 @@ GroupNight shall not be obligated to indemnify or defend you with respect to any
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNl-mC-uvr">
                                                             <rect key="frame" x="93" y="8" width="459" height="72.5"/>
                                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="21"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -779,7 +749,7 @@ GroupNight shall not be obligated to indemnify or defend you with respect to any
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfW-ye-7P5">
                                                                     <rect key="frame" x="8" y="8" width="384" height="16"/>
                                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
@@ -867,7 +837,7 @@ GroupNight shall not be obligated to indemnify or defend you with respect to any
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hcx-oY-wr3">
                                                                     <rect key="frame" x="57.5" y="8" width="435" height="16"/>
                                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hcY-lE-zdt">
@@ -1103,38 +1073,29 @@ GroupNight shall not be obligated to indemnify or defend you with respect to any
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jW6-Y1-oqg">
-                                <rect key="frame" x="174" y="540" width="253" height="30"/>
+                                <rect key="frame" x="275.5" y="530" width="50" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="253" id="eAi-XF-L6G"/>
+                                    <constraint firstAttribute="width" constant="50" id="eAi-XF-L6G"/>
+                                    <constraint firstAttribute="width" secondItem="jW6-Y1-oqg" secondAttribute="height" multiplier="1:1" id="x7b-Vr-uwA"/>
                                 </constraints>
-                                <state key="normal" title="www.icons8.com">
-                                    <color key="titleColor" red="0.33731000880000001" green="1" blue="0.4138532472" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
+                                <color key="tintColor" red="0.33731000880000001" green="1" blue="0.4138532472" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="Icons8 Logo Filled-50"/>
                                 <connections>
                                     <action selector="linkButtonTapped:" destination="JHa-Qz-vvY" eventType="touchUpInside" id="qdu-on-nR0"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some icons were provided by:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t3C-fX-TbB">
-                                <rect key="frame" x="15" y="492" width="560" height="28"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="21"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="dEO-T6-qz9" firstAttribute="trailing" secondItem="JUu-qW-gaC" secondAttribute="trailingMargin" id="AdV-Oq-uAz"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="t3C-fX-TbB" secondAttribute="trailing" constant="5" id="HiI-Me-cJO"/>
-                            <constraint firstItem="jW6-Y1-oqg" firstAttribute="top" secondItem="t3C-fX-TbB" secondAttribute="bottom" constant="20" id="QH0-4t-Ptr"/>
-                            <constraint firstItem="PHe-8T-onY" firstAttribute="top" secondItem="jW6-Y1-oqg" secondAttribute="bottom" constant="30" id="Wwj-Q6-Ali"/>
                             <constraint firstItem="kTB-O7-m5l" firstAttribute="trailing" secondItem="JUu-qW-gaC" secondAttribute="trailingMargin" id="XGw-ZF-IQV"/>
-                            <constraint firstItem="jW6-Y1-oqg" firstAttribute="centerX" secondItem="eTc-6d-UMw" secondAttribute="centerX" id="azV-l2-U6j"/>
+                            <constraint firstItem="PHe-8T-onY" firstAttribute="top" secondItem="jW6-Y1-oqg" secondAttribute="bottom" constant="20" id="a77-hS-rvd"/>
                             <constraint firstItem="kTB-O7-m5l" firstAttribute="leading" secondItem="JUu-qW-gaC" secondAttribute="leadingMargin" id="eKl-52-zuG"/>
                             <constraint firstItem="kTB-O7-m5l" firstAttribute="top" secondItem="3vX-sO-dh9" secondAttribute="bottom" constant="110" id="hJ5-Xa-s44"/>
                             <constraint firstItem="dEO-T6-qz9" firstAttribute="top" secondItem="3vX-sO-dh9" secondAttribute="bottom" id="izV-10-ahN"/>
                             <constraint firstItem="eTc-6d-UMw" firstAttribute="centerX" secondItem="kTB-O7-m5l" secondAttribute="centerX" id="jck-YE-cgd"/>
                             <constraint firstItem="eTc-6d-UMw" firstAttribute="top" secondItem="kTB-O7-m5l" secondAttribute="bottom" constant="45" id="mNr-MT-Th4"/>
-                            <constraint firstItem="t3C-fX-TbB" firstAttribute="leading" secondItem="JUu-qW-gaC" secondAttribute="leadingMargin" constant="-5" id="oNB-HJ-eDb"/>
+                            <constraint firstItem="jW6-Y1-oqg" firstAttribute="centerX" secondItem="eTc-6d-UMw" secondAttribute="centerX" id="o7h-C7-g7e"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1148,13 +1109,14 @@ GroupNight shall not be obligated to indemnify or defend you with respect to any
         </scene>
     </scenes>
     <resources>
+        <image name="Icons8 Logo Filled-50" width="50" height="50"/>
         <image name="groupIcon" width="25" height="25"/>
         <image name="moreFilled" width="25" height="25"/>
         <image name="settings" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qyL-HI-1CH"/>
         <segue reference="nlu-t8-Ns3"/>
+        <segue reference="qyL-HI-1CH"/>
         <segue reference="yJy-YH-vSY"/>
     </inferredMetricsTieBreakers>
 </document>

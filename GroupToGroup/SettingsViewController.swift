@@ -55,6 +55,7 @@ class SettingsViewController: UIViewController,UIImagePickerControllerDelegate, 
         if UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary) {
             alert.addAction(UIAlertAction(title: "Photo Library", style: .Default, handler: { (_) -> Void in
                 imagePicker.sourceType = .PhotoLibrary
+                imagePicker.allowsEditing = true
                 self.presentViewController(imagePicker, animated: true, completion: nil)
             }))
         }
@@ -78,7 +79,7 @@ class SettingsViewController: UIViewController,UIImagePickerControllerDelegate, 
     
     @IBAction func linkButtonTapped(sender: AnyObject) {
         
-        let alert = UIAlertController(title: "Would you like to see their website?", message: nil, preferredStyle: .Alert)
+        let alert = UIAlertController(title: "Some icons were provided by www.icons8.com", message: "Would you like to see their website?", preferredStyle: .Alert)
         alert.addAction(UIAlertAction(title: "No Thanks", style: .Cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (iconsLink) -> Void in
             let icons8 = NSURL(string: "https://icons8.com")

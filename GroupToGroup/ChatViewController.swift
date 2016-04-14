@@ -107,6 +107,7 @@ class ChatViewController: UIViewController, UITextViewDelegate {
         let rawFrame = value.CGRectValue
         let keyboardFrame = view.convertRect(rawFrame, fromView: nil)
         
+        myUIView.hidden = false
         mockTextView.hidden = true
         mockSendButton.hidden = true
         tableViewBottomConstraint.constant = keyboardFrame.height
@@ -115,6 +116,7 @@ class ChatViewController: UIViewController, UITextViewDelegate {
     
     func keyboardHidden(notification: NSNotification) {
         tableViewBottomConstraint.constant = 46
+        myUIView.hidden = true
         mockTextView.hidden = false
         mockSendButton.hidden = false
         textView.text = ""

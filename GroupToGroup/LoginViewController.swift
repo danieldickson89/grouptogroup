@@ -36,9 +36,9 @@ class LoginViewController: UIViewController {
         createNewAccountButton.layer.borderColor = UIColor.myGreenColor().CGColor
         createNewAccountButton.layer.borderWidth = 1.5
         createNewAccountButton.layer.cornerRadius = 6.0
-        emailTextField.attributedPlaceholder = NSAttributedString(string: "*email", attributes: [NSForegroundColorAttributeName: UIColor.lightGrayColor()])
+        emailTextField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSForegroundColorAttributeName: UIColor.lightGrayColor()])
         emailTextField.backgroundColor = UIColor(white: 0.75, alpha: 0.25)
-        passwordTextField.attributedPlaceholder = NSAttributedString(string: "*password", attributes: [NSForegroundColorAttributeName: UIColor.lightGrayColor()])
+        passwordTextField.attributedPlaceholder = NSAttributedString(string: "*Password", attributes: [NSForegroundColorAttributeName: UIColor.lightGrayColor()])
         passwordTextField.backgroundColor = UIColor(white: 0.75, alpha: 0.25)
     }
 
