@@ -56,6 +56,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="g1H-C9-jwD" firstAttribute="leading" secondItem="zqp-YU-8GY" secondAttribute="leading" id="33O-gd-Aky"/>
                             <constraint firstItem="gc4-6k-u0P" firstAttribute="width" secondItem="gVe-YI-7r5" secondAttribute="width" id="Fhk-zv-amR"/>
@@ -72,6 +73,9 @@
                             <constraint firstItem="gc4-6k-u0P" firstAttribute="centerX" secondItem="g1H-C9-jwD" secondAttribute="centerX" id="v7R-aJ-bdJ"/>
                             <constraint firstItem="zqp-YU-8GY" firstAttribute="top" secondItem="bMM-Tg-s3k" secondAttribute="bottom" constant="89" id="zow-8j-ERs"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="VrY-Qa-G7Z" appends="YES" id="Rmx-VW-xpg"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="2ag-vk-WWs"/>
                     <connections>
@@ -82,6 +86,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MrB-Zj-PZe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="VrY-Qa-G7Z">
+                    <connections>
+                        <action selector="tapGestureTapped:" destination="LBi-K8-OfX" id="yk5-ST-yIR"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="263" y="267"/>
         </scene>
@@ -138,6 +147,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="vIS-gy-4cB" firstAttribute="centerX" secondItem="dPn-Zg-ifT" secondAttribute="centerX" id="8LM-PH-2V7"/>
                             <constraint firstItem="dPn-Zg-ifT" firstAttribute="top" secondItem="tL7-0j-aEB" secondAttribute="bottom" constant="17" id="FBp-Pa-VwE"/>
@@ -153,6 +163,9 @@
                             <constraint firstItem="dWj-St-P5L" firstAttribute="leading" secondItem="UEN-Nf-fKc" secondAttribute="leadingMargin" id="sTA-6z-Vjx"/>
                             <constraint firstItem="tL7-0j-aEB" firstAttribute="leading" secondItem="dPn-Zg-ifT" secondAttribute="leading" id="sj6-mC-uyE"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="6a5-V3-vDK" appends="YES" id="Z8h-Kx-Prd"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="3fP-Gn-BuQ">
                         <barButtonItem key="backBarButtonItem" title="Cancel" id="HJv-JU-3zn"/>
@@ -165,6 +178,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hF9-xp-jco" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="6a5-V3-vDK">
+                    <connections>
+                        <action selector="tapGestureTapped:" destination="off-7i-VO6" id="7kb-QG-GZy"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1003" y="267"/>
         </scene>
@@ -195,7 +213,42 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dkX-tH-hIj">
                                 <rect key="frame" x="20" y="81" width="560" height="499"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">Hi there! Thanks for using GroupNight. GroupNight exists to help you and your friends find other groups of friends. We want to give you the best experience possible, so please feel free to give us feedback on the App Store after use. In order to use this app, you'll need to agree to the below statement. Just to sum it up for you: don't post anything inappropriate, and recognize the limits of the app. That's about it. Have fun!  GroupNight App End User License AgreementThis End User License Agreement (“Agreement”) is between you and GroupNight and governs use of this app made available through the Apple App Store. By installing the GroupNight App, you agree to be bound by this Agreement and understand that there is no tolerance for objectionable content. If you do not agree with the terms and conditions of this Agreement, you are not entitled to use the GroupNight App.In order to ensure GroupNight provides the best experience possible for everyone, we strongly enforce a no tolerance policy for objectionable content. If you see inappropriate content, please use the “Report as offensive” feature found under each profile.1. PartiesThis Agreement is between you and GroupNight only, and not Apple, Inc. (“Apple”). Notwithstanding the foregoing, you acknowledge that Apple and its subsidiaries are third party beneficiaries of this Agreement and Apple has the right to enforce this Agreement against you. GroupNight, not Apple, is solely responsible for the GroupNight App and its content.2. PrivacyGroupNight may collect and use information about your usage of the GroupNight App, including certain types of information from and about your device. GroupNight may use this information, as long as it is in a form that does not personally identify you, to measure the use and performance of the GroupNight App.3. Limited LicenseGroupNight grants you a limited, non-exclusive, non-transferable, revocable license to use the GroupNight App for your personal, non-commercial purposes. You may only use the GroupNight App on Apple devices that you own or control and as permitted by the App Store Terms of Service.4. Age RestrictionsBy using the GroupNight App, you represent and warrant that (a) you are 18 years of age or older and you agree to be bound by this Agreement; and (b) your use of the GroupNight App does not violate any applicable law or regulation. Your access to the GroupNight App may be terminated without warning if GroupNight believes, in its sole discretion, that you are under the age of 18 years.5. Objectionable Content PolicyObjectionable content may not be submitted to GroupNight, who will moderate all content and ultimately decide whether or not to post a submission to the extent such content includes, is in conjunction with, or alongside any, Objectionable Content. Objectionable Content includes, but is not limited to: (i) sexually explicit materials; (ii) obscene, defamatory, libelous, slanderous, violent and/or unlawful content or profanity; (iii) content that infringes upon the rights of any third party, including copyright, trademark, privacy, publicity or other personal or proprietary right, or that is deceptive or fraudulent; (iv) content that promotes the use or sale of illegal or regulated substances, tobacco products, ammunition and/or firearms; and (v) gambling, including without limitation, any online casino, sports books, bingo or poker.6. WarrantyGroupNight disclaims all warranties about the GroupNight App to the fullest extent permitted by law. To the extent any warranty exists under law that cannot be disclaimed, GroupNight, not Apple, shall be solely responsible for such warranty.7. Maintenance and SupportGroupNight does provide minimal maintenance or support for it but not to the extent that any maintenance or support is required by applicable law, GroupNight, not Apple, shall be obligated to furnish any such maintenance or support.8. Product ClaimsGroupNight, not Apple, is responsible for addressing any claims by you relating to the GroupNight App or use of it, including, but not limited to: (i) any product liability claim; (ii) any claim that the GroupNight App fails to conform to any applicable legal or regulatory requirement; and (iii) any claim arising under consumer protection or similar legislation. Nothing in this Agreement shall be deemed an admission that you may have such claims.9. Third Party Intellectual Property ClaimsGroupNight shall not be obligated to indemnify or defend you with respect to any third party claim arising out or relating to the GroupNight App. To the extent GroupNight is required to provide indemnification by applicable law, GroupNight, not Apple, shall be solely responsible for the investigation, defense, settlement and discharge of any claim that the GroupNight App or your use of it infringes any third party intellectual property right.10. Reporting Inappropriate ContentIn the case that you wish to report inappropriate content please send us an email to:groupnightfeedback@gmail.com </mutableString>
+                                <string key="text">Hi there! Thanks for using GroupNight. GroupNight exists to help you and your friends find other groups of friends. We want to give you the best experience possible, so please feel free to give us feedback on the App Store after use. In order to use this app, you'll need to agree to the below statement. Just to sum it up for you: don't post anything inappropriate, and recognize the limits of the app. That's about it. Have fun!  GroupNight App End User License Agreement
+This End User License Agreement (“Agreement”) is between you and GroupNight and governs use of this app made available through the Apple App Store. By installing the GroupNight App, you agree to be bound by this Agreement and understand that there is no tolerance for objectionable content. If you do not agree with the terms and conditions of this Agreement, you are not entitled to use the GroupNight App.
+
+In order to ensure GroupNight provides the best experience possible for everyone, we strongly enforce a no tolerance policy for objectionable content. If you see inappropriate content, please use the “Report as offensive” feature found under each profile.
+
+1. Parties
+This Agreement is between you and GroupNight only, and not Apple, Inc. (“Apple”). Notwithstanding the foregoing, you acknowledge that Apple and its subsidiaries are third party beneficiaries of this Agreement and Apple has the right to enforce this Agreement against you. GroupNight, not Apple, is solely responsible for the GroupNight App and its content.
+
+2. Privacy
+GroupNight may collect and use information about your usage of the GroupNight App, including certain types of information from and about your device. GroupNight may use this information, as long as it is in a form that does not personally identify you, to measure the use and performance of the GroupNight App.
+
+3. Limited License
+GroupNight grants you a limited, non-exclusive, non-transferable, revocable license to use the GroupNight App for your personal, non-commercial purposes. You may only use the GroupNight App on Apple devices that you own or control and as permitted by the App Store Terms of Service.
+
+4. Age Restrictions
+By using the GroupNight App, you represent and warrant that (a) you are 18 years of age or older and you agree to be bound by this Agreement; and (b) your use of the GroupNight App does not violate any applicable law or regulation. Your access to the GroupNight App may be terminated without warning if GroupNight believes, in its sole discretion, that you are under the age of 18 years.
+
+5. Objectionable Content Policy
+Objectionable content may not be submitted to GroupNight, who will moderate all content and ultimately decide whether or not to post a submission to the extent such content includes, is in conjunction with, or alongside any, Objectionable Content. Objectionable Content includes, but is not limited to: (i) sexually explicit materials; (ii) obscene, defamatory, libelous, slanderous, violent and/or unlawful content or profanity; (iii) content that infringes upon the rights of any third party, including copyright, trademark, privacy, publicity or other personal or proprietary right, or that is deceptive or fraudulent; (iv) content that promotes the use or sale of illegal or regulated substances, tobacco products, ammunition and/or firearms; and (v) gambling, including without limitation, any online casino, sports books, bingo or poker.
+
+6. Warranty
+GroupNight disclaims all warranties about the GroupNight App to the fullest extent permitted by law. To the extent any warranty exists under law that cannot be disclaimed, GroupNight, not Apple, shall be solely responsible for such warranty.
+
+7. Maintenance and Support
+GroupNight does provide minimal maintenance or support for it but not to the extent that any maintenance or support is required by applicable law, GroupNight, not Apple, shall be obligated to furnish any such maintenance or support.
+
+8. Product Claims
+GroupNight, not Apple, is responsible for addressing any claims by you relating to the GroupNight App or use of it, including, but not limited to: (i) any product liability claim; (ii) any claim that the GroupNight App fails to conform to any applicable legal or regulatory requirement; and (iii) any claim arising under consumer protection or similar legislation. Nothing in this Agreement shall be deemed an admission that you may have such claims.
+
+9. Third Party Intellectual Property Claims
+GroupNight shall not be obligated to indemnify or defend you with respect to any third party claim arising out or relating to the GroupNight App. To the extent GroupNight is required to provide indemnification by applicable law, GroupNight, not Apple, shall be solely responsible for the investigation, defense, settlement and discharge of any claim that the GroupNight App or your use of it infringes any third party intellectual property right.
+
+10. Reporting Inappropriate Content
+In the case that you wish to report inappropriate content please send us an email to:
+groupnightfeedback@gmail.com 
+</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -466,11 +519,11 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8DM-Fw-LkN">
-                                <rect key="frame" x="497" y="28" width="83" height="36"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
-                                <state key="normal" title="Start Chat"/>
+                                <rect key="frame" x="555" y="28" width="25" height="25"/>
+                                <color key="tintColor" red="0.33731000880000001" green="1" blue="0.4138532472" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="moreFilled"/>
                                 <connections>
-                                    <action selector="startChatButtonTapped:" destination="aTs-Ab-6ad" eventType="touchUpInside" id="keQ-c4-K0q"/>
+                                    <action selector="moreButtonTapped:" destination="aTs-Ab-6ad" eventType="touchUpInside" id="mvz-WK-eUb"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -489,7 +542,7 @@
                     <connections>
                         <outlet property="cancelButton" destination="bXh-e9-0eb" id="BVj-p5-HxK"/>
                         <outlet property="groupNameLabel" destination="Be7-bw-bfB" id="VoR-VT-ydz"/>
-                        <outlet property="startChatButton" destination="8DM-Fw-LkN" id="RyX-Qb-Bqh"/>
+                        <outlet property="moreButton" destination="8DM-Fw-LkN" id="Jv5-Zd-tF6"/>
                         <outlet property="tableView" destination="1fe-7x-eTT" id="tde-xL-6T8"/>
                     </connections>
                 </viewController>

@@ -22,10 +22,6 @@ class SettingsViewController: UIViewController,UIImagePickerControllerDelegate, 
         profileImage.layer.cornerRadius = profileImage.frame.size.width / 2
         profileImage.layer.masksToBounds = true
         
-//        dispatch_async(dispatch_get_main_queue()) {
-//
-//        }
-        
         if let currentUser = UserController.currentUser {
             ImageController.imageForBase64String(currentUser.imageString, completion: { (success, image) in
                 if success {

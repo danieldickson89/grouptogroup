@@ -47,6 +47,10 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func tapGestureTapped(sender: AnyObject) {
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+    }
     
     @IBAction func logInButtonTapped(sender: AnyObject) {
         

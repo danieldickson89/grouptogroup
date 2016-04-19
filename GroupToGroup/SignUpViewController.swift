@@ -45,6 +45,11 @@ class SignUpViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func tapGestureTapped(sender: AnyObject) {
+        usernameTextField.resignFirstResponder()
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+    }
     
     @IBAction func submitButtonTapped(sender: AnyObject) {
         if let  username = usernameTextField.text,

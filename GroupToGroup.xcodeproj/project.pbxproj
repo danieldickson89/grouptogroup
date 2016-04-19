@@ -10,6 +10,8 @@
 		3905D1741CB305EC00D6ABE6 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3905D1731CB305EC00D6ABE6 /* SWRevealViewController.m */; };
 		3918B42D1CA361E200E16407 /* GroupsSearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3918B42C1CA361E200E16407 /* GroupsSearchResultsTableViewController.swift */; };
 		3918B42F1CA3651E00E16407 /* GroupProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3918B42E1CA3651E00E16407 /* GroupProfileViewController.swift */; };
+		3921FA491CBF2E3D001DDDA9 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3921FA481CBF2E3D001DDDA9 /* Report.swift */; };
+		3921FA4B1CBF2F7C001DDDA9 /* ReportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3921FA4A1CBF2F7C001DDDA9 /* ReportController.swift */; };
 		392A9D141CA48D8D00964522 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392A9D131CA48D8D00964522 /* ChatViewController.swift */; };
 		3938FBCA1C8F7BEE00BAD9CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3938FBC91C8F7BEE00BAD9CD /* AppDelegate.swift */; };
 		3938FBCF1C8F7BEE00BAD9CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3938FBCD1C8F7BEE00BAD9CD /* Main.storyboard */; };
@@ -63,6 +65,8 @@
 		3905D1731CB305EC00D6ABE6 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		3918B42C1CA361E200E16407 /* GroupsSearchResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsSearchResultsTableViewController.swift; sourceTree = "<group>"; };
 		3918B42E1CA3651E00E16407 /* GroupProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupProfileViewController.swift; sourceTree = "<group>"; };
+		3921FA481CBF2E3D001DDDA9 /* Report.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
+		3921FA4A1CBF2F7C001DDDA9 /* ReportController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportController.swift; sourceTree = "<group>"; };
 		392A9D131CA48D8D00964522 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		3938FBC61C8F7BEE00BAD9CD /* GroupToGroup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroupToGroup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3938FBC91C8F7BEE00BAD9CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -187,6 +191,7 @@
 				3938FBEA1C8F875300BAD9CD /* Group.swift */,
 				3938FC0A1C8F8D5500BAD9CD /* Conversation.swift */,
 				3938FBF01C8F8A7B00BAD9CD /* Message.swift */,
+				3921FA481CBF2E3D001DDDA9 /* Report.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -212,6 +217,7 @@
 				3938FC061C8F8D2100BAD9CD /* GroupController.swift */,
 				3938FC081C8F8D2900BAD9CD /* ConversationController.swift */,
 				3938FC0D1C8F993700BAD9CD /* MessageController.swift */,
+				3921FA4A1CBF2F7C001DDDA9 /* ReportController.swift */,
 				39FC76C21CB586F500BCE1A8 /* ImageController.swift */,
 			);
 			name = "Model Controllers";
@@ -250,6 +256,7 @@
 				TargetAttributes = {
 					3938FBC51C8F7BEE00BAD9CD = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = EPHG7LV4VJ;
 					};
 				};
 			};
@@ -310,8 +317,10 @@
 				3938FBCA1C8F7BEE00BAD9CD /* AppDelegate.swift in Sources */,
 				3938FBF31C8F8B7C00BAD9CD /* FirebaseController.swift in Sources */,
 				394D73241CA9CC2100505DDD /* ColorPallet.swift in Sources */,
+				3921FA4B1CBF2F7C001DDDA9 /* ReportController.swift in Sources */,
 				3905D1741CB305EC00D6ABE6 /* SWRevealViewController.m in Sources */,
 				3938FC091C8F8D2900BAD9CD /* ConversationController.swift in Sources */,
+				3921FA491CBF2E3D001DDDA9 /* Report.swift in Sources */,
 				3938FBE01C8F80CC00BAD9CD /* YourGroupsViewController.swift in Sources */,
 				39FC76CB1CB5E9D000BCE1A8 /* GroupProfileTableViewCell.swift in Sources */,
 				39FC76C51CB58AA300BCE1A8 /* SettingsViewController.swift in Sources */,
@@ -426,6 +435,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/GroupToGroup",
@@ -444,6 +454,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/GroupToGroup",
