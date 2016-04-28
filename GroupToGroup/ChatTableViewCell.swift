@@ -43,17 +43,6 @@ class ChatTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         
     }
-    
-    func rightBubbleConstraint(textCount: Int) {
-        
-        
-    }
-    
-    func leftBubbleConstraint(textCount: Int) {
-        
-        
-    }
-    
 }
 
 extension ChatTableViewCell {
@@ -83,6 +72,12 @@ extension ChatTableViewCell {
     
     func updateWithRightMemberMessage(message: Message) {
         
+//        switch message.text.characters.count {
+//        case 1...5: rightBubbleConstraint.constant = 280
+//        case 6...15: rightBubbleConstraint.constant = 240
+//        case 16...25: rightBubbleConstraint.constant = 180
+//        default: rightBubbleConstraint.constant = 120
+//        }
         rightImageView.image = UIImage(named: "blankPic")
         rightNameStamp.text = ""
         rightImageView.layer.cornerRadius = rightImageView.frame.size.width / 2
@@ -106,6 +101,12 @@ extension ChatTableViewCell {
     
     func updateWithLeftMemberMessage(message: Message) {
      
+//        switch message.text.characters.count {
+//        case 1...5: leftBubbleConstraint.constant = 280
+//        case 6...15: leftBubbleConstraint.constant = 240
+//        case 16...25: leftBubbleConstraint.constant = 180
+//        default: leftBubbleConstraint.constant = 120
+//        }
         leftImageView.image = UIImage(named: "blankPic")
         leftNameStamp.text = ""
         leftImageView.layer.cornerRadius = leftImageView.frame.size.width / 2

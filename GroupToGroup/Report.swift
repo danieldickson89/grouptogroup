@@ -37,7 +37,4 @@ class Report {
         self.reporterID = reporterID
         self.groupID = groupID
     }
-
-    
-    
 }

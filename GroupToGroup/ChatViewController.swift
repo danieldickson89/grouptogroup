@@ -126,7 +126,27 @@ class ChatViewController: UIViewController, UITextViewDelegate {
     
     func textViewDidBeginEditing(textView: UITextView) {
         self.textView.becomeFirstResponder()
+        if let constraint = self.myUIView.constraints.filter({$0.identifier == "_UIKBAutolayoutHeightConstraint"}).first {
+            
+            constraint.constant = self.textView.contentSize.height + 10
+        }
     }
+    
+    func textViewDidChange(textView: UITextView) {
+        
+        UIView.animateWithDuration(0.2) {
+            
+            if let constraint = self.myUIView.constraints.filter({$0.identifier == "_UIKBAutolayoutHeightConstraint"}).first {
+                
+                if self.textView.contentSize.height <= 160 {
+                    constraint.constant = self.textView.contentSize.height + 10
+                } else {
+                    constraint.constant = 160
+                }
+            }
+        }
+    }
+    
     
     // MARK: - Actions
     

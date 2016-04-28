@@ -292,13 +292,13 @@ groupnightfeedback@gmail.com
                                         <rect key="frame" x="0.0" y="0.0" width="512" height="31"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="css-pf-F64">
-                                                <rect key="frame" x="0.0" y="0.0" width="358.5" height="31"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="359" height="31"/>
                                                 <color key="textColor" red="0.36508461310000001" green="1" blue="0.42784337030000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yho-WY-bQJ">
-                                                <rect key="frame" x="368.5" y="0.0" width="143.5" height="31"/>
+                                                <rect key="frame" x="369" y="0.0" width="144" height="31"/>
                                                 <color key="backgroundColor" red="0.36508461310000001" green="1" blue="0.42784337030000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                                 <state key="normal" title="Join">
@@ -717,7 +717,7 @@ groupnightfeedback@gmail.com
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tnJ-zf-CvU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="263" y="1041"/>
+            <point key="canvasLocation" x="285" y="1041"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="nRd-2f-GnG">
@@ -766,22 +766,22 @@ groupnightfeedback@gmail.com
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Tom-an-aj7">
-                                                    <rect key="frame" x="150" y="8" width="400" height="99"/>
+                                                    <rect key="frame" x="100" y="8" width="450" height="99"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="heq-zi-HRb">
-                                                            <rect key="frame" x="0.0" y="0.0" width="400" height="99"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="450" height="99"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="OaA-h7-s4C">
-                                                                    <rect key="frame" x="8" y="32" width="384" height="59"/>
+                                                                    <rect key="frame" x="8" y="32" width="434" height="59"/>
                                                                     <subviews>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bR6-Jz-pbQ">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="384" height="59"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="434" height="59"/>
                                                                             <subviews>
                                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ycr-Pc-39v">
-                                                                                    <rect key="frame" x="8" y="8" width="368" height="43"/>
+                                                                                    <rect key="frame" x="8" y="8" width="418" height="43"/>
                                                                                     <subviews>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XsB-70-bCN">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="368" height="43"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="418" height="43"/>
                                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                                             <nil key="highlightedColor"/>
@@ -800,7 +800,7 @@ groupnightfeedback@gmail.com
                                                                     </subviews>
                                                                 </stackView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfW-ye-7P5">
-                                                                    <rect key="frame" x="8" y="8" width="384" height="16"/>
+                                                                    <rect key="frame" x="8" y="8" width="434" height="16"/>
                                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -833,7 +833,7 @@ groupnightfeedback@gmail.com
                                                 <constraint firstAttribute="bottom" secondItem="Tom-an-aj7" secondAttribute="bottom" id="bJT-19-8ya"/>
                                                 <constraint firstItem="Tom-an-aj7" firstAttribute="top" secondItem="PLs-He-Q4Q" secondAttribute="top" constant="8" id="hIb-Jw-0y1"/>
                                                 <constraint firstItem="GmC-r4-i8s" firstAttribute="leading" secondItem="Tom-an-aj7" secondAttribute="trailing" constant="-3" id="k2t-ia-GYN"/>
-                                                <constraint firstItem="Tom-an-aj7" firstAttribute="leading" secondItem="PLs-He-Q4Q" secondAttribute="leading" constant="150" id="yVa-Vi-jA8"/>
+                                                <constraint firstItem="Tom-an-aj7" firstAttribute="leading" secondItem="PLs-He-Q4Q" secondAttribute="leading" constant="100" id="yVa-Vi-jA8"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -1028,7 +1028,7 @@ groupnightfeedback@gmail.com
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" keyboardAppearance="alert"/>
                                 </textView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s1e-lf-GFK">
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s1e-lf-GFK">
                                     <rect key="frame" x="520" y="8" width="72" height="32"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
@@ -1051,7 +1051,6 @@ groupnightfeedback@gmail.com
                                 <constraint firstItem="s1e-lf-GFK" firstAttribute="leading" secondItem="RXm-Gk-E3B" secondAttribute="trailing" constant="8" symbolic="YES" id="Pjn-Xz-wZb"/>
                                 <constraint firstAttribute="trailing" secondItem="s1e-lf-GFK" secondAttribute="trailing" constant="8" id="RWz-BW-Tfd"/>
                                 <constraint firstItem="RXm-Gk-E3B" firstAttribute="leading" secondItem="TjX-9U-8eI" secondAttribute="leadingMargin" id="fAo-0f-89t"/>
-                                <constraint firstItem="RXm-Gk-E3B" firstAttribute="top" secondItem="s1e-lf-GFK" secondAttribute="top" id="ikE-ru-rvR"/>
                             </constraints>
                         </view>
                     </subviews>

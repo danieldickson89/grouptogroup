@@ -131,6 +131,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		391914F91CD188F700CAAA34 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				396BE9FB1CAB16A3004DB4F1 /* ConversationListTableViewCell.swift */,
+				39FC76CA1CB5E9D000BCE1A8 /* GroupProfileTableViewCell.swift */,
+				394D73211CA9C4AA00505DDD /* ChatTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		3938FBBD1C8F7BEE00BAD9CD = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +166,7 @@
 				3938FBEE1C8F876900BAD9CD /* Models */,
 				3938FC0C1C8F8D5D00BAD9CD /* Model Controllers */,
 				3938FBE71C8F872700BAD9CD /* ViewControllers */,
+				391914F91CD188F700CAAA34 /* Views */,
 				3938FBD01C8F7BEE00BAD9CD /* Assets.xcassets */,
 				394D73231CA9CC2100505DDD /* ColorPallet.swift */,
 				3938FBD21C8F7BEE00BAD9CD /* LaunchScreen.storyboard */,
@@ -173,13 +184,10 @@
 				39FC76C41CB58AA300BCE1A8 /* SettingsViewController.swift */,
 				3938FBDF1C8F80CC00BAD9CD /* YourGroupsViewController.swift */,
 				3938FBE31C8F810800BAD9CD /* GroupChatsListTableViewController.swift */,
-				396BE9FB1CAB16A3004DB4F1 /* ConversationListTableViewCell.swift */,
 				3938FBE11C8F80EA00BAD9CD /* AddGroupTableViewController.swift */,
 				3918B42C1CA361E200E16407 /* GroupsSearchResultsTableViewController.swift */,
 				3918B42E1CA3651E00E16407 /* GroupProfileViewController.swift */,
-				39FC76CA1CB5E9D000BCE1A8 /* GroupProfileTableViewCell.swift */,
 				392A9D131CA48D8D00964522 /* ChatViewController.swift */,
-				394D73211CA9C4AA00505DDD /* ChatTableViewCell.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
