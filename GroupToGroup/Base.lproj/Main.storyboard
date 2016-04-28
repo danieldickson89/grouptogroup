@@ -198,20 +198,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Buh-50-vbF">
-                                <rect key="frame" x="523" y="28" width="57" height="36"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="ICP-MO-oMQ"/>
-                                    <constraint firstAttribute="width" constant="57" id="nEQ-4N-NJD"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
-                                <state key="normal" title=" Done "/>
-                                <connections>
-                                    <action selector="doneButtonTapped:" destination="S80-Tg-FMj" eventType="touchUpInside" id="xRa-3p-73H"/>
-                                </connections>
-                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dkX-tH-hIj">
-                                <rect key="frame" x="20" y="81" width="560" height="499"/>
+                                <rect key="frame" x="20" y="20" width="560" height="499"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Hi there! Thanks for using GroupNight. GroupNight exists to help you and your friends find other groups of friends. We want to give you the best experience possible, so please feel free to give us feedback on the App Store after use. In order to use this app, you'll need to agree to the below statement. Just to sum it up for you: don't post anything inappropriate, and recognize the limits of the app. That's about it. Have fun!  GroupNight App End User License Agreement
 This End User License Agreement (“Agreement”) is between you and GroupNight and governs use of this app made available through the Apple App Store. By installing the GroupNight App, you agree to be bound by this Agreement and understand that there is no tolerance for objectionable content. If you do not agree with the terms and conditions of this Agreement, you are not entitled to use the GroupNight App.
@@ -253,15 +241,26 @@ groupnightfeedback@gmail.com
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Buh-50-vbF">
+                                <rect key="frame" x="272" y="533" width="57" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="57" id="tsL-86-imI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
+                                <state key="normal" title=" Done "/>
+                                <connections>
+                                    <action selector="doneButtonTapped:" destination="S80-Tg-FMj" eventType="touchUpInside" id="xRa-3p-73H"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="dkX-tH-hIj" firstAttribute="leading" secondItem="bL5-4e-76b" secondAttribute="leadingMargin" id="IGb-gP-6QG"/>
-                            <constraint firstItem="Buh-50-vbF" firstAttribute="top" secondItem="IWy-lo-Ddb" secondAttribute="bottom" constant="8" id="Lql-U8-0Cy"/>
-                            <constraint firstAttribute="bottom" secondItem="dkX-tH-hIj" secondAttribute="bottom" constant="20" symbolic="YES" id="LvW-eO-7nA"/>
-                            <constraint firstItem="dkX-tH-hIj" firstAttribute="trailing" secondItem="Buh-50-vbF" secondAttribute="trailing" id="cLa-aK-OyU"/>
-                            <constraint firstItem="dkX-tH-hIj" firstAttribute="top" secondItem="Buh-50-vbF" secondAttribute="bottom" constant="17" id="gS2-aY-t27"/>
-                            <constraint firstItem="Buh-50-vbF" firstAttribute="trailing" secondItem="bL5-4e-76b" secondAttribute="trailingMargin" id="jzg-PO-vsn"/>
+                            <constraint firstItem="dkX-tH-hIj" firstAttribute="trailing" secondItem="bL5-4e-76b" secondAttribute="trailingMargin" id="0dT-tz-ilJ"/>
+                            <constraint firstItem="Buh-50-vbF" firstAttribute="top" secondItem="dkX-tH-hIj" secondAttribute="bottom" constant="14" id="Oal-5k-My5"/>
+                            <constraint firstItem="dkX-tH-hIj" firstAttribute="top" secondItem="IWy-lo-Ddb" secondAttribute="bottom" id="RuT-yg-oLD"/>
+                            <constraint firstItem="LmX-pX-hvm" firstAttribute="top" secondItem="Buh-50-vbF" secondAttribute="bottom" constant="31" id="WvN-gW-lV3"/>
+                            <constraint firstItem="dkX-tH-hIj" firstAttribute="centerX" secondItem="Buh-50-vbF" secondAttribute="centerX" id="cf6-iJ-wko"/>
+                            <constraint firstItem="dkX-tH-hIj" firstAttribute="leading" secondItem="bL5-4e-76b" secondAttribute="leadingMargin" id="mgE-dT-ydd"/>
                         </constraints>
                     </view>
                     <connections>

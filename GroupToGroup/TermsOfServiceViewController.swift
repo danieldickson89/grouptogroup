@@ -24,8 +24,11 @@ class TermsOfServiceViewController: UIViewController {
         doneButton.layer.borderColor = UIColor.myGreenColor().CGColor
         doneButton.layer.borderWidth = 1.5
         doneButton.layer.cornerRadius = 6.0
-        //tosTextView.layer.borderColor = UIColor.whiteColor().CGColor
-        //tosTextView.layer.borderWidth = 1.5
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        tosTextView.setContentOffset(CGPointMake(0, 0), animated: true)
     }
 
     @IBAction func doneButtonTapped(sender: AnyObject) {
